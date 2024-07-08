@@ -1,29 +1,172 @@
 ---
 import Layout from "../layouts/Layout-Kinniku.astro";
 import { Image } from "astro:assets";
-import KinnikufesHeaderImage from "../images/kinnikufes__header-image.jpg";
+import KinnikufesHeaderImage from "../images/kinnikufes__header-image.webp";
+import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
 ---
 
 <Layout title="筋肉のフェスティバル | あじがさわフードフェス2024">
   <main class="main">
-    <section class="kinnikufes">
-      <div class="kinnikufes__header">
-        <div class="kinnikufes__header-image">
-          <Image src={KinnikufesHeaderImage} alt="筋肉フェス参加者" />
+    <div class="kinnikufes__header">
+      <section class="kinnikufes__header-image">
+        <Image src={KinnikufesHeaderImage} alt="筋肉フェスタイトル" />
+      </section>
+    </div>
+    <div class="kinnikufes__main">
+      <section class="kinnikufes__main-image">
+        <Image src={KinnikufesMainImage} alt="特別審査員" />
+      </section>
+      <section class="kinnikufes__main-text">
+        <div>
+          <p>｜会場｜</p>
+          <p>鰺ヶ沢町 海の駅わんど向かい特設会場</p>
+        </div>
+        <div>
+          <p>｜クラス｜</p>
+          <p>男性フリー、女性フリー<br /> ※年齢・身長・体重等全てフリー</p>
+        </div>
+        <div>
+          <p>｜参加費｜</p>
+          <p>無料</p>
+        </div>
+        <div>
+          <p>｜参加申込期間｜</p>
+          <p>2024年8月1日（木）～9月17日（火）</p>
+        </div>
+        <div>
+          <p>｜応募方法｜</p>
+          <p><a href="">専用フォームからお申込みください</a></p>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="kinnikufes__footer">
+      <hr class="hr" />
+      <div class="kinnikufes__footer-main">
+        <div>
+          <p>主催</p>
+          <p>鰺ヶ沢</p>
+          <p>協力</p>
+          <p>鰺ヶ沢町観光協会、鯵ヶ沢町商工会、パーソナルジムCORE</p>
+        </div>
+        <div>
+          <p>お問い合わせ先</p>
+          <p>
+            あじがさわフードフェス2024開催業務受託　株式会社プラス　五所川原市字田町121番地2<br
+            />TEL 0173-26-7071（平日9：00～17：00）／FAX 0173-26-7072
+          </p>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </footer>
 
   <style>
+    html {
+      background-color: #120811;
+      color: #fff;
+      font-size: 1.6rem;
+    }
+
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
     .container {
       max-width: 1600px;
       margin: 0 auto;
     }
+
     .kinnikufes__header-image {
       & img {
         width: 100%;
         height: 100%;
+      }
+    }
+
+    .kinnikufes__main {
+      background-color: #120811;
+      display: flex;
+      padding: 1.5rem 1.5rem 0 1.5rem;
+      gap: 2rem;
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+    }
+
+    .kinnikufes__main-image {
+      width: 60%;
+      margin-top: -180px;
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+      @media (max-width: 768px) {
+        margin-top: 0;
+        width: 100%;
+        margin-top: 0;
+      }
+    }
+
+    .kinnikufes__main-text {
+      width: 40%;
+      align-self: center;
+      & div {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        & p {
+          color: #fff;
+        }
+      }
+    }
+
+    .kinnikufes__footer {
+      padding: 0 1.5rem 0 1.5rem;
+    }
+
+    hr {
+      height: 0;
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    .hr {
+      border-top: 5px solid #fff;
+    }
+
+    .kinnikufes__footer-main {
+      & div:nth-of-type(1) {
+        display: flex;
+        gap: 1rem;
+        & p {
+          padding: 2px 8px;
+        }
+        & p:nth-of-type(1) {
+          border: solid 2px #fff;
+          border-radius: 4px;
+        }
+
+        & p:nth-of-type(3) {
+          border: solid 2px #fff;
+          border-radius: 4px;
+        }
+      }
+      & div:nth-of-type(2) {
+        display: flex;
+        gap: 1rem;
+        & p {
+          padding: 2px 8px;
+          display: flex;
+          align-items: center;
+        }
+        & p:nth-of-type(1) {
+          border: solid 2px #fff;
+          border-radius: 4px;
+        }
       }
     }
   </style>
