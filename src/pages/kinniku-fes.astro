@@ -1,0 +1,79 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import kinnikufestitle from "../images/kinniku-fes-title.png";
+import kinnikufessankasha from "../images/kinniku-fes-sankasha.png";
+import kinnikufesbackground from "../images/kinniku-fes-background.jpg";
+---
+
+<Layout title="筋肉のフェスティバル | あじがさわフードフェス2024">
+  <div class="container">
+    <main class="main">
+      <section class="kinnikufes">
+        <div class="kinnikufes__header">
+          <div class="kinnikufes__header-background">
+            <Image src={kinnikufesbackground} alt="筋肉フェス参加者" />
+          </div>
+          <div class="kinnikufes__header-title">
+            <Image
+              src={kinnikufestitle}
+              widths={[240, 540, 720, kinnikufestitle.width]}
+              sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${kinnikufestitle.width}px`}
+              alt="筋肉フェス参加者"
+            />
+          </div>
+          <div class="kinnikufes__header-image">
+            <Image
+              src={kinnikufessankasha}
+              widths={[240, 540, 720, kinnikufessankasha.width]}
+              sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${kinnikufessankasha.width}px`}
+              alt="筋肉フェス参加者"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <style>
+    .container {
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    .kinnikufes__header {
+      display: flex;
+      flex-direction: row-reverse;
+      background-image: ../images/kinniku-fes-background.jpg;
+      position: relative;
+      height: 100vh;
+    }
+
+    .kinnikufes__header-background {
+      position: absolute;
+      width: 100%;
+      &img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .kinnikufes__header-title {
+      flex: 1;
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+      z-index: 1;
+    }
+
+    .kinnikufes__header-image {
+      flex: 3;
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+      z-index: 1;
+    }
+  </style>
+</Layout>
