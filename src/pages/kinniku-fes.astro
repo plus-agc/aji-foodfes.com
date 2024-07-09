@@ -7,53 +7,57 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
 
 <Layout title="筋肉のフェスティバル | あじがさわフードフェス2024">
   <header class="header">
-    <div class="container">
-      <div class="kinnikufes__header">
-        <section class="kinnikufes__header-image">
-          <Image src={KinnikufesHeaderImage} alt="筋肉フェスタイトル" />
-        </section>
-      </div>
+    <div class="header__container">
+      <section class="header__image">
+        <Image src={KinnikufesHeaderImage} alt="筋肉フェスタイトル" />
+      </section>
     </div>
   </header>
   <main class="main">
-    <div class="container">
-      <div class="kinnikufes__main">
-        <section class="kinnikufes__main-image">
-          <Image src={KinnikufesMainImage} alt="特別審査員" />
-        </section>
-        <section class="kinnikufes__main-text">
-          <div>
-            <p>｜会場｜</p>
-            <p>鰺ヶ沢町 海の駅わんど向かい特設会場</p>
-          </div>
-          <div>
-            <p>｜クラス｜</p>
-            <p>男性フリー、女性フリー<br /> ※年齢・身長・体重等全てフリー</p>
-          </div>
-          <div>
-            <p>｜参加費｜</p>
-            <p>無料</p>
-          </div>
-          <div>
-            <p>｜参加申込期間｜</p>
-            <p>2024年8月1日（木）～9月17日（火）</p>
-          </div>
-          <div>
-            <p>｜応募方法｜</p>
-            <p>
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfC-YOdrZZrBvcpoyb4g99i8TxxJhqLw5IeVJ0vt8iY_NJ-lg/viewform?usp=sf_link"
-                target="_blank">専用フォームからお申込みください</a
-              >
-            </p>
-          </div>
-        </section>
+    <div class="main__container">
+      <div class="main__header">
+        <p>昨年に引き続き、今年も鰺ヶ沢町にてボディメイクコンテスト</p>
+        <p>「第２回筋肉のフェスティバル」を開催いたします。</p>
+        <p>
+          海をバックに、日々、ストイックに磨き上げたボディをご披露ください。
+        </p>
+        <p>栄冠は誰のボディに！</p>
       </div>
+      <section class="main__image">
+        <Image src={KinnikufesMainImage} alt="特別審査員" />
+      </section>
+      <section class="main__text">
+        <div>
+          <p>｜会場｜</p>
+          <p>鰺ヶ沢町 海の駅わんど向かい特設会場</p>
+        </div>
+        <div>
+          <p>｜クラス｜</p>
+          <p>男性フリー、女性フリー<br /> ※年齢・身長・体重等全てフリー</p>
+        </div>
+        <div>
+          <p>｜参加費｜</p>
+          <p>無料</p>
+        </div>
+        <div>
+          <p>｜参加申込期間｜</p>
+          <p>2024年8月1日（木）～9月17日（火）</p>
+        </div>
+        <div>
+          <p>｜応募方法｜</p>
+          <p>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfC-YOdrZZrBvcpoyb4g99i8TxxJhqLw5IeVJ0vt8iY_NJ-lg/viewform?usp=sf_link"
+              target="_blank">専用フォームからお申込みください</a
+            >
+          </p>
+        </div>
+      </section>
     </div>
   </main>
   <footer class="footer">
-    <div class="container">
-      <div class="kinnikufes__footer-main">
+    <div class="footer__container">
+      <div class="footer__main">
         <div>
           <p>主催</p>
           <p>鰺ヶ沢</p>
@@ -79,11 +83,6 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
       font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
         "Hiragino Sans", Meiryo, sans-serif;
     }
-    .header {
-      background-image: url("../images/kinnikufes__header-background.webp");
-      background-size: cover;
-      background-position: bottom;
-    }
 
     a {
       text-decoration: none;
@@ -92,21 +91,30 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
       }
     }
 
-    .container {
+    /* header */
+    .header {
+      background-image: url("../images/kinnikufes__header-background.webp");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: bottom -500px right 0px;
+      backdrop-filter: brightness(60%);
+    }
+
+    .header__container {
       max-width: 1200px;
       margin: 0 auto;
     }
 
-    .kinnikufes__header-image {
+    .header__image {
       & img {
         width: 100%;
         height: 100%;
       }
     }
 
-    .kinnikufes__main {
+    /* main */
+    .main {
       background-color: #120811;
-      display: flex;
       padding: 1.5rem 1.5rem 0 1.5rem;
       gap: 2rem;
       @media (max-width: 768px) {
@@ -114,21 +122,26 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
       }
     }
 
-    .kinnikufes__main-image {
-      width: 60%;
-      margin-top: -90px;
+    .main__container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .main__header {
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    .main__image {
+      width: 100%;
       & img {
         width: 100%;
         height: auto;
       }
-      @media (max-width: 768px) {
-        margin-top: 0;
-        width: 100%;
-      }
     }
 
-    .kinnikufes__main-text {
-      width: 40%;
+    .main__text {
+      width: 100%;
       align-self: center;
       & div {
         display: grid;
@@ -142,7 +155,8 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
       }
     }
 
-    .kinnikufes__footer-main {
+    /* footer */
+    .footer__main {
       padding: 0 1.5rem 0 1.5rem;
       border-top: solid 5px #fff;
       & div:nth-of-type(1) {
@@ -192,6 +206,11 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
           gap: 0;
         }
       }
+    }
+
+    .footer__container {
+      max-width: 1200px;
+      margin: 0 auto;
     }
   </style>
 </Layout>
