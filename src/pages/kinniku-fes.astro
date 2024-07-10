@@ -122,6 +122,70 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
           <Image src={KinnikufesMainImage} alt="特別審査員" />
         </div>
       </section>
+      <dl class="Qa-Box">
+        <div class="Qa">
+          <dt>
+            <p>審査員の数は？</p>
+          </dt>
+          <dd>
+            <p>
+              5名<br />特別審査員　パーソナルジムＣＯＲＥ　オーナー　木村　拓磨
+              氏
+            </p>
+          </dd>
+        </div>
+        <div class="Qa">
+          <dt>
+            <p>審査基準は？</p>
+          </dt>
+          <dd>
+            <ul>
+              <li>全体のバランス</li>
+              <li>筋肉の発達</li>
+              <li>ポーズ</li>
+              <li>表情</li>
+              <li>ユーモア</li>
+            </ul>
+          </dd>
+        </div>
+        <div class="Qa">
+          <dt>
+            <p>服装規定は？</p>
+          </dt>
+          <dd>
+            <ul>
+              <li>男性：腰から膝までのハーフパンツ等</li>
+              <li>女性：スポーツブラ、ショートパンツ</li>
+            </ul>
+          </dd>
+        </div>
+        <div class="Qa">
+          <dt>
+            <p>大会賞品はある？</p>
+          </dt>
+          <dd>
+            <ul>
+              <li>優勝者　パーソナルジムCORE　プロテイン</li>
+              <li>特別審査員賞　パーソナルジムCORE　トレーニングチケット</li>
+              <li>※上記以外にも参加賞・副賞・各審査員賞あり</li>
+            </ul>
+          </dd>
+        </div>
+        <div class="Qa">
+          <dt>
+            <p>注意事項について教えてください</p>
+          </dt>
+          <dd>
+            <ul>
+              <li>
+                タトゥー等ある方は、ファンデーション、シール等で隠せる範囲で出場可能です。
+              </li>
+              <li>ボディメイクを始めたばかりの方も参加可能です。</li>
+              <li>当日の飛び入り参加はできません。</li>
+            </ul>
+          </dd>
+        </div>
+      </dl>
     </div>
   </main>
   <footer class="footer">
@@ -143,6 +207,19 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
       </div>
     </div>
   </footer>
+  <div class="cta" style="position:relative;margin-top:200px;">
+    <a
+      href="#"
+      class="cta-container"
+      style="position:fixed;bottom:0;border:solid 1px #FFF;padding:1rem 0;background-color:#120811;width:100%;color:#FFF;"
+    >
+      <div style="max-width:1200px;margin:0 auto;">
+        <p>無料でお申し込みいただけます！</p>
+        <p>参加申込期間：2024年8月1日（木）～9月17日（火）</p>
+        <p>フォームから申込む</p>
+      </div>
+    </a>
+  </div>
 </Layout>
 
 <style lang="scss">
@@ -250,6 +327,7 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
   .footer__main {
     padding: 0 1.5rem 0 1.5rem;
     border-top: solid 5px #120811;
+    color: #fff;
     & div:nth-of-type(1) {
       display: flex;
       gap: 1rem;
@@ -557,6 +635,72 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
         display: block;
         margin: 0 auto;
       }
+    }
+  }
+  .Qa-Box {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .Qa-Box .Qa dt,
+  .Qa-Box .Qa dd {
+    display: flex;
+    align-items: baseline;
+    margin: 15px 0;
+    padding: 15px;
+  }
+
+  .Qa-Box .Qa dt {
+    background: #f5f5f5;
+  }
+
+  .Qa-Box .Qa dt p {
+    margin: 0;
+    padding-left: 15px;
+    font-weight: bold;
+    width: 100%;
+  }
+
+  .Qa-Box .Qa dd p {
+    margin: 0;
+    padding-left: 15px;
+    width: 100%;
+    color: #fff;
+  }
+
+  .Qa-Box .Qa dd {
+    ul {
+      li {
+        color: #fff;
+      }
+    }
+  }
+
+  .Qa-Box .Qa dt::before {
+    content: "Q";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background: #6699b7;
+    width: 2em;
+    height: 2em;
+  }
+
+  .Qa-Box .Qa dd::before {
+    content: "A";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background: #d65556;
+    width: 2em;
+    height: 2em;
+  }
+
+  @media screen and (max-width: 960px) {
+    .Qa-Box {
+      width: 95%;
     }
   }
 </style>
