@@ -294,7 +294,7 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
 
   .main__header {
     p {
-      font-size: 24px;
+      font-size: clamp(0.875rem, 0.648rem + 1.14vw, 1.5rem);
     }
   }
 
@@ -303,7 +303,7 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
       list-style-type: none;
       padding: 0 0 0 1rem;
       & li {
-        font-size: 24px;
+        font-size: clamp(0.875rem, 0.648rem + 1.14vw, 1.5rem);
       }
     }
   }
@@ -326,7 +326,7 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
       flex: 1 1 calc(50% - 1rem);
       box-sizing: border-box;
       & p {
-        font-size: 24px;
+        font-size: clamp(0.875rem, 0.648rem + 1.14vw, 1.5rem);
       }
     }
     @media (max-width: 768px) {
@@ -394,7 +394,11 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
   .main__card {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-between;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   .main__card-item {
@@ -593,8 +597,8 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
   }
   .heading06 {
     position: relative;
-    padding-top: 50px;
-    font-size: 26px;
+    padding-top: clamp(1.875rem, 1.42rem + 2.27vw, 3.125rem);
+    font-size: clamp(1rem, 0.773rem + 1.14vw, 1.625rem);
   }
 
   .heading06 span {
@@ -608,16 +612,16 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
     top: 10px;
     left: 0;
     color: $color_beige;
-    font-size: 50px;
+    font-size: clamp(0.625rem, -0.284rem + 4.55vw, 3.125rem);
     font-family: luxus-brut, cursive;
     font-style: italic;
   }
 
   .heading07 {
     position: relative;
-    padding-top: 50px;
-    padding-left: 30px;
-    font-size: 32px;
+    padding-top: clamp(0.625rem, -0.284rem + 4.55vw, 3.125rem);
+    padding-left: clamp(0.625rem, 0.17rem + 2.27vw, 1.875rem);
+    font-size: clamp(1rem, 0.636rem + 1.82vw, 2rem);
     font-weight: bold;
   }
 
@@ -633,7 +637,7 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
     top: -20px;
     left: 0;
     color: $color_beige;
-    font-size: 80px;
+    font-size: clamp(1.875rem, 0.739rem + 5.68vw, 5rem);
     font-weight: 400;
     font-family: luxus-brut, cursive;
     font-style: italic;
