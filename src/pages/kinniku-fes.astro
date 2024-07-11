@@ -188,7 +188,7 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
           </dd>
         </div>
       </dl>
-      <div class="main__card-item alt">
+      <div class="main__card-item alt" style="margin:96px auto 96px;">
         <div class="meta">
           <div
             class="photo"
@@ -196,20 +196,18 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
           >
           </div>
         </div>
-        <div class="description">
-          <h1 style="font-size:1.2rem;">
+        <div class="description" style="padding:2rem 1rem;">
+          <h1 style="font-size:1rem;">
             申込期間：2024年8月1日（木）～9月17日（火）
           </h1>
           <div style="padding:16px 0;">
             <p style="font-size:18px;font-weight:bolder;">
-              海をバックに、日々、ストイックに磨き上げたボディをご披露ください。<span
-                style="color:red;">栄冠は誰のボディに！</span
-              >
+              海をバックに、日々、ストイックに磨き上げたボディをご披露ください。栄冠は誰のボディに！
             </p>
             <p class="read-more">
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSfC-YOdrZZrBvcpoyb4g99i8TxxJhqLw5IeVJ0vt8iY_NJ-lg/viewform"
-                style="font-weight:bold;font-size:1.4rem;"
+                style="font-weight:bold;font-size:1.4rem;color:red;"
                 target="_blank">専用フォームからお申し込み</a
               >
             </p>
@@ -243,11 +241,13 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
 <style lang="scss">
   $color_white: #fff;
   $color_prime: rgba(255, 191, 0, 0.5);
+  $color_beige: rgba(196, 157, 97, 0.5);
   $color_grey: #e2e2e2;
+  $color_black: #120811;
   $color_grey_dark: #a2a2a2;
   html {
-    background-color: #120811;
-    color: #120811;
+    background-color: rgb(255, 250, 226);
+    color: $color_black;
     font-size: 16px;
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
       "Hiragino Sans", Meiryo, sans-serif;
@@ -283,19 +283,18 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
 
   /* main */
   .main {
-    background-color: #120811;
+    background-color: rgb(255, 250, 226);
   }
 
   .main__container {
     max-width: 1200px;
     margin: 111px auto 0;
-    color: #120811;
+    color: $color_black;
   }
 
   .main__header {
     p {
       font-size: 24px;
-      color: #fff;
     }
   }
 
@@ -328,7 +327,6 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
       box-sizing: border-box;
       & p {
         font-size: 24px;
-        color: #fff;
       }
     }
     @media (max-width: 768px) {
@@ -339,7 +337,6 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
   /* footer */
   .footer__main {
     padding: 0 1.5rem 0 1.5rem;
-    color: #fff;
     & div:nth-of-type(1) {
       display: flex;
       gap: 1rem;
@@ -347,12 +344,12 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
         padding: 2px 8px;
       }
       & p:nth-of-type(1) {
-        border: solid 2px #fff;
+        border: solid 2px $color_black;
         border-radius: 4px;
       }
 
       & p:nth-of-type(3) {
-        border: solid 2px #fff;
+        border: solid 2px $color_black;
         border-radius: 4px;
       }
     }
@@ -365,12 +362,12 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
         align-items: center;
       }
       & p:nth-of-type(1) {
-        border: solid 2px #fff;
+        border: solid 2px $color_black;
         border-radius: 4px;
       }
     }
     @media (max-width: 768px) {
-      border-top: solid 1px #fff;
+      border-top: solid 1px $color_black;
       padding: 1.5rem;
       & div {
         display: flex;
@@ -443,7 +440,6 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
       margin: auto;
       transition: left 0.2s;
       background: rgba(#000, 0.6);
-      color: $color_white;
       padding: 10px;
       width: 100%;
       font-size: 0.9rem;
@@ -498,7 +494,6 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
         font-size: 1rem;
         font-weight: 300;
         text-transform: uppercase;
-        color: $color_grey_dark;
         margin-top: 5px;
         font-family: luxus-brut, cursive;
       }
@@ -600,7 +595,6 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
     position: relative;
     padding-top: 50px;
     font-size: 26px;
-    color: #fff;
   }
 
   .heading06 span {
@@ -613,7 +607,7 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
     position: absolute;
     top: 10px;
     left: 0;
-    color: rgba(255, 191, 0, 0.5);
+    color: $color_beige;
     font-size: 50px;
     font-family: luxus-brut, cursive;
     font-style: italic;
@@ -624,7 +618,6 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
     padding-top: 50px;
     padding-left: 30px;
     font-size: 32px;
-    color: #fff;
     font-weight: bold;
   }
 
@@ -639,7 +632,7 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
     transform: rotate(-5deg);
     top: -20px;
     left: 0;
-    color: rgba(255, 191, 0, 0.5);
+    color: $color_beige;
     font-size: 80px;
     font-weight: 400;
     font-family: luxus-brut, cursive;
@@ -649,12 +642,11 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
     margin-bottom: 2rem;
     & div {
       width: 100%;
-      color: #fff;
       & p {
         font-size: 24px;
       }
       & img {
-        width: 80%;
+        width: 60%;
         height: auto;
         display: block;
         margin: 0 auto;
@@ -675,7 +667,7 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
   }
 
   .Qa-Box .Qa dt {
-    background: #f5f5f5;
+    background: $color_white;
   }
 
   .Qa-Box .Qa dt p {
@@ -689,15 +681,11 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
     margin: 0;
     padding-left: 15px;
     width: 100%;
-    color: #fff;
+    font-size: 1.3rem;
   }
 
-  .Qa-Box .Qa dd {
-    ul {
-      li {
-        color: #fff;
-      }
-    }
+  .Qa-Box .Qa dd li {
+    font-size: 1.3rem;
   }
 
   .Qa-Box .Qa dt::before {
@@ -774,7 +762,6 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
     );
     background-position: 1%;
     background-size: 200% auto;
-    color: #fff !important;
     overflow: hidden;
     position: relative;
     text-decoration: none !important;
