@@ -197,9 +197,23 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
           </div>
         </div>
         <div class="description">
-          <h1>1.グループ審査</h1>
-          <p>フロント（2ポーズ）15秒</p>
-          <p>バック（2ポーズ）15秒</p>
+          <h1 style="font-size:1.2rem;">
+            申込期間：2024年8月1日（木）～9月17日（火）
+          </h1>
+          <div style="padding:16px 0;">
+            <p style="font-size:18px;font-weight:bolder;">
+              海をバックに、日々、ストイックに磨き上げたボディをご披露ください。<span
+                style="color:red;">栄冠は誰のボディに！</span
+              >
+            </p>
+            <p class="read-more">
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfC-YOdrZZrBvcpoyb4g99i8TxxJhqLw5IeVJ0vt8iY_NJ-lg/viewform"
+                style="font-weight:bold;font-size:1.4rem;"
+                target="_blank">専用フォームからお申し込み</a
+              >
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -333,12 +347,12 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
         padding: 2px 8px;
       }
       & p:nth-of-type(1) {
-        border: solid 2px #120811;
+        border: solid 2px #fff;
         border-radius: 4px;
       }
 
       & p:nth-of-type(3) {
-        border: solid 2px #120811;
+        border: solid 2px #fff;
         border-radius: 4px;
       }
     }
@@ -351,12 +365,12 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
         align-items: center;
       }
       & p:nth-of-type(1) {
-        border: solid 2px #120811;
+        border: solid 2px #fff;
         border-radius: 4px;
       }
     }
     @media (max-width: 768px) {
-      border-top: solid 1px #120811;
+      border-top: solid 1px #fff;
       padding: 1.5rem;
       & div {
         display: flex;
@@ -478,7 +492,7 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
       h1 {
         line-height: 1;
         margin: 0;
-        font-size: 1.7rem;
+        font-size: 1.3rem;
       }
       h2 {
         font-size: 1rem;
@@ -495,8 +509,8 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
           display: inline-block;
           position: relative;
           &:after {
-            content: "\f061";
-            font-family: FontAwesome;
+            content: "→";
+            font-weight: bold;
             margin-left: -10px;
             opacity: 0;
             vertical-align: middle;
@@ -557,9 +571,19 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
       }
       &.alt {
         flex-direction: row-reverse;
-        width: 80%;
-        height: 300px;
+        width: 70%;
+        height: 220px;
         .description {
+          // background: var(
+          //   --Gradation_2,
+          //   linear-gradient(
+          //     105deg,
+          //     #eda91b 20%,
+          //     #b87014 39%,
+          //     #b87014 51%,
+          //     #eda91b 80%
+          //   )
+          // );
           &:before {
             left: inherit;
             right: -10px;
