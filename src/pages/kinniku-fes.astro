@@ -66,8 +66,10 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
           </p>
         </div>
       </section>
-      <hr class="hr" />
-      <section class="main__header" style="padding:96px 0 0 0;">
+    </div>
+    <hr class="hr" />
+    <div class="main__container">
+      <section class="main__header">
         <h1 class="heading07" data-en="Performance">パフォーマンス</h1>
         <p>
           受付終了後、パーソナルジムCORE　木村拓磨
@@ -186,8 +188,23 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
           </dd>
         </div>
       </dl>
+      <div class="main__card-item alt">
+        <div class="meta">
+          <div
+            class="photo"
+            style="background-image: url(/images/bnr_img.webp)"
+          >
+          </div>
+        </div>
+        <div class="description">
+          <h1>1.グループ審査</h1>
+          <p>フロント（2ポーズ）15秒</p>
+          <p>バック（2ポーズ）15秒</p>
+        </div>
+      </div>
     </div>
   </main>
+  <hr class="hr" />
   <footer class="footer">
     <div class="footer__container">
       <div class="footer__main">
@@ -207,33 +224,11 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
       </div>
     </div>
   </footer>
-  <div class="p-pickandmix-bnr js-anim-fadeInUp -move">
-    <a href="https://www.lindt.jp/c/onlineshop/collection/european_specialities"
-      ><span class="p-pickandmix-bnr__tag">オンラインショップ限定</span>
-      <p class="p-pickandmix-bnr__txt">
-        ヨーロピアン<br class="pc-hidden" />スペシャリティーズアソート<br
-        />リンドールミルク入り
-      </p><span class="p-pickandmix-bnr__btn">ご購入はこちら </span>
-    </a>
-  </div>
-  <div class="cta" style="position:relative;margin-top:200px;">
-    <a
-      href="#"
-      class="cta-container"
-      style="position:fixed;bottom:0;border:solid 1px #FFF;padding:1rem 0;background-color:#120811;width:100%;color:#FFF;"
-    >
-      <div style="max-width:1200px;margin:0 auto;">
-        <p>無料でお申し込みいただけます！</p>
-        <p>参加申込期間：2024年8月1日（木）～9月17日（火）</p>
-        <p>フォームから申込む</p>
-      </div>
-    </a>
-  </div>
 </Layout>
 
 <style lang="scss">
   $color_white: #fff;
-  $color_prime: rgba(225, 255, 0, 01);
+  $color_prime: rgba(255, 191, 0, 0.5);
   $color_grey: #e2e2e2;
   $color_grey_dark: #a2a2a2;
   html {
@@ -275,16 +270,11 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
   /* main */
   .main {
     background-color: #120811;
-    padding: 1.5rem 1.5rem 0 1.5rem;
-    gap: 2rem;
-    @media (max-width: 768px) {
-      flex-direction: column;
-    }
   }
 
   .main__container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 111px auto 0;
     color: #120811;
   }
 
@@ -335,7 +325,6 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
   /* footer */
   .footer__main {
     padding: 0 1.5rem 0 1.5rem;
-    border-top: solid 5px #120811;
     color: #fff;
     & div:nth-of-type(1) {
       display: flex;
@@ -568,6 +557,8 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
       }
       &.alt {
         flex-direction: row-reverse;
+        width: 80%;
+        height: 300px;
         .description {
           &:before {
             left: inherit;
@@ -598,7 +589,7 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
     position: absolute;
     top: 10px;
     left: 0;
-    color: rgba(225, 255, 0, 0.5);
+    color: rgba(255, 191, 0, 0.5);
     font-size: 50px;
     font-family: luxus-brut, cursive;
     font-style: italic;
@@ -624,7 +615,7 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
     transform: rotate(-5deg);
     top: -20px;
     left: 0;
-    color: rgba(225, 255, 0, 0.5);
+    color: rgba(255, 191, 0, 0.5);
     font-size: 80px;
     font-weight: 400;
     font-family: luxus-brut, cursive;
@@ -712,8 +703,42 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
       width: 95%;
     }
   }
+  .p-pickandmix-bnr {
+    margin: 111px 0;
+    width: 840px;
+  }
+  .p-pickandmix-bnr,
   .p-pickandmix-bnr a {
-    background-color: var(
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media screen and (min-width: 1440px) {
+    .p-pickandmix-bnr a {
+      border-radius: 30px;
+      height: 250px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .p-pickandmix-bnr a {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      border-radius: 2.08vw;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1% 39% 1% 8%;
+    }
+  }
+  .p-pickandmix-bnr a {
+    background: var(
       --Gradation_2,
       linear-gradient(
         105deg,
@@ -731,5 +756,97 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
     text-decoration: none !important;
     -webkit-transition: 0.6s;
     transition: 0.6s;
+  }
+
+  @media screen and (min-width: 1440px) {
+    .p-pickandmix-bnr__tag {
+      border-radius: 3px;
+      font-size: 14px;
+      padding: 4px 17px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .p-pickandmix-bnr__tag {
+      background: var(
+        --Gradation,
+        linear-gradient(90deg, #c61624 47.75%, #812029 141.13%)
+      );
+      border-radius: 0.2vw;
+      font-size: 0.97vw;
+      letter-spacing: 0.08em;
+      padding: 0.27vw 1.18vw;
+    }
+  }
+  .p-pickandmix-bnr__tag {
+    display: inline-block;
+    font-weight: 700;
+  }
+
+  @media screen and (min-width: 1440px) {
+    .p-pickandmix-bnr__txt {
+      font-size: 22px;
+      margin-top: 17px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .p-pickandmix-bnr__txt {
+      font-size: 1.52vw;
+      margin-top: 1.18vw;
+    }
+  }
+  .p-pickandmix-bnr__txt {
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  @media screen and (min-width: 1440px) {
+    .p-pickandmix-bnr__btn {
+      font-size: 16px;
+      margin-top: 27px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .p-pickandmix-bnr__btn {
+      font-size: 1.11vw;
+      margin-top: 1.87vw;
+    }
+  }
+  .p-pickandmix-bnr__btn {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-weight: 700;
+    justify-content: flex-end;
+    text-align: right;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 768px) {
+    .p-pickandmix-bnr a:after {
+      background-position: center 40%;
+      background-size: 152% auto;
+      height: 170%;
+      right: -6.3%;
+      width: 41%;
+    }
+  }
+  .p-pickandmix-bnr a:after {
+    background: url("../images/bnr_img.webp") no-repeat 50% / cover;
+    border-radius: 50%;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 3.58vw;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 2.05vw;
   }
 </style>
