@@ -30,7 +30,7 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
       <section class="main__list">
         <div>
           <h2 class="main__list-item" data-en="Event">開催日時</h2>
-          <p>2024年10月8日（SUN）</p>
+          <p>2024年10月8日（SUN）<br />11:00〜12:00</p>
         </div>
         <div>
           <h2 class="main__list-item" data-en="Hours">受付時間</h2>
@@ -219,10 +219,16 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
         </div>
         <div>
           <p>お問い合わせ先</p>
-          <p>
-            あじがさわフードフェス2024開催業務受託　株式会社プラス　五所川原市字田町121番地2<br
-            />TEL 0173-26-7071（平日9：00～17：00）／FAX 0173-26-7072
-          </p>
+          <ul>
+            <li>
+              あじがさわフードフェス2024開催業務受託<span>株式会社プラス</span>
+            </li>
+            <li>
+              五所川原市字田町121番地2<span
+                >TEL 0173-26-7071（平日9:00～17:00）</span
+              >FAX 0173-26-7072
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -237,7 +243,7 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
   html {
     background-color: rgb(255, 250, 226);
     color: $color_black;
-    font-size: 16px;
+    font-size: clamp(0.875rem, 0.83rem + 0.23vw, 1rem);
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
       "Hiragino Sans", Meiryo, sans-serif;
   }
@@ -695,6 +701,26 @@ footer
 =========================================================== */
 
   .footer__main {
+    ul {
+      list-style-type: none;
+      padding: 0;
+      text-align: left;
+      @media (max-width: 375px) {
+        text-align: center;
+      }
+      span:nth-of-type(1) {
+        margin-left: 1rem;
+        @media (max-width: 375px) {
+          display: block;
+          width: 100%;
+          text-align: center;
+        }
+      }
+      span:nth-of-type(2) {
+        width: 100%;
+        display: block;
+      }
+    }
     & div:nth-of-type(1) {
       display: flex;
       gap: 1rem;
@@ -718,6 +744,9 @@ footer
         padding: 2px 8px;
         display: flex;
         align-items: center;
+        @media (max-width: 375px) {
+          flex-direction: column;
+        }
       }
       & p:nth-of-type(1) {
         border: solid 2px $color_black;
@@ -748,22 +777,27 @@ footer
     padding: 1.5rem;
   }
 
-  .cta {
-    padding: 2rem 1rem;
-    h1 {
-      font-size: clamp(0.75rem, 0.659rem + 0.45vw, 1rem);
-    }
-    div {
-      padding: 16px 0;
-    }
-    .description-text {
-      font-size: clamp(0.875rem, 0.784rem + 0.45vw, 1.125rem);
-      font-weight: bolder;
-    }
-    a {
-      font-weight: bold;
-      font-size: clamp(1rem, 0.855rem + 0.73vw, 1.4rem);
-      color: red;
+  .alt {
+    .cta {
+      padding: 2rem 1rem;
+      h1 {
+        font-size: clamp(0.75rem, 0.659rem + 0.45vw, 1rem);
+        line-height: 1.2rem;
+      }
+      div {
+        padding: 0 0 16px;
+      }
+      .description-text {
+        font-size: clamp(0.875rem, 0.784rem + 0.45vw, 1.125rem);
+        font-weight: bolder;
+      }
+      .read-more {
+        a {
+          font-weight: bold;
+          font-size: clamp(1rem, 0.855rem + 0.73vw, 1.4rem);
+          color: red;
+        }
+      }
     }
   }
 </style>
