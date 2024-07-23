@@ -3,6 +3,9 @@ import Layout from "../layouts/Layout-Kinniku.astro";
 import { Image } from "astro:assets";
 import KinnikufesHeaderImage from "../images/kinnikufes__header-image.webp";
 import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
+import Adimage01 from "../images/ad-image01.jpg";
+import Adimage02 from "../images/ad-image02.jpg";
+import Adimage03 from "../images/ad-image03.jpg";
 ---
 
 <Layout title="筋肉のフェスティバル | あじがさわフードフェス2024">
@@ -205,6 +208,30 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
           </div>
         </div>
       </div>
+      <div class="ad-image">
+        <h2>【ご協賛企業】</h2>
+        <p>PERSONAL GYM CORE／姿勢改善専門院　整体いなみ／CRAZY CIDER</p>
+        <div class="ad_image-wrapper">
+          <div>
+            <a href="https://core-gym-hirosaki.jp/concept/" target="_blank">
+              <Image src={Adimage01} alt="PERSONAL GYM CORE" />
+            </a>
+          </div>
+          <div>
+            <a
+              href="https://www.instagram.com/seitai.inami?igsh=NzM3YXh0czNlMzFh&utm_source=qr"
+              target="_blank"
+            >
+              <Image src={Adimage02} alt="姿勢改善専門院 整体いなみ" />
+            </a>
+          </div>
+          <div>
+            <a href="https://aomori-fukuya.shop-pro.jp/" target="_blank">
+              <Image src={Adimage03} alt="筋肉フェスタイトル" />
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
   <hr class="hr" />
@@ -213,7 +240,7 @@ import KinnikufesMainImage from "../images/kinnikufes__main-image.webp";
       <div class="footer__main">
         <div>
           <p>主催</p>
-          <p>鰺ヶ沢</p>
+          <p>鰺ヶ沢町</p>
           <p>協力</p>
           <p>鰺ヶ沢町観光協会、鯵ヶ沢町商工会、パーソナルジムCORE</p>
         </div>
@@ -798,6 +825,22 @@ footer
           color: red;
         }
       }
+    }
+  }
+  .ad_image-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    div {
+      flex: 1;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+    p:nth-of-type(1) {
+      font-weight: bold;
     }
   }
 </style>
