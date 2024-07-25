@@ -13,8 +13,6 @@ export default defineConfig({
     relativeLinks(),
     sitemap(),
     robotsTxt(),
-    sentry(),
-    spotlightjs(),
     partytown({
       config: {
         forward: ["dataLayer.push"],
