@@ -4,12 +4,17 @@ import sitemap from "@astrojs/sitemap";
 import partytown from "@astrojs/partytown";
 import robotsTxt from "astro-robots-txt";
 
+import sentry from "@sentry/astro";
+import spotlightjs from "@spotlightjs/astro";
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [
     relativeLinks(),
     sitemap(),
     robotsTxt(),
+    sentry(),
+    spotlightjs(),
     partytown({
       config: {
         forward: ["dataLayer.push"],
@@ -21,6 +26,8 @@ export default defineConfig({
         "https://aji-foodfes.com/sitemap-index.xml",
       ],
     }),
+    sentry(),
+    spotlightjs(),
   ],
   output: "static",
   compressHTML: false,
