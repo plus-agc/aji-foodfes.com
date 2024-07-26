@@ -1,25 +1,98 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import MainImage from "../images/main-image.webp";
+import FooterBg from "../images/footer__image-desc.svg";
+import FooterBgSp from "../images/footer__image-sp.svg";
 ---
 
 <Layout title="あじがさわフードフェス2024">
+  <header class="header">
+    <div class="container">
+      <div class="header__image">
+        <Image src={MainImage} alt="筋肉フェスタイトル" />
+      </div>
+    </div>
+  </header>
   <main>
     <div class="container">
-      <h1>「2024あじがさわフードフェス」は現在準備中です</h1>
-      <ul>
-        <li><a href="/">ホーム</a></li>
-        <li><a href="/kinniku-fes.html">筋肉フェス</a></li>
-      </ul>
+      <h1>情報は随時更新予定！</h1>
     </div>
   </main>
+  <footer>
+    <div class="container">
+      <div class="footer__image">
+        <Image src={FooterBg} alt="概要欄" class="pc" />
+        <Image src={FooterBgSp} alt="概要欄" class="sp" />
+      </div>
+    </div>
+  </footer>
 
-  <style>
+  <style lang="scss">
+    header,
+    main,
+    footer {
+      background-color: #fffcd1;
+    }
+    main {
+      padding: clamp(0rem, -4.154rem + 16.91vw, 9.375rem);
+      @media (max-width: 767px) {
+        margin-bottom: 50px;
+      }
+    }
     .container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .header__image {
+      width: 100%;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .main__image-date {
+      padding: 120px 0;
+      width: 60%;
+      margin: 0 auto;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .footer__image {
+      position: relative;
+      img {
+        width: 100% !important;
+        height: auto !important;
+      }
+      .pc {
+        display: none;
+        @media (min-width: 768px) {
+          & {
+            display: block;
+          }
+        }
+      }
+      .sp {
+        display: none;
+        @media (max-width: 767px) {
+          & {
+            display: block;
+          }
+        }
+      }
+    }
+    h1 {
+      font-size: clamp(1.125rem, 0.627rem + 2.03vw, 2.25rem);
+      text-align: center;
+      background-color: #e60012;
+      color: #fff;
+      margin-bottom: 5rem;
+      width: fit-content;
+      padding: 16px 32px;
+      margin: 0 auto;
+      border-radius: 16px;
     }
   </style>
 </Layout>

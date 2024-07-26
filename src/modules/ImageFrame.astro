@@ -1,0 +1,19 @@
+---
+import { getImage } from "astro:assets";
+import type { HTMLAttributes } from "astro/types";
+import { MIN_WIDTH_MD } from "~/data/siteData";
+interface Props extends HTMLAttributes<"img"> {
+  imgSrc: ImageMetadata;
+  imgSrcPC?: ImageMetadata;
+}
+
+const { imgSrc, imgSrcPC, ...attrs } = Astro.props;
+const optimizedImage = await getImage({ src: imgSrc, format: "webp" });
+const optimizedPCImage =
+  imgSrcPC && (await getImage({ src: imgSrcPC, format: "webp" }));
+---
+
+<picture>
+  {imgSrcPC && <source media={MIN_WIDTH_MD} srcset={optimizedPCImage?.src} />}
+  <img src={optimizedImage.src} {...attrs} />
+</picture>
