@@ -839,7 +839,18 @@ footer
     justify-content: space-between;
     gap: 1rem;
     div {
-      flex: 1;
+      flex: 1 1 calc(25% - 20px); /* PC: 4列（100% / 4 - パディング） */
+      box-sizing: border-box;
+    }
+    @media (max-width: 1200px) {
+      div {
+        flex: 1 1 calc(33.33% - 20px); /* タブレット大: 3列 */
+      }
+    }
+    @media (max-width: 900px) {
+      div {
+        flex: 1 1 calc(50% - 20px); /* タブレット小: 2列 */
+      }
     }
     img {
       width: 100%;
