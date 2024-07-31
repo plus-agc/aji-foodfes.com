@@ -4,9 +4,11 @@ import { Image } from "astro:assets";
 import MainImage from "../images/main-image.webp";
 import FooterBg from "../images/footer__image-desc.svg";
 import FooterBgSp from "../images/footer__image-sp.svg";
+import Menubar from "../modules/Menubar.astro";
 ---
 
 <Layout title="あじがさわフードフェス2024">
+  <Menubar />
   <header class="header">
     <div class="container">
       <div class="header__image">
@@ -33,6 +35,10 @@ import FooterBgSp from "../images/footer__image-sp.svg";
     main,
     footer {
       background-color: #fffcd1;
+    }
+    header {
+      position: relative;
+      z-index: 1;
     }
     main {
       padding: clamp(0rem, -4.154rem + 16.91vw, 9.375rem);
