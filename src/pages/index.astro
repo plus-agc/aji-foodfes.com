@@ -1,8 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import MainImage from "../images/main-image.webp";
-import FooterBg from "../images/footer__image-desc.svg";
+import Maintext from "../images/main-text.svg";
+import HeaderTitle from "../images/header-title.svg";
+import FooterDesc from "../images/footer__image-desc.svg";
 import FooterBgSp from "../images/footer__image-sp.svg";
 import Menubar from "../modules/Menubar.astro";
 ---
@@ -10,95 +11,183 @@ import Menubar from "../modules/Menubar.astro";
 <Layout title="あじがさわフードフェス2024">
   <Menubar />
   <header class="header">
-    <div class="container">
+    <div class="pc">
       <div class="header__image">
-        <Image src={MainImage} alt="筋肉フェスタイトル" />
+        <div class="container">
+          <img
+            class="back"
+            src="https://res.cloudinary.com/dpd2jenj9/image/upload/v1723171655/%E3%81%82%E3%81%98%E3%81%8C%E3%81%95%E3%82%8F%E3%83%95%E3%83%BC%E3%83%89%E3%83%95%E3%82%A7%E3%82%B92024/main-image_r50tna.webp"
+            alt=""
+          />
+        </div>
       </div>
+      <div class="header__title">
+        <div class="container">
+          <Image
+            src={Maintext}
+            alt="メインテキスト"
+            class="header__title-text"
+          />
+          <Image src={HeaderTitle} alt="あじがさわフードフェス2024" />
+        </div>
+      </div>
+    </div>
+    <div class="sp">
+      <img
+        src="https://res.cloudinary.com/dpd2jenj9/image/upload/v1723178655/%E3%81%82%E3%81%98%E3%81%8C%E3%81%95%E3%82%8F%E3%83%95%E3%83%BC%E3%83%89%E3%83%95%E3%82%A7%E3%82%B92024/main-image-sp_kai1ks.webp"
+        alt=""
+      />
     </div>
   </header>
   <main>
-    <div class="container">
-      <h1>情報は随時更新予定！</h1>
+    <div class="main__desc">
+      <div class="pc">
+        <div class="container">
+          <img
+            src="https://res.cloudinary.com/dpd2jenj9/image/upload/v1723176125/%E3%81%82%E3%81%98%E3%81%8C%E3%81%95%E3%82%8F%E3%83%95%E3%83%BC%E3%83%89%E3%83%95%E3%82%A7%E3%82%B92024/main-desc_uc9vg5.webp"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="sp">
+        <img
+          src="https://res.cloudinary.com/dpd2jenj9/image/upload/v1723178809/%E3%81%82%E3%81%98%E3%81%8C%E3%81%95%E3%82%8F%E3%83%95%E3%83%BC%E3%83%89%E3%83%95%E3%82%A7%E3%82%B92024/main-desc-sp1_ra78re.webp"
+          alt=""
+        />
+        <img
+          src="https://res.cloudinary.com/dpd2jenj9/image/upload/v1723178810/%E3%81%82%E3%81%98%E3%81%8C%E3%81%95%E3%82%8F%E3%83%95%E3%83%BC%E3%83%89%E3%83%95%E3%82%A7%E3%82%B92024/main-desc-sp2_e9envr.webp"
+          alt=""
+        />
+        <img
+          src="https://res.cloudinary.com/dpd2jenj9/image/upload/v1723178810/%E3%81%82%E3%81%98%E3%81%8C%E3%81%95%E3%82%8F%E3%83%95%E3%83%BC%E3%83%89%E3%83%95%E3%82%A7%E3%82%B92024/main-desc-sp3_kmj5cm.webp"
+          alt=""
+        />
+      </div>
     </div>
   </main>
   <footer>
-    <div class="container">
-      <div class="footer__image">
-        <Image src={FooterBg} alt="概要欄" class="pc" />
-        <Image src={FooterBgSp} alt="概要欄" class="sp" />
+    <div class="footer__image">
+      <div class="container">
+        <div class="forward">
+          <Image src={FooterDesc} alt="概要欄" class="pc" />
+          <Image src={FooterBgSp} alt="概要欄" class="sp" />
+        </div>
       </div>
     </div>
   </footer>
-
-  <style lang="scss">
-    header,
-    main,
-    footer {
-      background-color: #fffcd1;
+</Layout>
+<style lang="scss">
+  header,
+  main,
+  footer {
+    background-color: #fffcd1;
+  }
+  header {
+    position: relative;
+    z-index: 1;
+  }
+  main {
+    padding: clamp(2rem, -4.154rem + 16.91vw, 9.375rem);
+    @media (max-width: 767px) {
+      margin-bottom: 50px;
     }
-    header {
+  }
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .header__image {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    .back {
       position: relative;
       z-index: 1;
     }
-    main {
-      padding: clamp(0rem, -4.154rem + 16.91vw, 9.375rem);
-      @media (max-width: 767px) {
-        margin-bottom: 50px;
-      }
+    .forward {
+      position: absolute;
+      bottom: -1rem;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      height: auto;
+      z-index: 3;
     }
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-    .header__image {
+    img {
       width: 100%;
+      height: auto;
+    }
+  }
+  .header__title {
+    background-color: #330001;
+    position: relative;
+    padding: 5rem 5rem 1rem 5rem;
+    z-index: 2;
+    margin-top: -7rem;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    .header__title-text {
+      width: 100%;
+      height: auto;
+      margin-top: -20rem;
+    }
+  }
+  .main__desc {
+    width: 100%;
+    margin: 0 auto;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    .sp {
       img {
-        width: 100%;
-        height: auto;
+        margin-bottom: 1rem;
       }
     }
-    .main__image-date {
-      padding: 120px 0;
-      width: 60%;
-      margin: 0 auto;
-      img {
-        width: 100%;
-        height: auto;
+  }
+  .footer__image {
+    background-image: url(/images/footer-bg.svg);
+    background-size: cover;
+    background-position: top;
+    .forward {
+      padding: 3rem 0;
+    }
+    img {
+      width: 100% !important;
+      height: auto !important;
+    }
+  }
+  .pc {
+    display: none;
+    @media (min-width: 768px) {
+      & {
+        display: block;
       }
     }
-    .footer__image {
-      position: relative;
-      img {
-        width: 100% !important;
-        height: auto !important;
-      }
-      .pc {
-        display: none;
-        @media (min-width: 768px) {
-          & {
-            display: block;
-          }
-        }
-      }
-      .sp {
-        display: none;
-        @media (max-width: 767px) {
-          & {
-            display: block;
-          }
-        }
+  }
+  .sp {
+    display: none;
+    @media (max-width: 767px) {
+      & {
+        display: block;
       }
     }
-    h1 {
-      font-size: clamp(1.125rem, 0.627rem + 2.03vw, 2.25rem);
-      text-align: center;
-      background-color: #e60012;
-      color: #fff;
-      margin-bottom: 5rem;
-      width: fit-content;
-      padding: 16px 32px;
-      margin: 0 auto;
-      border-radius: 16px;
+    img {
+      width: 100%;
+      height: auto;
     }
-  </style>
-</Layout>
+  }
+  h1 {
+    font-size: clamp(1.125rem, 0.627rem + 2.03vw, 2.25rem);
+    text-align: center;
+    background-color: #e60012;
+    color: #fff;
+    margin-bottom: 5rem;
+    width: fit-content;
+    padding: 16px 32px;
+    margin: 0 auto;
+    border-radius: 16px;
+  }
+</style>
