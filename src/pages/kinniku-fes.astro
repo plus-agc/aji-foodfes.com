@@ -7,6 +7,7 @@ import Adimage01 from "../images/ad-image01.jpg";
 import Adimage02 from "../images/ad-image02.jpg";
 import Adimage03 from "../images/ad-image03.jpg";
 import Adimage04 from "../images/ad-image04.jpg";
+import Adimage05 from "../images/ad-image05.jpg";
 import Menubar from "../modules/Menubar.astro";
 ---
 
@@ -238,6 +239,11 @@ import Menubar from "../modules/Menubar.astro";
           <div>
             <a href="https://www.instagram.com/banryugroup/" target="_blank">
               <Image src={Adimage04} alt="幡龍グループ" />
+            </a>
+          </div>
+          <div>
+            <a href="https://bisuikan.co.jp/" target="_blank">
+              <Image src={Adimage05} alt="白神山美水館" />
             </a>
           </div>
         </div>
@@ -840,20 +846,20 @@ footer
   .ad_image-wrapper {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 1rem;
     div {
-      flex: 1 1 calc(25% - 20px); /* PC: 4列（100% / 4 - パディング） */
+      flex: 0 1 calc(25% - 20px); /* PC: 4列（100% / 4 - パディング） */
       box-sizing: border-box;
     }
     @media (max-width: 1200px) {
       div {
-        flex: 1 1 calc(33.33% - 20px); /* タブレット大: 3列 */
+        flex: 0 1 calc(33.33% - 20px); /* タブレット大: 3列 */
       }
     }
     @media (max-width: 900px) {
       div {
-        flex: 1 1 calc(50% - 20px); /* タブレット小: 2列 */
+        flex: 0 1 calc(50% - 20px); /* タブレット小: 2列 */
       }
     }
     img {
