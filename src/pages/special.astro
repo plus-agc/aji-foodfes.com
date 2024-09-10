@@ -4,13 +4,20 @@ import { Image } from "astro:assets";
 import Zukedon from "../images/img-zukedon.webp";
 import Oniku from "../images/img-oniku.webp";
 import Sweets from "../images/img-sweets.webp";
+import Ringomusume from "../images/img-ringomusume.webp";
+import Kimura from "../images/img-kimura.webp";
+import Shouhinken from "../images/img-shouhinken.webp";
+import Baloon from "../images/img-baloon.webp";
+import Butter from "../images/img-butter.webp";
+import Rikishi from "../images/img-rikishi.webp";
+import Golf from "../images/img-golf.webp";
 ---
 
 <Layout title="あじがさわフードフェス2024">
   <header class="header">
     <div class="hero">
       <div class="hero-inner">
-        <h1>あじがさわフードフェスとは？</h1>
+        <h1>あじがさわ<br class="sp" /> フードフェスとは？</h1>
         <p>
           これまで青森県鰺ヶ沢町で開催していた春の「ヒラメフェス」と<br
           />夏の「肉のフェスティバル」、秋の「スイーツフェス」、<br
@@ -27,7 +34,7 @@ import Sweets from "../images/img-sweets.webp";
         <div class="item_left bg-lightblue">
           <h2>鰺ヶ沢町ご当地丼 ヒラメのヅケ丼</h2>
           <p>販売開始10:30～</p>
-          <Image src={Zukedon} alt="ヅケ丼" />
+          <Image src={Zukedon} alt="ヅケ丼" class="js-parallax" data-y="10vw" />
         </div>
         <div class="item_right">
           <h2>鰺ヶ沢町内10店舗から合わせて1,700食の丼が大集結！</h2>
@@ -50,7 +57,12 @@ import Sweets from "../images/img-sweets.webp";
       <div class="main_contents-item">
         <div class="item_left bg-brown">
           <h2>お肉コーナー<br />オープンコーナー</h2>
-          <Image src={Oniku} alt="お肉コーナー" />
+          <Image
+            src={Oniku}
+            alt="お肉コーナー"
+            class="js-parallax"
+            data-y="10vw"
+          />
         </div>
         <div class="item_right">
           <h2>町内外から34店舗が集結！</h2>
@@ -75,7 +87,12 @@ import Sweets from "../images/img-sweets.webp";
       <div class="main_contents-item">
         <div class="item_left bg-pink">
           <h2>スイーツコーナー</h2>
-          <Image src={Sweets} alt="スイーツコーナー" />
+          <Image
+            src={Sweets}
+            alt="スイーツコーナー"
+            class="js-parallax"
+            data-y="10vw"
+          />
         </div>
         <div class="item_right">
           <h2>町内外8店舗が集結！</h2>
@@ -85,8 +102,83 @@ import Sweets from "../images/img-sweets.webp";
         </div>
       </div>
       <div class="main_contents-item">
-        <div class="item_center bg-teal">
-          <h2>ステージイベント</h2>
+        <div class="item_center bg-teal color-blue">
+          <h3>ステージイベント</h3>
+          <div class="item_text">
+            <ul>
+              <li><p>10:00</p><p>オープニングセレモニー</p></li>
+              <li>
+                <p>11:00</p>
+                <p>
+                  第2回あじがさわ筋肉のフェスティバル<br />栄冠は誰の手に!?
+                </p>
+              </li>
+              <li>
+                <p>13:00</p>
+                <p>鰺ヶ沢高等学校PRタイム</p>
+              </li>
+              <li>
+                <p>13:30</p>
+                <p>りんご娘スペシャルライブ</p>
+              </li>
+            </ul>
+          </div>
+          <div class="item_image box">
+            <Image src={Kimura} alt="スイーツコーナー" />
+            <Image src={Ringomusume} alt="スイーツコーナー" />
+          </div>
+        </div>
+      </div>
+      <div class="main_contents-item">
+        <div class="item_center bg-lightteal color-blue">
+          <h3>体験イベント・<br class="sp" />抽選会</h3>
+          <div class="item_text">
+            <h4>デジタル抽選会</h4>
+            <p>
+              簡単なアンケートに答えて、地元特産品や商品券をGET!<br />
+              1等は「鰺ヶ沢町で使える商品券5,000円分」!
+            </p>
+            <h4>アートバルーン体験</h4>
+            <p>
+              風船でお魚を作ろう！<br />
+              体験無料！
+            </p>
+            <h4>バター作り体験</h4>
+            <p>
+              ABITANiAジャージーファームのジャージー牛でバター作り!<br />
+              会場で販売しているジャージー牛ステーキにのせて食べるのもお勧めです!<br
+              />
+              1組 1,500円<br />
+              10:15～ 30組/12:50～ 30組
+            </p>
+          </div>
+          <div class="item_image box">
+            <Image src={Shouhinken} alt="デジタル抽選会" />
+            <Image src={Baloon} alt="アートバルーン体験" />
+            <Image src={Butter} alt="バター作り体験" />
+          </div>
+        </div>
+      </div>
+      <div class="main_contents-item">
+        <div class="item_center bg-red">
+          <h3>鰺ヶ沢高等学校<br class="sp" />ブース</h3>
+          <div class="item_text">
+            <h4>SBP研究会</h4>
+            <p>
+              鯵高生が長谷川自然牧場ハンバーグ入りの「力士くんおやき」を販売！<br
+              />
+              その腕前をご賞味あれ！
+            </p>
+            <h4>パターゴルフ体験</h4>
+            <p>
+              鰺ヶ沢高校ゴルフ部が運営するコーナーです。<br />
+              お一人様5打まで。カップインすると「飴っこ」をプレゼント！
+            </p>
+          </div>
+          <div class="item_image box">
+            <Image src={Rikishi} alt="力士くんおやき" />
+            <Image src={Golf} alt="パターゴルフ" />
+          </div>
         </div>
       </div>
     </div>
@@ -94,6 +186,31 @@ import Sweets from "../images/img-sweets.webp";
   <footer class="footer"></footer>
 </Layout>
 <style lang="scss">
+  .bg-lightblue {
+    background-color: #009fe8;
+  }
+  .bg-brown {
+    background-color: #510102;
+  }
+  .bg-pink {
+    background-color: #feb3d2;
+  }
+  .bg-teal {
+    background-color: #54c9bd;
+  }
+  .bg-lightteal {
+    background-color: #c0e9e5;
+  }
+  .bg-red {
+    background-color: #ff0000;
+  }
+  .color-blue {
+    color: #0047ba !important;
+  }
+  .color-white {
+    color: #fff;
+  }
+
   header {
     .hero {
       max-width: 95%;
@@ -106,11 +223,18 @@ import Sweets from "../images/img-sweets.webp";
         padding: 2rem;
         h1 {
           font-size: 5vw;
+          @media (max-width: 599px) {
+            font-size: 11vw;
+            margin: 0;
+          }
           text-align: center;
           font-weight: 700;
         }
         p {
           font-size: 2vw;
+          @media (max-width: 599px) {
+            font-size: 5vw;
+          }
           font-weight: 600;
           text-align: center;
           line-height: 1.8;
@@ -119,50 +243,47 @@ import Sweets from "../images/img-sweets.webp";
     }
   }
   main {
+    padding-bottom: 60px;
     .main_contents {
       max-width: 95%;
       margin: 0 auto;
 
       .main_contents-item {
         display: flex;
+        flex-wrap: wrap;
+        @media (max-width: 599px) {
+          flex-direction: column;
+        }
+        gap: 2rem;
         margin-top: 2rem;
-        .bg-lightblue {
-          background-color: #009fe8;
-          -webkit-text-stroke: 3px #009fe8;
-        }
-        .bg-brown {
-          background-color: #510102;
-          -webkit-text-stroke: 3px #510102;
-        }
-        .bg-pink {
-          background-color: #feb3d2;
-          -webkit-text-stroke: 3px #feb3d2;
-        }
-        .bg-teal {
-          background-color: #54c9bd;
-          -webkit-text-stroke: 3px #54c9bd;
-        }
+
         .item_left {
           position: relative;
           border-radius: 1rem;
-          padding: 2rem;
+          padding: clamp(1rem, 0.4rem + 3vw, 4rem);
           color: #fff;
           flex: 1;
           overflow: hidden;
           h2 {
             position: inherit;
             font-size: 2.5vw;
+            @media (max-width: 599px) {
+              font-size: 6vw;
+            }
             font-weight: 900;
             z-index: 2;
           }
           p {
             position: inherit;
             font-size: 2vw;
+            @media (max-width: 599px) {
+              font-size: 5vw;
+            }
             font-weight: 900;
             z-index: 2;
           }
           img {
-            width: 80%;
+            width: 100%;
             height: auto;
             position: absolute;
             bottom: 0;
@@ -171,19 +292,27 @@ import Sweets from "../images/img-sweets.webp";
           }
         }
         .item_right {
-          padding: 0 2rem;
           color: #0047ba;
           flex: 1;
           h2 {
             font-size: 2vw;
+            @media (max-width: 599px) {
+              font-size: 6vw;
+            }
             font-weight: 500;
           }
           h3 {
             font-size: 1.8vw;
+            @media (max-width: 599px) {
+              font-size: 6vw;
+            }
             font-weight: 500;
           }
           p {
             font-size: 1.8vw;
+            @media (max-width: 599px) {
+              font-size: 5vw;
+            }
             font-weight: 500;
             margin-bottom: 8px;
           }
@@ -193,6 +322,9 @@ import Sweets from "../images/img-sweets.webp";
             li {
               margin-bottom: 8px;
               font-size: 1.4vw;
+              @media (max-width: 599px) {
+                font-size: 5vw;
+              }
               font-weight: 500;
             }
             li:nth-of-type(1) {
@@ -203,18 +335,122 @@ import Sweets from "../images/img-sweets.webp";
         }
         .item_center {
           position: relative;
-          width: 100%;
           border-radius: 1rem;
-          padding: 2rem;
+          padding: clamp(1rem, 0.4rem + 3vw, 4rem);
           color: #fff;
           display: flex;
-          overflow: hidden;
-          h2 {
-            font-size: 6vw;
+          flex-wrap: wrap;
+          gap: 0 clamp(1.875rem, 1.5rem + 1.88vw, 3.75rem);
+          h3 {
+            font-size: 4vw;
+            @media (max-width: 599px) {
+              font-size: 10vw;
+              text-align: center;
+              margin: 1rem 0;
+            }
             font-weight: 900;
+            width: 100%;
+          }
+          ul {
+            list-style-type: none;
+            font-size: 1.8vw;
+            font-weight: 600;
+            margin: 0;
+            padding: 0;
+            li {
+              display: flex;
+              gap: clamp(1rem, 0.6rem + 2vw, 3rem);
+              p {
+                position: inherit;
+                z-index: 2;
+              }
+            }
+          }
+          .item_image {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(1rem, 5vw, 6rem);
+            padding: 2rem;
+            img {
+              width: 80%;
+              height: auto;
+              margin: 0 auto;
+            }
+          }
+          .item_text {
+            width: 65%;
+            @media (max-width: 599px) {
+              width: 100%;
+            }
+            h4 {
+              font-size: 3vw;
+              @media (max-width: 599px) {
+                font-size: 6vw;
+              }
+              font-weight: 600;
+              margin-top: 0;
+              margin-bottom: 8px;
+            }
+            p {
+              font-size: 2vw;
+              @media (max-width: 599px) {
+                font-size: 5vw;
+              }
+              font-weight: 600;
+              margin-bottom: clamp(1rem, -0.4rem + 7vw, 8rem);
+            }
           }
         }
       }
     }
   }
+  .sp {
+    display: none;
+    @media (max-width: 599px) {
+      display: block;
+    }
+  }
 </style>
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray(".js-parallax").forEach((wrap) => {
+    const y = wrap.getAttribute("data-y") || -100;
+
+    gsap.to(wrap, {
+      y: y,
+      scrollTrigger: {
+        trigger: wrap,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 0.1,
+        //markers: true
+      },
+    });
+  });
+  gsap.utils.toArray(".box").forEach((box) => {
+    // .box内のimg要素を取得
+    gsap.utils.toArray("img", box).forEach((img) => {
+      gsap.fromTo(
+        img, // 各imgに対してアニメーション
+        {
+          scale: 1, // 縦横1倍
+          autoAlpha: 0, // アニメーション開始前は透明
+        },
+        {
+          scale: 1.1, // 縦横1.1倍
+          autoAlpha: 1, // アニメーション後に出現(透過率0)
+          scrollTrigger: {
+            trigger: img, // 各imgごとにトリガーを設定
+            toggleActions: "play none none reverse", // 上スクロールで戻る
+            start: "top center", // アニメーションの開始位置
+            markers: true, // マーカー表示
+          },
+        }
+      );
+    });
+  });
+</script>

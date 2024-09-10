@@ -12,10 +12,11 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.1.6",
     "astro": "^4.15.4",
-    "astro-relative-links": "^0.3.9",
+    "astro-relative-links": "^0.2.2",
     "astro-robots-txt": "^1.0.0"
   },
   "devDependencies": {
+    "gsap": "^3.12.5",
     "prettier": "^3.3.2",
     "prettier-plugin-astro": "^0.14.0",
     "sass": "^1.77.7"
