@@ -1,0 +1,220 @@
+---
+import Layout from "../layouts/Layout-Special.astro";
+import { Image } from "astro:assets";
+import Zukedon from "../images/img-zukedon.webp";
+import Oniku from "../images/img-oniku.webp";
+import Sweets from "../images/img-sweets.webp";
+---
+
+<Layout title="あじがさわフードフェス2024">
+  <header class="header">
+    <div class="hero">
+      <div class="hero-inner">
+        <h1>あじがさわフードフェスとは？</h1>
+        <p>
+          これまで青森県鰺ヶ沢町で開催していた春の「ヒラメフェス」と<br
+          />夏の「肉のフェスティバル」、秋の「スイーツフェス」、<br
+          />３大食イベントを一堂に会した初開催のイベントです！
+        </p>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="main_contents">
+      <div class="main_contents-hero"></div>
+
+      <div class="main_contents-item">
+        <div class="item_left bg-lightblue">
+          <h2>鰺ヶ沢町ご当地丼 ヒラメのヅケ丼</h2>
+          <p>販売開始10:30～</p>
+          <Image src={Zukedon} alt="ヅケ丼" />
+        </div>
+        <div class="item_right">
+          <h2>鰺ヶ沢町内10店舗から合わせて1,700食の丼が大集結！</h2>
+          <p>●ヒラメのヅケ丼</p>
+          <ul>
+            <li>9店舗 計1,110食</li>
+            <li>
+              鰺ヶ沢産の極上ヒラメを贅沢にヅケにし、たっぷりとご飯にのせた鰺ヶ沢町の名物です！
+            </li>
+          </ul>
+          <p>●ヒラメのヅケ丼プレミアム</p>
+          <ul>
+            <li>7店舗 計590食</li>
+            <li>
+              ヒラメのヅケに、ウニやアワビ、幻の魚「イトウ」などをトッピングした丼。イベント限定丼です！
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="main_contents-item">
+        <div class="item_left bg-brown">
+          <h2>お肉コーナー<br />オープンコーナー</h2>
+          <Image src={Oniku} alt="お肉コーナー" />
+        </div>
+        <div class="item_right">
+          <h2>町内外から34店舗が集結！</h2>
+          <h3>出店店舗では、鰺ヶ沢町産の食材を使用したメニューを限定販売！</h3>
+          <p>●お肉コーナー</p>
+          <ul>
+            <li>13店舗出店！</li>
+            <li>
+              鰺ヶ沢町の2大牧場「長谷川自然牧場」の豚肉や「ABITANiAジャージーファーム」の牛肉、町産の野菜・果物などを使用したメニューが登場！鰺ヶ沢町の交流都市「岩手県久慈市」もやって来ます！
+            </li>
+          </ul>
+          <p>●オープンコーナー</p>
+          <ul>
+            <li>12店舗出店！</li>
+            <li>
+              鰺ヶ沢町産の魚介類、野菜、果物を使ったメニューが盛り沢山！
+              趣向を凝らしたオリジナルメニューを食べ尽くそう！
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="main_contents-item">
+        <div class="item_left bg-pink">
+          <h2>スイーツコーナー</h2>
+          <Image src={Sweets} alt="スイーツコーナー" />
+        </div>
+        <div class="item_right">
+          <h2>町内外8店舗が集結！</h2>
+          <h3>
+            鰺ヶ沢町産のりんごやメロン・栗等の果物、ジャージー牛乳、野菜などを使用したスイーツをご賞味ください！
+          </h3>
+        </div>
+      </div>
+      <div class="main_contents-item">
+        <div class="item_center bg-teal">
+          <h2>ステージイベント</h2>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer"></footer>
+</Layout>
+<style lang="scss">
+  header {
+    .hero {
+      max-width: 95%;
+      margin: 0 auto;
+      background-color: #0047ba;
+      color: #fff;
+      border-radius: 1rem;
+      .hero-inner {
+        margin-top: 60px;
+        padding: 2rem;
+        h1 {
+          font-size: 5vw;
+          text-align: center;
+          font-weight: 700;
+        }
+        p {
+          font-size: 2vw;
+          font-weight: 600;
+          text-align: center;
+          line-height: 1.8;
+        }
+      }
+    }
+  }
+  main {
+    .main_contents {
+      max-width: 95%;
+      margin: 0 auto;
+
+      .main_contents-item {
+        display: flex;
+        margin-top: 2rem;
+        .bg-lightblue {
+          background-color: #009fe8;
+          -webkit-text-stroke: 3px #009fe8;
+        }
+        .bg-brown {
+          background-color: #510102;
+          -webkit-text-stroke: 3px #510102;
+        }
+        .bg-pink {
+          background-color: #feb3d2;
+          -webkit-text-stroke: 3px #feb3d2;
+        }
+        .bg-teal {
+          background-color: #54c9bd;
+          -webkit-text-stroke: 3px #54c9bd;
+        }
+        .item_left {
+          position: relative;
+          border-radius: 1rem;
+          padding: 2rem;
+          color: #fff;
+          flex: 1;
+          overflow: hidden;
+          h2 {
+            position: inherit;
+            font-size: 2.5vw;
+            font-weight: 900;
+            z-index: 2;
+          }
+          p {
+            position: inherit;
+            font-size: 2vw;
+            font-weight: 900;
+            z-index: 2;
+          }
+          img {
+            width: 80%;
+            height: auto;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+          }
+        }
+        .item_right {
+          padding: 0 2rem;
+          color: #0047ba;
+          flex: 1;
+          h2 {
+            font-size: 2vw;
+            font-weight: 500;
+          }
+          h3 {
+            font-size: 1.8vw;
+            font-weight: 500;
+          }
+          p {
+            font-size: 1.8vw;
+            font-weight: 500;
+            margin-bottom: 8px;
+          }
+          ul {
+            list-style-type: none;
+            padding-left: 1em;
+            li {
+              margin-bottom: 8px;
+              font-size: 1.4vw;
+              font-weight: 500;
+            }
+            li:nth-of-type(1) {
+              width: fit-content;
+              border-bottom: solid 2px #0047ba;
+            }
+          }
+        }
+        .item_center {
+          position: relative;
+          width: 100%;
+          border-radius: 1rem;
+          padding: 2rem;
+          color: #fff;
+          display: flex;
+          overflow: hidden;
+          h2 {
+            font-size: 6vw;
+            font-weight: 900;
+          }
+        }
+      }
+    }
+  }
+</style>
