@@ -953,82 +953,70 @@ import FooterBgSp from "../images/footer__image-sp.svg";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   gsap.registerPlugin(ScrollTrigger);
 
-  // 599px以下と600px以上で異なるdata-yを設定
+  // 共通の設定
+  const commonScrollTriggerConfig = {
+    start: "top bottom",
+    end: "bottom top",
+    scrub: 0.1,
+  };
+
+  // データYを取得する関数
   function getDataYBasedOnScreenSize() {
-    return window.innerWidth < 600 ? "5vw" : "10vw"; // 599px以下なら5vw、600px以上なら10vw
+    return window.innerWidth < 600 ? "5vw" : "10vw";
   }
 
-  gsap.utils.toArray(".js-parallax").forEach((wrap) => {
-    // SPとPCで異なるdata-yを取得する
-    const defaultY = getDataYBasedOnScreenSize();
-    const y = wrap.getAttribute("data-y") || defaultY;
-
+  // パララックス効果を適用する関数
+  function applyParallax(wrap) {
+    const y = wrap.getAttribute("data-y") || getDataYBasedOnScreenSize();
     gsap.to(wrap, {
       y: y,
       scrollTrigger: {
         trigger: wrap,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: 0.1,
-        //markers: true
+        ...commonScrollTriggerConfig,
       },
     });
-  });
+  }
 
-  // ウィンドウリサイズ時に`data-y`を変更する
-  window.addEventListener("resize", () => {
-    gsap.utils.toArray(".js-parallax").forEach((wrap) => {
-      const newY = getDataYBasedOnScreenSize();
-      const y = wrap.getAttribute("data-y") || newY;
+  // 初期設定
+  gsap.utils.toArray(".js-parallax").forEach(applyParallax);
 
-      gsap.to(wrap, {
-        y: y,
-        scrollTrigger: {
-          trigger: wrap,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 0.1,
-        },
-      });
-    });
-  });
+  // デバウンス関数
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
 
-  // ウィンドウリサイズ時に`data-y`を変更する
-  window.addEventListener("resize", () => {
-    gsap.utils.toArray(".js-parallax").forEach((wrap) => {
-      const newY = getDataYBasedOnScreenSize();
-      const y = wrap.getAttribute("data-y") || newY;
+  // リサイズイベントのデバウンス処理
+  const debouncedResize = debounce(() => {
+    gsap.utils.toArray(".js-parallax").forEach(applyParallax);
+  }, 250);
 
-      gsap.to(wrap, {
-        y: y,
-        scrollTrigger: {
-          trigger: wrap,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 0.1,
-        },
-      });
-    });
-  });
+  // リサイズイベントリスナー
+  window.addEventListener("resize", debouncedResize);
+
+  // ボックス内の画像アニメーション
   gsap.utils.toArray(".box").forEach((box) => {
-    // .box内のimg要素を取得
     gsap.utils.toArray("img", box).forEach((img) => {
       gsap.fromTo(
-        img, // 各imgに対してアニメーション
+        img,
+        { scale: 1, autoAlpha: 0 },
         {
-          scale: 1, // 縦横1倍
-          autoAlpha: 0, // アニメーション開始前は透明
-        },
-        {
-          scale: 1.1, // 縦横1.1倍
-          autoAlpha: 1, // アニメーション後に出現(透過率0)
+          scale: 1.1,
+          autoAlpha: 1,
           scrollTrigger: {
-            trigger: img, // 各imgごとにトリガーを設定
-            toggleActions: "play none none reverse", // 上スクロールで戻る
-            start: "top center", // アニメーションの開始位置
-            markers: false, // マーカー表示
+            trigger: img,
+            toggleActions: "play none none reverse",
+            start: "top center",
+            markers: false,
           },
-        }
+        },
       );
     });
   });
