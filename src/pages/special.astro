@@ -11,6 +11,55 @@ import Baloon from "../images/img-baloon.webp";
 import Butter from "../images/img-butter.webp";
 import Rikishi from "../images/img-rikishi.webp";
 import Golf from "../images/img-golf.webp";
+import Normal01 from "../images/normal-01.webp";
+import Normal02 from "../images/normal-02.webp";
+import Normal03 from "../images/normal-03.webp";
+import Normal04 from "../images/normal-04.webp";
+import Normal05 from "../images/normal-05.webp";
+import Normal06 from "../images/normal-06.webp";
+import Normal07 from "../images/normal-07.webp";
+import Normal08 from "../images/normal-08.webp";
+import Normal09 from "../images/normal-09.webp";
+import Premium01 from "../images/premium-01.webp";
+import Premium02 from "../images/premium-02.webp";
+import Premium03 from "../images/premium-03.webp";
+import Premium04 from "../images/premium-04.webp";
+import Premium05 from "../images/premium-05.webp";
+import Premium06 from "../images/premium-06.webp";
+import Premium07 from "../images/premium-07.webp";
+import Premium08 from "../images/premium-08.webp";
+import Meat01 from "../images/meat-01.svg";
+import Meat02 from "../images/meat-02.svg";
+import Meat03 from "../images/meat-03.svg";
+import Meat04 from "../images/meat-04.svg";
+import Meat05 from "../images/meat-05.svg";
+import Meat06 from "../images/meat-06.svg";
+import Meat07 from "../images/meat-07.svg";
+import Meat08 from "../images/meat-08.svg";
+import Meat09 from "../images/meat-09.svg";
+import Meat10 from "../images/meat-10.svg";
+import Meat11 from "../images/meat-11.svg";
+import Meat12 from "../images/meat-12.svg";
+import Open01 from "../images/open-01.svg";
+import Open02 from "../images/open-02.svg";
+import Open03 from "../images/open-03.svg";
+import Open04 from "../images/open-04.svg";
+import Open05 from "../images/open-05.svg";
+import Open06 from "../images/open-06.svg";
+import Open07 from "../images/open-07.svg";
+import Open08 from "../images/open-08.svg";
+import Open09 from "../images/open-09.svg";
+import Open10 from "../images/open-10.svg";
+import Open11 from "../images/open-11.svg";
+import Open12 from "../images/open-12.svg";
+import Sweets01 from "../images/sweets-01.svg";
+import Sweets02 from "../images/sweets-02.svg";
+import Sweets03 from "../images/sweets-03.svg";
+import Sweets04 from "../images/sweets-04.svg";
+import Sweets05 from "../images/sweets-05.svg";
+import Sweets06 from "../images/sweets-06.svg";
+import Sweets07 from "../images/sweets-07.svg";
+import Sweets08 from "../images/sweets-08.svg";
 ---
 
 <Layout title="あじがさわフードフェス2024">
@@ -28,8 +77,6 @@ import Golf from "../images/img-golf.webp";
   </header>
   <main class="main">
     <div class="main_contents">
-      <div class="main_contents-hero"></div>
-
       <div class="main_contents-item">
         <div class="item_left bg-lightblue">
           <h2>鰺ヶ沢町ご当地丼 ヒラメのヅケ丼</h2>
@@ -54,30 +101,90 @@ import Golf from "../images/img-golf.webp";
           </ul>
         </div>
       </div>
-      <ul class="drpdwn">
-        <li>
+      <ul class="drpdwn" id="zukedon">
+        <li id="normal">
           <input type="checkbox" checked />
-          <h2>ヅケ丼</h2>
-          <p>
-            This page was written in HTML and CSS. The CSS was compiled from
-            SASS. I used Normalize as my CSS reset and -prefix-free to save
-            myself some headaches. I haven't quite gotten the hang of Slim for
-            compiling into HTML, but someday I'll use it since its syntax
-            compliments that of SASS. Regardless, this could all be done in
-            plain HTML and CSS.
-          </p>
+          <h2>ヒラメのヅケ丼 ①〜⑨税込1,000円</h2>
+          <div>
+            <p>
+              <Image
+                src={Normal01}
+                alt="ヒラメのヅケ丼ノーマル スーパーとびしま"
+              />
+            </p>
+            <p>
+              <Image src={Normal02} alt="ヒラメのヅケ丼ノーマル K2マート" />
+            </p>
+            <p>
+              <Image src={Normal03} alt="ヒラメのヅケ丼ノーマル 居酒屋 良治" />
+            </p>
+            <p>
+              <Image src={Normal04} alt="ヒラメのヅケ丼ノーマル お富久" />
+            </p>
+            <p>
+              <Image src={Normal05} alt="ヒラメのヅケ丼ノーマル 割烹 水天閣" />
+            </p>
+            <p>
+              <Image
+                src={Normal06}
+                alt="ヒラメのヅケ丼ノーマル ドライブイン汐風"
+              />
+            </p>
+            <p>
+              <Image src={Normal07} alt="ヒラメのヅケ丼ノーマル 網野仕出し店" />
+            </p>
+            <p>
+              <Image
+                src={Normal08}
+                alt="ヅケ丼ノーマル ロックウッドホテル&スパ"
+              />
+            </p>
+            <p>
+              <Image src={Normal09} alt="ヅケ丼ノーマル 児雷也" />
+            </p>
+          </div>
         </li>
-        <li>
+        <li id="premium">
           <input type="checkbox" checked />
-          <h2>ヅケ丼プレミアム</h2>
-          <p>
-            This page was written in HTML and CSS. The CSS was compiled from
-            SASS. I used Normalize as my CSS reset and -prefix-free to save
-            myself some headaches. I haven't quite gotten the hang of Slim for
-            compiling into HTML, but someday I'll use it since its syntax
-            compliments that of SASS. Regardless, this could all be done in
-            plain HTML and CSS.
-          </p>
+          <h2>ヒラメのヅケ丼プレミアム ⑩〜⑯税込1,500円</h2>
+          <div>
+            <p>
+              <Image
+                src={Premium01}
+                alt="ヒラメのヅケ丼ノーマル スーパーとびしま"
+              />
+            </p>
+            <p>
+              <Image src={Premium02} alt="ヒラメのヅケ丼ノーマル K2マート" />
+            </p>
+            <p>
+              <Image src={Premium03} alt="ヒラメのヅケ丼ノーマル 居酒屋 良治" />
+            </p>
+            <p>
+              <Image src={Premium04} alt="ヒラメのヅケ丼ノーマル お富久" />
+            </p>
+            <p>
+              <Image src={Premium05} alt="ヒラメのヅケ丼ノーマル 割烹 水天閣" />
+            </p>
+            <p>
+              <Image
+                src={Premium06}
+                alt="ヒラメのヅケ丼ノーマル ドライブイン汐風"
+              />
+            </p>
+            <p>
+              <Image
+                src={Premium07}
+                alt="ヒラメのヅケ丼ノーマル 網野仕出し店"
+              />
+            </p>
+            <p>
+              <Image
+                src={Premium08}
+                alt="ヅケ丼ノーマル ロックウッドホテル&スパ"
+              />
+            </p>
+          </div>
         </li>
       </ul>
       <div class="main_contents-item">
@@ -110,30 +217,90 @@ import Golf from "../images/img-golf.webp";
           </ul>
         </div>
       </div>
-      <ul class="drpdwn">
-        <li>
+      <ul class="drpdwn" id="oniku-open">
+        <li id="oniku">
           <input type="checkbox" checked />
-          <h2>ヅケ丼</h2>
-          <p>
-            This page was written in HTML and CSS. The CSS was compiled from
-            SASS. I used Normalize as my CSS reset and -prefix-free to save
-            myself some headaches. I haven't quite gotten the hang of Slim for
-            compiling into HTML, but someday I'll use it since its syntax
-            compliments that of SASS. Regardless, this could all be done in
-            plain HTML and CSS.
-          </p>
+          <h2>お肉コーナー</h2>
+          <div>
+            <p>
+              <Image src={Meat01} alt="長谷川自然牧場" />
+            </p>
+            <p>
+              <Image src={Meat02} alt="ABITANiAジャージーファーム" />
+            </p>
+            <p>
+              <Image src={Meat03} alt="たこやき西海" />
+            </p>
+            <p>
+              <Image src={Meat04} alt="焼肉レストラン一心亭 鰺ヶ沢店" />
+            </p>
+            <p>
+              <Image src={Meat05} alt="居酒屋 良治" />
+            </p>
+            <p>
+              <Image src={Meat06} alt="精肉・惣菜 のろ" />
+            </p>
+            <p>
+              <Image src={Meat07} alt="會津めん 浜さき" />
+            </p>
+            <p>
+              <Image src={Meat08} alt="West Side Kitchen" />
+            </p>
+            <p>
+              <Image src={Meat09} alt="から揚げ専門店 こばしょぐ" />
+            </p>
+            <p>
+              <Image src={Meat10} alt="からあげ専門店 鶏笑" />
+            </p>
+            <p>
+              <Image src={Meat11} alt="キッチンBANBAN by幡龍" />
+            </p>
+            <p>
+              <Image src={Meat12} alt="岩手県久慈市 鰺ヶ沢高等学校SBP研究会" />
+            </p>
+          </div>
         </li>
-        <li>
+        <li id="open">
           <input type="checkbox" checked />
-          <h2>ヅケ丼プレミアム</h2>
-          <p>
-            This page was written in HTML and CSS. The CSS was compiled from
-            SASS. I used Normalize as my CSS reset and -prefix-free to save
-            myself some headaches. I haven't quite gotten the hang of Slim for
-            compiling into HTML, but someday I'll use it since its syntax
-            compliments that of SASS. Regardless, this could all be done in
-            plain HTML and CSS.
-          </p>
+          <h2>オープンコーナー</h2>
+          <div>
+            <p>
+              <Image src={Open01} alt="赤石水産漁協女性部" />
+            </p>
+            <p>
+              <Image src={Open02} alt="らーめん寛" />
+            </p>
+            <p>
+              <Image src={Open03} alt="鰺ヶ沢町農林水産課「元気屋台AJIYA」" />
+            </p>
+            <p>
+              <Image src={Open04} alt="農産物直売所「あじ・彩・感」倶楽部" />
+            </p>
+            <p>
+              <Image src={Open05} alt="いちごや" />
+            </p>
+            <p>
+              <Image src={Open06} alt="CAFÉ水とコーヒー" />
+            </p>
+            <p>
+              <Image src={Open07} alt="株式会社SATO FARM" />
+            </p>
+            <p>
+              <Image src={Open08} alt="Pizza NAPOURA" />
+            </p>
+            <p>
+              <Image src={Open09} alt="活味屋" />
+            </p>
+            <p>
+              <Image src={Open10} alt="大湊海軍カレーパン" />
+            </p>
+            <p>
+              <Image src={Open11} alt="カフェデリーナ" />
+            </p>
+            <p>
+              <Image src={Open12} alt="福士豆腐店" />
+            </p>
+          </div>
         </li>
       </ul>
       <div class="main_contents-item">
@@ -153,30 +320,36 @@ import Golf from "../images/img-golf.webp";
           </h3>
         </div>
       </div>
-      <ul class="drpdwn">
+      <ul class="drpdwn" id="sweets">
         <li>
           <input type="checkbox" checked />
-          <h2>ヅケ丼</h2>
-          <p>
-            This page was written in HTML and CSS. The CSS was compiled from
-            SASS. I used Normalize as my CSS reset and -prefix-free to save
-            myself some headaches. I haven't quite gotten the hang of Slim for
-            compiling into HTML, but someday I'll use it since its syntax
-            compliments that of SASS. Regardless, this could all be done in
-            plain HTML and CSS.
-          </p>
-        </li>
-        <li>
-          <input type="checkbox" checked />
-          <h2>ヅケ丼プレミアム</h2>
-          <p>
-            This page was written in HTML and CSS. The CSS was compiled from
-            SASS. I used Normalize as my CSS reset and -prefix-free to save
-            myself some headaches. I haven't quite gotten the hang of Slim for
-            compiling into HTML, but someday I'll use it since its syntax
-            compliments that of SASS. Regardless, this could all be done in
-            plain HTML and CSS.
-          </p>
+          <h2>スイーツコーナー</h2>
+          <div>
+            <p>
+              <Image src={Sweets01} alt="菓子工房TATUYA" />
+            </p>
+            <p>
+              <Image src={Sweets02} alt="café MilMu" />
+            </p>
+            <p>
+              <Image src={Sweets03} alt="銘菓の店 山ざき" />
+            </p>
+            <p>
+              <Image src={Sweets04} alt="まつみや酒店" />
+            </p>
+            <p>
+              <Image src={Sweets05} alt="あっことさっとのアップルパイ" />
+            </p>
+            <p>
+              <Image src={Sweets06} alt="food&design CONVEY" />
+            </p>
+            <p>
+              <Image src={Sweets07} alt="Sanny Blue" />
+            </p>
+            <p>
+              <Image src={Sweets08} alt="サトウコーヒー" />
+            </p>
+          </div>
         </li>
       </ul>
       <div class="main_contents-item">
@@ -315,12 +488,12 @@ import Golf from "../images/img-golf.webp";
         padding: 2rem;
         h1 {
           font-size: 5vw;
+          text-align: center;
+          font-weight: 700;
           @media (max-width: 599px) {
             font-size: 11vw;
             margin: 0;
           }
-          text-align: center;
-          font-weight: 700;
         }
         p {
           font-size: 2vw;
@@ -509,6 +682,8 @@ import Golf from "../images/img-golf.webp";
       display: block;
     }
   }
+
+  // ドロップダウン
   $white: rgba(254, 255, 250, 1);
   $grey: rgba(220, 231, 235, 1);
   $red: rgba(255, 104, 115, 1);
@@ -538,6 +713,50 @@ import Golf from "../images/img-golf.webp";
     perspective: 900px;
     padding: 0;
     margin: 0;
+    div {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px; /* 基本のギャップを設定 */
+    }
+
+    div p {
+      flex: 1;
+    }
+
+    div p img {
+      width: 100%;
+      height: auto;
+    }
+
+    /* PC時 (900px以上の画面幅) - 3列 */
+    @media (min-width: 900px) {
+      div {
+        gap: 24px; /* PC時は少し広めのギャップ */
+      }
+      div p {
+        flex: 0 0 calc(33.33% - 24px); /* 3列 + ギャップ考慮 */
+      }
+    }
+
+    /* タブレット時 (600px以上、900px未満) - 2列 */
+    @media (min-width: 600px) and (max-width: 899px) {
+      div {
+        gap: 16px; /* タブレット時のギャップ */
+      }
+      div p {
+        flex: 0 0 calc(50% - 16px); /* 2列 + ギャップ考慮 */
+      }
+    }
+
+    /* スマホ時 (599px以下) - 1列 */
+    @media (max-width: 599px) {
+      div {
+        gap: 8px; /* スマホ時は狭めのギャップ */
+      }
+      div p {
+        flex: 0 0 100%; /* 1列 */
+      }
+    }
 
     li {
       position: relative;
@@ -598,7 +817,7 @@ import Golf from "../images/img-golf.webp";
         opacity: 0;
 
         &:checked {
-          & ~ p {
+          & ~ div {
             margin-top: 0;
             max-height: 0;
             opacity: 0;
