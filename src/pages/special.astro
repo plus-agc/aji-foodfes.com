@@ -424,7 +424,7 @@ import FooterBgSp from "../images/footer__image-sp.svg";
         </div>
       </div>
       <div class="main_contents-item">
-        <div class="item_center bg-red">
+        <div class="item_center bg-red color-white">
           <h3>鰺ヶ沢高等学校<br class="sp" />ブース</h3>
           <div class="item_text">
             <h4>SBP研究会</h4>
@@ -468,206 +468,259 @@ import FooterBgSp from "../images/footer__image-sp.svg";
   </footer>
 </Layout>
 <style lang="scss">
+  // 変数定義
+  $primary-color: #0047ba;
+  $white: #fff;
+  $grey: #dce7eb;
+  $red: #ff6873;
+  $mobile-breakpoint: 599px;
+  $tablet-breakpoint: 900px;
+
+  // ミックスイン
+  @mixin mobile {
+    @media (max-width: $mobile-breakpoint) {
+      @content;
+    }
+  }
+  @mixin tablet {
+    @media (min-width: $mobile-breakpoint + 1) and (max-width: $tablet-breakpoint - 1) {
+      @content;
+    }
+  }
+  @mixin desktop {
+    @media (min-width: $tablet-breakpoint) {
+      @content;
+    }
+  }
+
+  @mixin responsive-font($desktop-size, $mobile-size) {
+    font-size: $desktop-size;
+    @include mobile {
+      font-size: $mobile-size;
+    }
+  }
+
+  // プレースホルダーセレクタ
+  %centered-content {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  %transition {
+    transition: all 0.25s ease-in-out;
+  }
+  %no-select {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+    user-select: none;
+  }
+  %flipIn {
+    animation: flipdown 0.5s ease both;
+  }
+
+  // 色定義
+  $colors: (
+    "lightblue": #009fe8,
+    "brown": #510102,
+    "pink": #feb3d2,
+    "teal": #54c9bd,
+    "lightteal": #c0e9e5,
+    "red": #ff0000,
+  );
+
+  @each $name, $color in $colors {
+    .bg-#{$name} {
+      background-color: $color;
+    }
+  }
+
+  .color-blue {
+    color: $primary-color;
+  }
+  .color-white {
+    color: $white;
+  }
+
+  // 基本レイアウト
   .container {
     max-width: 1280px;
     margin: 0 auto;
   }
-  .bg-lightblue {
-    background-color: #009fe8;
-  }
-  .bg-brown {
-    background-color: #510102;
-  }
-  .bg-pink {
-    background-color: #feb3d2;
-  }
-  .bg-teal {
-    background-color: #54c9bd;
-  }
-  .bg-lightteal {
-    background-color: #c0e9e5;
-  }
-  .bg-red {
-    background-color: #ff0000;
-  }
-  .color-blue {
-    color: #0047ba !important;
-  }
-  .color-white {
-    color: #fff;
-  }
 
-  header {
-    .hero {
-      max-width: 95%;
-      margin: 0 auto;
-      background-color: #0047ba;
-      color: #fff;
-      border-radius: 1rem;
-      .hero-inner {
-        margin-top: 60px;
-        padding: 2rem;
-        h1 {
-          font-size: 5vw;
-          text-align: center;
-          font-weight: 700;
-          @media (max-width: 599px) {
-            font-size: 11vw;
-            margin: 0;
-          }
+  // ヘッダーセクション
+  header .hero {
+    @extend %centered-content;
+    background-color: $primary-color;
+    color: $white;
+    border-radius: 1rem;
+
+    .hero-inner {
+      margin-top: 60px;
+      padding: 2rem;
+
+      h1 {
+        @include responsive-font(5vw, 11vw);
+        text-align: center;
+        font-weight: 700;
+        @include mobile {
+          margin: 0;
         }
-        p {
-          font-size: 2vw;
-          @media (max-width: 599px) {
-            font-size: 5vw;
-          }
-          font-weight: 600;
-          text-align: center;
-          line-height: 1.8;
-        }
+      }
+
+      p {
+        @include responsive-font(2vw, 5vw);
+        font-weight: 600;
+        text-align: center;
+        line-height: 1.8;
       }
     }
   }
+
+  // メインコンテンツ
   main {
     padding-bottom: 60px;
+
     .main_contents {
-      max-width: 95%;
-      margin: 0 auto;
+      @extend %centered-content;
 
       .main_contents-item {
         display: flex;
         flex-wrap: wrap;
-        @media (max-width: 599px) {
-          flex-direction: column;
-        }
         gap: 2rem;
         margin-top: 2rem;
 
-        .item_left {
+        @include mobile {
+          flex-direction: column;
+        }
+
+        %item-shared {
           position: relative;
           border-radius: 1rem;
           padding: clamp(1rem, 0.4rem + 3vw, 4rem);
-          color: #fff;
+        }
+
+        .item_left {
+          @extend %item-shared;
+          color: $white;
           flex: 1;
           overflow: hidden;
-          h2 {
-            position: inherit;
-            font-size: 2.5vw;
-            @media (max-width: 599px) {
-              font-size: 6vw;
-            }
-            font-weight: 900;
-            z-index: 2;
-          }
+
+          h2,
           p {
-            position: inherit;
-            font-size: 2vw;
-            @media (max-width: 599px) {
-              font-size: 5vw;
-            }
-            font-weight: 900;
+            position: relative;
             z-index: 2;
           }
+
+          h2 {
+            @include responsive-font(2.5vw, 6vw);
+            font-weight: 900;
+          }
+
+          p {
+            @include responsive-font(2vw, 5vw);
+            font-weight: 900;
+          }
+
           img {
             width: 100%;
             height: auto;
             position: absolute;
             bottom: 115px;
-            @media (max-width: 599px) {
-              bottom: 0;
-            }
             right: 0;
             z-index: 1;
+            @include mobile {
+              bottom: 0;
+            }
           }
         }
+
         .item_right {
-          color: #0047ba;
+          color: $primary-color;
           flex: 1;
+
           h2 {
-            font-size: clamp(3vw, 3vw, 2vw);
-            @media (max-width: 599px) {
-              font-size: 6vw;
-            }
-            font-weight: 500;
+            @include responsive-font(clamp(3vw, 3vw, 2vw), 6vw);
           }
           h3 {
-            font-size: clamp(2vw, 2.2vw, 1.8vw);
-            @media (max-width: 599px) {
-              font-size: 6vw;
-            }
-            font-weight: 500;
+            @include responsive-font(clamp(2vw, 2.2vw, 1.8vw), 6vw);
           }
           p {
-            font-size: clamp(2vw, 2.2vw, 3vw);
-            @media (max-width: 599px) {
-              font-size: 5vw;
-            }
-            font-weight: 500;
+            @include responsive-font(clamp(2vw, 2.2vw, 3vw), 5vw);
             margin-bottom: 8px;
           }
+
+          h2,
+          h3,
+          p {
+            font-weight: 500;
+          }
+
           ul {
             list-style-type: none;
             padding-left: 1em;
 
-            li:nth-of-type(1) {
-              font-size: clamp(24px, 2vw, 2.2vw);
-            }
-            li:nth-of-type(2) {
-              font-size: clamp(20px, 2vw, 1.6vw);
-            }
             li {
               margin-bottom: 8px;
-              @media (max-width: 599px) {
+              font-weight: 500;
+              @include mobile {
                 font-size: 5vw;
               }
-              font-weight: 500;
-            }
-            li:nth-of-type(1) {
-              width: fit-content;
-              border-bottom: solid 2px #0047ba;
+
+              &:nth-of-type(1) {
+                font-size: clamp(24px, 2vw, 2.2vw);
+                width: fit-content;
+                border-bottom: solid 2px $primary-color;
+              }
+
+              &:nth-of-type(2) {
+                font-size: clamp(20px, 2vw, 1.6vw);
+              }
             }
           }
         }
+
         .item_center {
-          position: relative;
-          border-radius: 1rem;
-          padding: clamp(1rem, 0.4rem + 3vw, 4rem);
-          color: #fff;
+          @extend %item-shared;
+          color: $white;
           display: flex;
           flex-wrap: wrap;
           gap: 0 clamp(1.875rem, 1.5rem + 1.88vw, 3.75rem);
+
           h3 {
-            font-size: 4vw;
-            @media (max-width: 599px) {
-              font-size: 10vw;
+            @include responsive-font(4vw, 10vw);
+            font-weight: 900;
+            width: 100%;
+            @include mobile {
               text-align: center;
               margin: 1rem 0;
             }
-            font-weight: 900;
-            width: 100%;
           }
+
           ul {
             list-style-type: none;
             font-weight: 600;
             margin: 0;
             padding: 0;
+
             li {
               display: flex;
               gap: clamp(1rem, 0.6rem + 2vw, 3rem);
               p {
-                position: inherit;
+                position: relative;
                 z-index: 2;
               }
             }
           }
+
           .item_image {
             flex: 1;
             display: flex;
             flex-direction: column;
             gap: clamp(1rem, 5vw, 6rem);
-            @media (max-width: 599px) {
+            @include mobile {
               padding: 2rem;
             }
+
             div {
               flex: 1;
               img {
@@ -677,25 +730,22 @@ import FooterBgSp from "../images/footer__image-sp.svg";
               }
             }
           }
+
           .item_text {
             width: 65%;
-            @media (max-width: 599px) {
+            @include mobile {
               width: 100%;
             }
+
             h4 {
-              font-size: 3vw;
-              @media (max-width: 599px) {
-                font-size: 6vw;
-              }
+              @include responsive-font(3vw, 6vw);
               font-weight: 600;
               margin-top: 0;
               margin-bottom: 8px;
             }
+
             p {
-              font-size: 2.5vw;
-              @media (max-width: 599px) {
-                font-size: 5vw;
-              }
+              @include responsive-font(2.5vw, 5vw);
               font-weight: 600;
               margin-bottom: clamp(1rem, -0.4rem + 7vw, 8rem);
             }
@@ -704,124 +754,76 @@ import FooterBgSp from "../images/footer__image-sp.svg";
       }
     }
   }
-  .sp {
-    display: none;
-    @media (max-width: 599px) {
-      display: block;
-    }
-  }
 
   // ドロップダウン
-  $white: rgba(254, 255, 250, 1);
-  $grey: rgba(220, 231, 235, 1);
-  $red: rgba(255, 104, 115, 1);
-  $black: #0047ba;
-  $sans: "Titillium Web", sans-serif;
-
-  .transition {
-    transition: all 0.25s ease-in-out;
-  }
-
-  .flipIn {
-    animation: flipdown 0.5s ease both;
-  }
-
-  .no-select {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-
   .drpdwn {
     list-style: none;
     perspective: 900px;
     padding: 0;
     margin: 0;
+
     h2 {
-      color: #0047ba;
+      color: $primary-color;
       display: flex;
       align-items: center;
       gap: 2rem;
-    }
-    h2:after {
-      content: "";
-      display: flex;
-      width: 2em;
-      height: 2em;
-      background-image: url("/images/after.svg");
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
+
+      &::after {
+        content: "";
+        display: flex;
+        width: 2em;
+        height: 2em;
+        background: url("/images/after.svg") no-repeat center / contain;
+      }
     }
 
     div {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px; /* 基本のギャップを設定 */
-    }
+      gap: 16px;
 
-    div p {
-      flex: 1;
-    }
+      p {
+        flex: 1;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
 
-    div p img {
-      width: 100%;
-      height: auto;
-    }
+      @include desktop {
+        gap: 24px;
+        p {
+          flex: 0 0 calc(33.33% - 24px);
+        }
+      }
 
-    /* PC時 (900px以上の画面幅) - 3列 */
-    @media (min-width: 900px) {
-      div {
-        gap: 24px; /* PC時は少し広めのギャップ */
+      @include tablet {
+        gap: 16px;
+        p {
+          flex: 0 0 calc(50% - 16px);
+        }
       }
-      div p {
-        flex: 0 0 calc(33.33% - 24px); /* 3列 + ギャップ考慮 */
-      }
-    }
 
-    /* タブレット時 (600px以上、900px未満) - 2列 */
-    @media (min-width: 600px) and (max-width: 899px) {
-      div {
-        gap: 16px; /* タブレット時のギャップ */
-      }
-      div p {
-        flex: 0 0 calc(50% - 16px); /* 2列 + ギャップ考慮 */
-      }
-    }
-
-    /* スマホ時 (599px以下) - 1列 */
-    @media (max-width: 599px) {
-      div {
-        gap: 8px; /* スマホ時は狭めのギャップ */
-      }
-      div p {
-        flex: 0 0 100%; /* 1列 */
+      @include mobile {
+        gap: 8px;
+        p {
+          flex: 0 0 100%;
+        }
       }
     }
 
     li {
       position: relative;
-      padding: 0;
+      padding: 0 0 4px;
       margin: 0;
-      padding-bottom: 4px;
       padding-top: 18px;
       border-top: 1px dotted $grey;
-      @extend .flipIn;
+      @extend %flipIn;
 
-      &:nth-of-type(1) {
-        animation-delay: 0.5s;
-      }
-
-      &:nth-of-type(2) {
-        animation-delay: 0.75s;
-      }
-
-      &:nth-of-type(3) {
-        animation-delay: 1s;
+      @for $i from 1 through 3 {
+        &:nth-of-type(#{$i}) {
+          animation-delay: #{0.25 + $i * 0.25}s;
+        }
       }
 
       &:last-of-type {
@@ -834,21 +836,20 @@ import FooterBgSp from "../images/footer__image-sp.svg";
         margin-top: 16px;
         right: 0;
 
-        &:before,
-        &:after {
+        &::before,
+        &::after {
           content: "";
-          @extend .transition;
+          @extend %transition;
           position: absolute;
           background-color: $red;
           width: 3px;
           height: 9px;
         }
 
-        &:before {
+        &::before {
           transform: translate(-2px, 0) rotate(45deg);
         }
-
-        &:after {
+        &::after {
           transform: translate(2px, 0) rotate(-45deg);
         }
       }
@@ -870,11 +871,10 @@ import FooterBgSp from "../images/footer__image-sp.svg";
           }
 
           & ~ i {
-            &:before {
+            &::before {
               transform: translate(2px, 0) rotate(45deg);
             }
-
-            &:after {
+            &::after {
               transform: translate(-2px, 0) rotate(-45deg);
             }
           }
@@ -886,7 +886,6 @@ import FooterBgSp from "../images/footer__image-sp.svg";
   @keyframes flipdown {
     0% {
       opacity: 0;
-      transform-origin: top center;
       transform: rotateX(-90deg);
     }
     5% {
@@ -902,51 +901,51 @@ import FooterBgSp from "../images/footer__image-sp.svg";
       transform: rotateX(-3deg);
     }
     100% {
-      transform-origin: top center;
       transform: rotateX(0deg);
     }
   }
+
   .map-wrapper {
-    max-width: 95%;
-    margin: 0 auto;
+    @extend %centered-content;
     img {
       width: 100%;
       height: auto;
     }
   }
+
   .footer {
     margin-top: 4rem;
-  }
-  .footer__image {
-    background-image: url(/images/footer-bg.svg);
-    background-size: cover;
-    background-position: top;
-    .forward {
-      padding: 3rem 0;
+
+    &__image {
+      background: url(/images/footer-bg.svg) no-repeat top / cover;
+
+      .forward {
+        padding: 3rem 0;
+      }
+
+      img {
+        width: 100% !important;
+        height: auto !important;
+      }
     }
-    img {
-      width: 100% !important;
-      height: auto !important;
-    }
   }
+
+  // レスポンシブ表示制御
   .pc {
     display: none;
     @media (min-width: 768px) {
-      & {
-        display: block;
-      }
+      display: block;
     }
   }
+
   .sp {
     display: none;
     @media (max-width: 767px) {
-      & {
-        display: block;
+      display: block;
+      img {
+        width: 100%;
+        height: auto;
       }
-    }
-    img {
-      width: 100%;
-      height: auto;
     }
   }
 </style>
@@ -1030,7 +1029,7 @@ import FooterBgSp from "../images/footer__image-sp.svg";
             start: "top center", // アニメーションの開始位置
             markers: false, // マーカー表示
           },
-        }
+        },
       );
     });
   });
