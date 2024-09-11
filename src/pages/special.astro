@@ -60,6 +60,9 @@ import Sweets05 from "../images/sweets-05.svg";
 import Sweets06 from "../images/sweets-06.svg";
 import Sweets07 from "../images/sweets-07.svg";
 import Sweets08 from "../images/sweets-08.svg";
+import Map from "../images/map.svg";
+import FooterDesc from "../images/footer__image-desc.svg";
+import FooterBgSp from "../images/footer__image-sp.svg";
 ---
 
 <Layout title="あじがさわフードフェス2024">
@@ -448,9 +451,27 @@ import Sweets08 from "../images/sweets-08.svg";
       </div>
     </div>
   </main>
-  <footer class="footer"></footer>
+
+  <div class="map-wrapper">
+    <Image src={Map} alt="会場図" />
+  </div>
+
+  <footer class="footer">
+    <div class="footer__image">
+      <div class="container">
+        <div class="forward">
+          <Image src={FooterDesc} alt="概要欄" class="pc" />
+          <Image src={FooterBgSp} alt="概要欄" class="sp" />
+        </div>
+      </div>
+    </div>
+  </footer>
 </Layout>
 <style lang="scss">
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
   .bg-lightblue {
     background-color: #009fe8;
   }
@@ -563,21 +584,21 @@ import Sweets08 from "../images/sweets-08.svg";
           color: #0047ba;
           flex: 1;
           h2 {
-            font-size: 2vw;
+            font-size: clamp(3vw, 3vw, 2vw);
             @media (max-width: 599px) {
               font-size: 6vw;
             }
             font-weight: 500;
           }
           h3 {
-            font-size: 1.8vw;
+            font-size: clamp(2vw, 2.2vw, 1.8vw);
             @media (max-width: 599px) {
               font-size: 6vw;
             }
             font-weight: 500;
           }
           p {
-            font-size: 1.8vw;
+            font-size: clamp(2vw, 2.2vw, 3vw);
             @media (max-width: 599px) {
               font-size: 5vw;
             }
@@ -587,9 +608,15 @@ import Sweets08 from "../images/sweets-08.svg";
           ul {
             list-style-type: none;
             padding-left: 1em;
+
+            li:nth-of-type(1) {
+              font-size: clamp(24px, 2vw, 2.2vw);
+            }
+            li:nth-of-type(2) {
+              font-size: clamp(20px, 2vw, 1.6vw);
+            }
             li {
               margin-bottom: 8px;
-              font-size: 1.4vw;
               @media (max-width: 599px) {
                 font-size: 5vw;
               }
@@ -621,7 +648,6 @@ import Sweets08 from "../images/sweets-08.svg";
           }
           ul {
             list-style-type: none;
-            font-size: 1.8vw;
             font-weight: 600;
             margin: 0;
             padding: 0;
@@ -639,7 +665,9 @@ import Sweets08 from "../images/sweets-08.svg";
             display: flex;
             flex-direction: column;
             gap: clamp(1rem, 5vw, 6rem);
-            padding: 2rem;
+            @media (max-width: 599px) {
+              padding: 2rem;
+            }
             div {
               flex: 1;
               img {
@@ -687,7 +715,7 @@ import Sweets08 from "../images/sweets-08.svg";
   $white: rgba(254, 255, 250, 1);
   $grey: rgba(220, 231, 235, 1);
   $red: rgba(255, 104, 115, 1);
-  $black: rgba(48, 69, 92, 0.8);
+  $black: #0047ba;
   $sans: "Titillium Web", sans-serif;
 
   .transition {
@@ -713,6 +741,23 @@ import Sweets08 from "../images/sweets-08.svg";
     perspective: 900px;
     padding: 0;
     margin: 0;
+    h2 {
+      color: #0047ba;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    h2:after {
+      content: "";
+      display: flex;
+      width: 2em;
+      height: 2em;
+      background-image: url("/images/after.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
     div {
       display: flex;
       flex-wrap: wrap;
@@ -859,6 +904,49 @@ import Sweets08 from "../images/sweets-08.svg";
     100% {
       transform-origin: top center;
       transform: rotateX(0deg);
+    }
+  }
+  .map-wrapper {
+    max-width: 95%;
+    margin: 0 auto;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .footer {
+    margin-top: 4rem;
+  }
+  .footer__image {
+    background-image: url(/images/footer-bg.svg);
+    background-size: cover;
+    background-position: top;
+    .forward {
+      padding: 3rem 0;
+    }
+    img {
+      width: 100% !important;
+      height: auto !important;
+    }
+  }
+  .pc {
+    display: none;
+    @media (min-width: 768px) {
+      & {
+        display: block;
+      }
+    }
+  }
+  .sp {
+    display: none;
+    @media (max-width: 767px) {
+      & {
+        display: block;
+      }
+    }
+    img {
+      width: 100%;
+      height: auto;
     }
   }
 </style>
