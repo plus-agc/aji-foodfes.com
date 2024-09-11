@@ -63,9 +63,11 @@ import Sweets08 from "../images/sweets-08.svg";
 import Map from "../images/map.svg";
 import FooterDesc from "../images/footer__image-desc.svg";
 import FooterBgSp from "../images/footer__image-sp.svg";
+import Menubar from "../modules/Menubar.astro";
 ---
 
 <Layout title="あじがさわフードフェス2024">
+  <Menubar />
   <header class="header">
     <div class="hero">
       <div class="hero-inner">
@@ -106,7 +108,7 @@ import FooterBgSp from "../images/footer__image-sp.svg";
       </div>
       <ul class="drpdwn" id="zukedon">
         <li id="normal">
-          <input type="checkbox" checked />
+          <input type="checkbox" />
           <h2>ヒラメのヅケ丼 ①〜⑨税込1,000円</h2>
           <div>
             <p>
@@ -148,7 +150,7 @@ import FooterBgSp from "../images/footer__image-sp.svg";
           </div>
         </li>
         <li id="premium">
-          <input type="checkbox" checked />
+          <input type="checkbox" />
           <h2>ヒラメのヅケ丼プレミアム ⑩〜⑯税込1,500円</h2>
           <div>
             <p>
@@ -222,7 +224,7 @@ import FooterBgSp from "../images/footer__image-sp.svg";
       </div>
       <ul class="drpdwn" id="oniku-open">
         <li id="oniku">
-          <input type="checkbox" checked />
+          <input type="checkbox" />
           <h2>お肉コーナー</h2>
           <div>
             <p>
@@ -264,7 +266,7 @@ import FooterBgSp from "../images/footer__image-sp.svg";
           </div>
         </li>
         <li id="open">
-          <input type="checkbox" checked />
+          <input type="checkbox" />
           <h2>オープンコーナー</h2>
           <div>
             <p>
@@ -325,7 +327,7 @@ import FooterBgSp from "../images/footer__image-sp.svg";
       </div>
       <ul class="drpdwn" id="sweets">
         <li>
-          <input type="checkbox" checked />
+          <input type="checkbox" />
           <h2>スイーツコーナー</h2>
           <div>
             <p>
@@ -1016,7 +1018,7 @@ import FooterBgSp from "../images/footer__image-sp.svg";
             start: "top center",
             markers: false,
           },
-        },
+        }
       );
     });
   });
