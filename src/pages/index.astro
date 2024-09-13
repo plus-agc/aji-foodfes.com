@@ -6,6 +6,10 @@ import HeaderTitle from "../images/header-title.svg";
 import FooterDesc from "../images/footer__image-desc.svg";
 import FooterBgSp from "../images/footer__image-sp.svg";
 import Menubar from "../modules/Menubar.astro";
+import MainImage from "../images/main-image.webp";
+import MainImageSP from "../images/main-image-sp.webp";
+import MainDesc from "../images/main-desc.webp";
+import MainDescSP from "../images/main-desc-sp.webp";
 ---
 
 <Layout title="あじがさわフードフェス2024">
@@ -14,11 +18,7 @@ import Menubar from "../modules/Menubar.astro";
     <div class="pc">
       <div class="header__image">
         <div class="container">
-          <img
-            class="back"
-            src="https://res.cloudinary.com/dpd2jenj9/image/upload/v1723181888/%E3%81%82%E3%81%98%E3%81%8C%E3%81%95%E3%82%8F%E3%83%95%E3%83%BC%E3%83%89%E3%83%95%E3%82%A7%E3%82%B92024/main-image_ejvgp0.webp"
-            alt=""
-          />
+          <Image src={MainImage} alt="あじがさわフードフェス2024" />
         </div>
       </div>
       <div class="header__title">
@@ -33,35 +33,18 @@ import Menubar from "../modules/Menubar.astro";
       </div>
     </div>
     <div class="sp">
-      <img
-        src="https://res.cloudinary.com/dpd2jenj9/image/upload/v1723178655/%E3%81%82%E3%81%98%E3%81%8C%E3%81%95%E3%82%8F%E3%83%95%E3%83%BC%E3%83%89%E3%83%95%E3%82%A7%E3%82%B92024/main-image-sp_kai1ks.webp"
-        alt=""
-      />
+      <Image src={MainImageSP} alt="あじがさわフードフェス2024" />
     </div>
   </header>
   <main>
     <div class="main__desc">
       <div class="pc">
         <div class="container">
-          <img
-            src="https://res.cloudinary.com/dpd2jenj9/image/upload/v1724403309/%E3%81%82%E3%81%98%E3%81%8C%E3%81%95%E3%82%8F%E3%83%95%E3%83%BC%E3%83%89%E3%83%95%E3%82%A7%E3%82%B92024/main-desc_xtzknd.webp"
-            alt=""
-          />
+          <Image src={MainDesc} alt="あじがさわフードフェス2024" />
         </div>
       </div>
       <div class="sp">
-        <img
-          src="https://res.cloudinary.com/dpd2jenj9/image/upload/v1723178809/%E3%81%82%E3%81%98%E3%81%8C%E3%81%95%E3%82%8F%E3%83%95%E3%83%BC%E3%83%89%E3%83%95%E3%82%A7%E3%82%B92024/main-desc-sp1_ra78re.webp"
-          alt=""
-        />
-        <img
-          src="https://res.cloudinary.com/dpd2jenj9/image/upload/v1723192633/%E3%81%82%E3%81%98%E3%81%8C%E3%81%95%E3%82%8F%E3%83%95%E3%83%BC%E3%83%89%E3%83%95%E3%82%A7%E3%82%B92024/main-desc-sp2_sssw6y.webp"
-          alt=""
-        />
-        <img
-          src="https://res.cloudinary.com/dpd2jenj9/image/upload/v1724403443/%E3%81%82%E3%81%98%E3%81%8C%E3%81%95%E3%82%8F%E3%83%95%E3%83%BC%E3%83%89%E3%83%95%E3%82%A7%E3%82%B92024/main-desc-sp3_djnjhw.webp"
-          alt=""
-        />
+        <Image src={MainDescSP} alt="あじがさわフードフェス2024" />
       </div>
     </div>
   </main>
@@ -87,7 +70,8 @@ import Menubar from "../modules/Menubar.astro";
     z-index: 1;
   }
   main {
-    padding: clamp(2rem, -4.154rem + 16.91vw, 9.375rem);
+    padding: 5vw 0 clamp(2rem, -4.154rem + 16.91vw, 9.375rem)
+      clamp(2rem, -4.154rem + 16.91vw, 9.375rem);
     @media (max-width: 767px) {
       margin-bottom: 50px;
     }
