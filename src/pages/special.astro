@@ -19,7 +19,7 @@ import Menubar from "../modules/Menubar.astro";
 
 <Layout title="あじがさわフードフェス2024">
   <Menubar />
-  <header class="header">
+  <header class="header color-white">
     <div class="hero">
       <div class="hero-inner">
         <h1>あじがさわ<br class="sp" /> フードフェスとは？</h1>
@@ -32,10 +32,10 @@ import Menubar from "../modules/Menubar.astro";
       </div>
     </div>
   </header>
-  <main class="main">
+  <main class="main color-brown bg-lightblue">
     <div class="main_contents">
       <div class="main_contents-item">
-        <div class="item_left bg-lightblue">
+        <div class="item_left bg-lightblue color-white">
           <h2>鰺ヶ沢町ご当地丼 ヒラメのヅケ丼</h2>
           <p>販売開始10:30～</p>
           <Image src={Zukedon} alt="ヅケ丼" class="js-parallax" data-y="10vw" />
@@ -145,7 +145,7 @@ import Menubar from "../modules/Menubar.astro";
         </li>
       </ul> -->
       <div class="main_contents-item">
-        <div class="item_left bg-brown">
+        <div class="item_left bg-brown color-white">
           <h2>お肉コーナー<br />オープンコーナー</h2>
           <Image
             src={Oniku}
@@ -260,7 +260,7 @@ import Menubar from "../modules/Menubar.astro";
         </li>
       </ul> -->
       <div class="main_contents-item">
-        <div class="item_left bg-pink">
+        <div class="item_left bg-lightblue color-white">
           <h2>スイーツコーナー</h2>
           <Image
             src={Sweets}
@@ -311,7 +311,7 @@ import Menubar from "../modules/Menubar.astro";
         </li>
       </ul> -->
       <div class="main_contents-item">
-        <div class="item_center bg-teal color-blue">
+        <div class="item_center bg-teal color-brown">
           <h3>ステージイベント</h3>
           <div class="item_text">
             <ul>
@@ -347,7 +347,7 @@ import Menubar from "../modules/Menubar.astro";
         </div>
       </div>
       <div class="main_contents-item">
-        <div class="item_center bg-lightteal color-blue">
+        <div class="item_center bg-teal color-brown">
           <h3>体験イベント・<br class="sp" />抽選会</h3>
           <div class="item_text">
             <h4>デジタル抽選会</h4>
@@ -384,7 +384,7 @@ import Menubar from "../modules/Menubar.astro";
         </div>
       </div>
       <div class="main_contents-item">
-        <div class="item_center bg-red color-white">
+        <div class="item_center bg-teal color-brown">
           <h3>鰺ヶ沢高等学校<br class="sp" />ブース</h3>
           <div class="item_text">
             <h4>SBP研究会</h4>
@@ -483,9 +483,10 @@ import Menubar from "../modules/Menubar.astro";
     "lightblue": #fffcd2,
     "brown": #510102,
     "pink": #feb3d2,
-    "teal": #54c9bd,
+    "teal": #a0d9f3,
     "lightteal": #c0e9e5,
     "red": #ff0000,
+    "white": #fff,
   );
 
   @each $name, $color in $colors {
@@ -499,6 +500,10 @@ import Menubar from "../modules/Menubar.astro";
   }
   .color-white {
     color: $white;
+  }
+
+  .color-brown {
+    color: #510102;
   }
 
   // 基本レイアウト
@@ -627,7 +632,7 @@ import Menubar from "../modules/Menubar.astro";
               &:nth-of-type(1) {
                 font-size: clamp(24px, 2vw, 2.2vw);
                 width: fit-content;
-                border-bottom: solid 2px $primary-color;
+                border-bottom: solid 2px;
               }
 
               &:nth-of-type(2) {
