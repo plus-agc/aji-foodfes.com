@@ -59,6 +59,7 @@ import Sweets05 from "../images/sweets-05.svg";
 import Sweets06 from "../images/sweets-06.svg";
 import Sweets07 from "../images/sweets-07.svg";
 import Sweets08 from "../images/sweets-08.svg";
+import Map from "../images/map.svg";
 ---
 
 <Layout title="あじがさわフードフェス2024">
@@ -301,6 +302,9 @@ import Sweets08 from "../images/sweets-08.svg";
       </ul>
     </div>
   </main>
+  <div class="map-wrapper">
+    <Image src={Map} alt="会場図" />
+  </div>
   <footer>
     <div class="footer__image">
       <div class="container">
@@ -641,6 +645,14 @@ import Sweets08 from "../images/sweets-08.svg";
     }
     100% {
       transform: rotateX(0deg);
+    }
+  }
+  .map-wrapper {
+    max-width: 1280px;
+    margin: 0 auto 160px auto;
+    img {
+      width: 100%;
+      height: auto;
     }
   }
 </style>

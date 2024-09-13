@@ -1,9 +1,9 @@
 ---
 import Layout from "../layouts/Layout-Special.astro";
 import { Image } from "astro:assets";
-import Zukedon from "../images/img-zukedon.webp";
-import Oniku from "../images/img-oniku.webp";
-import Sweets from "../images/img-sweets.webp";
+import Zukedon from "../images/dukedon.webp";
+import Oniku from "../images/meat-specials.webp";
+import Sweets from "../images/sweets.webp";
 import Ringomusume from "../images/img-ringomusume.webp";
 import Kimura from "../images/img-kimura.webp";
 import Shouhinken from "../images/img-shouhinken.webp";
@@ -11,7 +11,6 @@ import Baloon from "../images/img-baloon.webp";
 import Butter from "../images/img-butter.webp";
 import Rikishi from "../images/img-rikishi.webp";
 import Golf from "../images/img-golf.webp";
-import Map from "../images/map.svg";
 import FooterDesc from "../images/footer__image-desc.svg";
 import FooterBgSp from "../images/footer__image-sp.svg";
 import Menubar from "../modules/Menubar.astro";
@@ -35,10 +34,8 @@ import Menubar from "../modules/Menubar.astro";
   <main class="main color-brown">
     <div class="main_contents">
       <div class="main_contents-item">
-        <div class="item_left bg-lightblue color-white">
-          <h2>鰺ヶ沢町ご当地丼 ヒラメのヅケ丼</h2>
-          <p>販売開始10:30～</p>
-          <Image src={Zukedon} alt="ヅケ丼" class="js-parallax" data-y="10vw" />
+        <div class="item_left">
+          <Image src={Zukedon} alt="ヅケ丼" />
         </div>
         <div class="item_right">
           <h2>鰺ヶ沢町内10店舗から合わせて1,700食の丼が大集結！</h2>
@@ -60,14 +57,8 @@ import Menubar from "../modules/Menubar.astro";
       </div>
 
       <div class="main_contents-item">
-        <div class="item_left bg-brown color-white">
-          <h2>お肉コーナー<br />オープンコーナー</h2>
-          <Image
-            src={Oniku}
-            alt="お肉コーナー"
-            class="js-parallax"
-            data-y="10vw"
-          />
+        <div class="item_left">
+          <Image src={Oniku} alt="お肉コーナー" />
         </div>
         <div class="item_right">
           <h2>町内外から34店舗が集結！</h2>
@@ -90,14 +81,8 @@ import Menubar from "../modules/Menubar.astro";
       </div>
 
       <div class="main_contents-item">
-        <div class="item_left bg-lightblue color-white">
-          <h2>スイーツコーナー</h2>
-          <Image
-            src={Sweets}
-            alt="スイーツコーナー"
-            class="js-parallax"
-            data-y="10vw"
-          />
+        <div class="item_left">
+          <Image src={Sweets} alt="スイーツコーナー" />
         </div>
         <div class="item_right">
           <h2>町内外8店舗が集結！</h2>
@@ -210,10 +195,6 @@ import Menubar from "../modules/Menubar.astro";
       </div>
     </div>
   </main>
-
-  <div class="map-wrapper">
-    <Image src={Map} alt="会場図" />
-  </div>
 
   <footer class="footer">
     <div class="footer__image">
@@ -387,9 +368,6 @@ import Menubar from "../modules/Menubar.astro";
           img {
             width: 100%;
             height: auto;
-            position: absolute;
-            bottom: 115px;
-            right: 0;
             z-index: 1;
             @include mobile {
               bottom: 0;
@@ -513,14 +491,6 @@ import Menubar from "../modules/Menubar.astro";
           }
         }
       }
-    }
-  }
-
-  .map-wrapper {
-    @extend %centered-content;
-    img {
-      width: 100%;
-      height: auto;
     }
   }
 
