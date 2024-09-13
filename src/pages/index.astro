@@ -99,7 +99,7 @@ import Map from "../images/map.svg";
       <ul class="drpdwn" id="zukedon">
         <li id="normal">
           <input type="checkbox" checked />
-          <h2>ヒラメのヅケ丼 ①〜⑨税込1,000円</h2>
+          <h2><span>ヒラメのヅケ丼 ①〜⑨税込1,000円</span></h2>
           <div>
             <p>
               <Image
@@ -141,7 +141,7 @@ import Map from "../images/map.svg";
         </li>
         <li id="premium">
           <input type="checkbox" checked />
-          <h2>ヒラメのヅケ丼プレミアム ⑩〜⑯税込1,500円</h2>
+          <h2><span>ヒラメのヅケ丼プレミアム ⑩〜⑯税込1,500円</span></h2>
           <div>
             <p>
               <Image
@@ -185,7 +185,7 @@ import Map from "../images/map.svg";
       <ul class="drpdwn" id="oniku-open">
         <li id="oniku">
           <input type="checkbox" checked />
-          <h2>お肉コーナー</h2>
+          <h2><span>お肉コーナー</span></h2>
           <div>
             <p>
               <Image src={Meat01} alt="長谷川自然牧場" />
@@ -227,7 +227,7 @@ import Map from "../images/map.svg";
         </li>
         <li id="open">
           <input type="checkbox" checked />
-          <h2>オープンコーナー</h2>
+          <h2><span>オープンコーナー</span></h2>
           <div>
             <p>
               <Image src={Open01} alt="赤石水産漁協女性部" />
@@ -271,7 +271,7 @@ import Map from "../images/map.svg";
       <ul class="drpdwn" id="sweets">
         <li>
           <input type="checkbox" checked />
-          <h2>スイーツコーナー</h2>
+          <h2><span>スイーツコーナー</span></h2>
           <div>
             <p>
               <Image src={Sweets01} alt="菓子工房TATUYA" />
@@ -391,9 +391,7 @@ import Map from "../images/map.svg";
     z-index: 1;
   }
   main {
-    padding: 5vw clamp(2rem, -4.154rem + 16.91vw, 9.375rem)
-      clamp(2rem, -4.154rem + 16.91vw, 9.375rem)
-      clamp(2rem, -4.154rem + 16.91vw, 9.375rem);
+    padding: clamp(1rem, 0.8rem + 1vw, 4rem);
     @media (max-width: 767px) {
       margin-bottom: 50px;
     }
@@ -502,6 +500,7 @@ import Map from "../images/map.svg";
     list-style: none;
     perspective: 900px;
     padding: 0;
+    overflow: hidden;
     margin: 0 auto;
 
     h2 {
@@ -511,6 +510,9 @@ import Map from "../images/map.svg";
       align-items: center;
       gap: 2rem;
 
+      span {
+        flex: 1;
+      }
       &::after {
         content: "";
         display: flex;
@@ -649,7 +651,8 @@ import Map from "../images/map.svg";
   }
   .map-wrapper {
     max-width: 1280px;
-    margin: 0 auto 160px auto;
+    margin: 0 auto 60px auto;
+    padding: clamp(1rem, 0.8rem + 1vw, 4rem);
     img {
       width: 100%;
       height: auto;

@@ -38,7 +38,10 @@ import Menubar from "../modules/Menubar.astro";
           <Image src={Zukedon} alt="ヅケ丼" />
         </div>
         <div class="item_right">
-          <h2>鰺ヶ沢町内10店舗から合わせて1,700食の丼が大集結！</h2>
+          <h2>
+            鯵ヶ沢町ご当地丼<br class="pc" /> ヒラメのヅケ丼<br class="pc" /> 販売開始10:30〜
+          </h2>
+          <p>鰺ヶ沢町内10店舗から合わせて1,700食の丼が大集結！</p>
           <p>●ヒラメのヅケ丼</p>
           <ul>
             <li>9店舗 計1,110食</li>
@@ -61,7 +64,8 @@ import Menubar from "../modules/Menubar.astro";
           <Image src={Oniku} alt="お肉コーナー" />
         </div>
         <div class="item_right">
-          <h2>町内外から34店舗が集結！</h2>
+          <h2>お肉コーナー<br />オープンコーナー</h2>
+          <p>町内外から34店舗が集結！</p>
           <h3>出店店舗では、鰺ヶ沢産の食材を使用したメニューを限定販売！</h3>
           <p>●お肉コーナー</p>
           <ul>
@@ -85,7 +89,8 @@ import Menubar from "../modules/Menubar.astro";
           <Image src={Sweets} alt="スイーツコーナー" />
         </div>
         <div class="item_right">
-          <h2>町内外8店舗が集結！</h2>
+          <h2>スイーツコーナー</h2>
+          <p>町内外8店舗が集結！</p>
           <h3>
             鰺ヶ沢産のりんごやメロンなどの果物やジャージー牛乳、野菜を使用したスイーツを販売！<br
             />
@@ -134,18 +139,18 @@ import Menubar from "../modules/Menubar.astro";
         <div class="item_center bg-teal color-brown">
           <h3>体験イベント・<br class="sp" />抽選会</h3>
           <div class="item_text">
-            <h4>デジタル抽選会</h4>
+            <h4>●デジタル抽選会</h4>
             <p>
               簡単なアンケートに答えて、地元特産品や商品券をGET！<br />
               1等は「鰺ヶ沢町で使える商品券5,000円分」！
             </p>
-            <h4>アートバルーン体験</h4>
+            <h4>●アートバルーン体験</h4>
             <p>
               風船でお魚を作ろう！<br />
               体験無料！<br />
               全8回・各回15名様
             </p>
-            <h4>バター作り体験</h4>
+            <h4>●バター作り体験</h4>
             <p>
               ABITABiAジャージーファームのジャージー牛乳でバター作り！<br />
               会場で販売しているジャージー牛ステーキにのせて食べるのもお勧め！<br
@@ -171,13 +176,13 @@ import Menubar from "../modules/Menubar.astro";
         <div class="item_center bg-teal color-brown">
           <h3>鰺ヶ沢高等学校<br class="sp" />ブース</h3>
           <div class="item_text">
-            <h4>SBP研究会</h4>
+            <h4>●SBP研究会</h4>
             <p>
               鯵高生が長谷川自然牧場ハンバーグ入りの「力士くんおやき」を販売！
               <br />
               その腕前をご賞味あれ！
             </p>
-            <h4>パターゴルフ体験</h4>
+            <h4>●パターゴルフ体験</h4>
             <p>
               鰺ヶ沢高校ゴルフ部が運営するコーナーです。<br />
               お一人様5打まで。カップインすると「飴っこ」をプレゼント！
@@ -197,17 +202,43 @@ import Menubar from "../modules/Menubar.astro";
   </main>
 
   <footer class="footer">
-    <div class="footer__image">
-      <div class="container">
-        <div class="forward">
-          <Image src={FooterDesc} alt="概要欄" class="pc" />
-          <Image src={FooterBgSp} alt="概要欄" class="sp" />
-        </div>
-      </div>
+    <div class="cta">
+      <p><a href="/">あじがさわフードフェス2024詳細はこちら</a></p>
     </div>
   </footer>
 </Layout>
 <style lang="scss">
+  .cta {
+    padding-top: 120px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: url(/images/footer-bg.svg) no-repeat top / cover;
+    padding: clamp(2rem, 1.733rem + 1.33vw, 6rem) 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    z-index: 99;
+    p {
+      font-size: clamp(1rem, 0.667rem + 1.67vw, 6rem);
+      font-weight: 700;
+      margin: 20px 0 0 0;
+      a {
+        color: #fff;
+        text-decoration: none;
+        &:before {
+          content: "＼";
+          margin-right: 0.5rem;
+          color: #fff;
+        }
+        &:after {
+          content: "／";
+          margin-left: 0.5rem;
+          color: #fff;
+        }
+      }
+    }
+  }
   // 変数定義
   $primary-color: #0047ba;
   $white: #fff;
@@ -324,6 +355,7 @@ import Menubar from "../modules/Menubar.astro";
   // メインコンテンツ
   main {
     padding-bottom: 60px;
+    margin-bottom: 220px;
 
     .main_contents {
       @extend %centered-content;
@@ -332,6 +364,9 @@ import Menubar from "../modules/Menubar.astro";
         display: flex;
         flex-wrap: wrap;
         gap: 2rem;
+        @media (max-width: 599px) {
+          gap: 0;
+        }
         margin-top: 2rem;
 
         @include mobile {
@@ -341,7 +376,10 @@ import Menubar from "../modules/Menubar.astro";
         %item-shared {
           position: relative;
           border-radius: 1rem;
-          padding: clamp(1rem, 0.4rem + 3vw, 4rem);
+          padding: 4rem;
+          @media (max-width: 599px) {
+            padding: 0;
+          }
         }
 
         .item_left {
@@ -369,6 +407,7 @@ import Menubar from "../modules/Menubar.astro";
             width: 100%;
             height: auto;
             z-index: 1;
+            border-radius: 16px;
             @include mobile {
               bottom: 0;
             }
@@ -380,6 +419,10 @@ import Menubar from "../modules/Menubar.astro";
 
           h2 {
             @include responsive-font(clamp(3vw, 3vw, 2vw), 6vw);
+            background-color: #510102;
+            color: #fff;
+            padding: 1rem;
+            border-radius: 8px;
           }
           h3 {
             @include responsive-font(clamp(2vw, 2.2vw, 1.8vw), 6vw);
@@ -424,6 +467,7 @@ import Menubar from "../modules/Menubar.astro";
           display: flex;
           flex-wrap: wrap;
           gap: 0 clamp(1.875rem, 1.5rem + 1.88vw, 3.75rem);
+          padding: clamp(1rem, 0.667rem + 1.67vw, 6rem);
 
           h3 {
             @include responsive-font(4vw, 10vw);
