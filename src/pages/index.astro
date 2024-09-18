@@ -8,8 +8,6 @@ import FooterBgSp from "../images/footer__image-sp.svg";
 import Menubar from "../modules/Menubar.astro";
 import MainImage from "../images/main-image.webp";
 import MainImageSP from "../images/main-image-sp.webp";
-import MainDesc from "../images/main-desc.webp";
-import MainDescSP from "../images/main-desc-sp.webp";
 import Normal01 from "../images/normal-01.webp";
 import Normal02 from "../images/normal-02.webp";
 import Normal03 from "../images/normal-03.webp";
@@ -26,7 +24,6 @@ import Premium04 from "../images/premium-04.webp";
 import Premium05 from "../images/premium-05.webp";
 import Premium06 from "../images/premium-06.webp";
 import Premium07 from "../images/premium-07.webp";
-import Premium08 from "../images/premium-08.webp";
 import Meat01 from "../images/meat-01.svg";
 import Meat02 from "../images/meat-02.svg";
 import Meat03 from "../images/meat-03.svg";
@@ -60,6 +57,13 @@ import Sweets06 from "../images/sweets-06.svg";
 import Sweets07 from "../images/sweets-07.svg";
 import Sweets08 from "../images/sweets-08.svg";
 import Map from "../images/map.svg";
+import Header__titleDesk from "../images/header__title-desc.svg";
+import Dukedon__text from "../images/dukedon__text.svg";
+import Dukedon__image from "../images/dukedon__image.webp";
+import Dukedon__normalBanner from "../images/dukedon__normal-banner.svg";
+import Dukedon__premiumBanner from "../images/dukedon__premium-banner.svg";
+import Dukedon__premiumImage from "../images/dukedon__premium-image.webp";
+import Dukedon__premiumText from "../images/dukedon__premium-text.svg";
 ---
 
 <Layout title="あじがさわフードフェス2024">
@@ -68,7 +72,10 @@ import Map from "../images/map.svg";
     <div class="pc">
       <div class="header__image">
         <div class="container">
-          <Image src={MainImage} alt="あじがさわフードフェス2024" />
+          <Image
+            src={MainImage}
+            alt="あじがさわフードフェス2024 メインイメージ"
+          />
         </div>
       </div>
       <div class="header__title">
@@ -78,108 +85,196 @@ import Map from "../images/map.svg";
             alt="メインテキスト"
             class="header__title-text"
           />
-          <Image src={HeaderTitle} alt="あじがさわフードフェス2024" />
+          <Image src={HeaderTitle} alt="あじがさわフードフェス2024 タイトル" />
         </div>
       </div>
     </div>
     <div class="sp">
       <Image src={MainImageSP} alt="あじがさわフードフェス2024" />
     </div>
+    <div class="container">
+      <p class="header__title-desc">
+        <Image
+          src={Header__titleDesk}
+          alt=" 鯵ヶ沢町の3大食イベント春の「ヒラメフェス」夏の「肉のフェスティバル」秋の「スイーツフェス」を一堂に会した「食」盛り沢山に初開催！"
+        />
+      </p>
+    </div>
   </header>
   <main>
     <div class="main__desc">
-      <div class="pc">
-        <div class="container">
-          <Image src={MainDesc} alt="あじがさわフードフェス2024" />
+      <div class="lanove desc">
+        <h3>鯵ヶ沢ご当地丼「ヒラメのヅケ丼」</h3>
+        <div>
+          <p>町内10店舗・1,700食が大集結！</p>
+          <p>販売開始10:30〜（無くなり次第終了）</p>
         </div>
       </div>
-      <div class="sp">
-        <Image src={MainDescSP} alt="あじがさわフードフェス2024" />
-      </div>
-      <ul class="drpdwn" id="zukedon">
-        <li id="normal">
-          <input type="checkbox" checked />
-          <h2><span>ヒラメのヅケ丼 ①〜⑨税込1,000円</span></h2>
-          <div>
-            <p>
-              <Image
-                src={Normal01}
-                alt="ヒラメのヅケ丼ノーマル スーパーとびしま"
-              />
-            </p>
-            <p>
-              <Image src={Normal02} alt="ヒラメのヅケ丼ノーマル K2マート" />
-            </p>
-            <p>
-              <Image src={Normal03} alt="ヒラメのヅケ丼ノーマル 居酒屋 良治" />
-            </p>
-            <p>
-              <Image src={Normal04} alt="ヒラメのヅケ丼ノーマル お富久" />
-            </p>
-            <p>
-              <Image src={Normal05} alt="ヒラメのヅケ丼ノーマル 割烹 水天閣" />
-            </p>
-            <p>
-              <Image
-                src={Normal06}
-                alt="ヒラメのヅケ丼ノーマル ドライブイン汐風"
-              />
-            </p>
-            <p>
-              <Image src={Normal07} alt="ヒラメのヅケ丼ノーマル 網野仕出し店" />
-            </p>
-            <p>
-              <Image
-                src={Normal08}
-                alt="ヅケ丼ノーマル ロックウッドホテル&スパ"
-              />
-            </p>
-            <p>
-              <Image src={Normal09} alt="ヅケ丼ノーマル 児雷也" />
-            </p>
+      <div class="container border">
+        <div class="flex">
+          <div class="flex__item">
+            <Image
+              src={Dukedon__text}
+              alt="ヒラメのヅケ丼説明"
+              class="dukedon__image"
+            />
+            <Image src={Dukedon__image} alt="ヒラメのヅケ丼画像" />
           </div>
-        </li>
-        <li id="premium">
-          <input type="checkbox" checked />
-          <h2><span>ヒラメのヅケ丼プレミアム ⑩〜⑯税込1,500円</span></h2>
-          <div>
-            <p>
-              <Image
-                src={Premium01}
-                alt="ヒラメのヅケ丼プレミアム スーパーとびしま"
-              />
+          <div class="flex__item">
+            <p class="lanove">
+              鯵ヶ沢産の極上ヒラメを贅沢にヅケにし、たっぷりとご飯にのせた鯵ヶ沢町の名物丼です。
             </p>
-            <p>
-              <Image src={Premium02} alt="ヒラメのヅケ丼プレミアム K2マート" />
-            </p>
-            <p>
-              <Image
-                src={Premium03}
-                alt="ヒラメのヅケ丼プレミアム 漁師メシ 波"
-              />
-            </p>
-            <p>
-              <Image src={Premium04} alt="ヒラメのヅケ丼プレミアム お富久" />
-            </p>
-            <p>
-              <Image
-                src={Premium05}
-                alt="ヒラメのヅケ丼プレミアム 割烹 水天閣"
-              />
-            </p>
-            <p>
-              <Image
-                src={Premium06}
-                alt="ヒラメのヅケ丼プレミアム ドライブイン汐風"
-              />
-            </p>
-            <p>
-              <Image src={Premium07} alt="ヒラメのヅケ丼プレミアム 児雷也" />
-            </p>
+            <ul class="drpdwn">
+              <li>
+                <input
+                  type="checkbox"
+                  class="toggleCheckbox"
+                  data-target="dropdownContent1"
+                />
+                <h2>
+                  <span>
+                    <Image
+                      src={Dukedon__normalBanner}
+                      alt="ヒラメのヅケ丼ノーマル"
+                    />
+                  </span>
+                </h2>
+              </li>
+            </ul>
           </div>
-        </li>
-      </ul>
-      <ul class="drpdwn" id="oniku-open">
+          <ul class="drpdwn" id="dropdownContent1" style="display: none;">
+            <li>
+              <div>
+                <p>
+                  <Image
+                    src={Normal01}
+                    alt="ヒラメのヅケ丼ノーマル スーパーとびしま"
+                  />
+                </p>
+                <p>
+                  <Image src={Normal02} alt="ヒラメのヅケ丼ノーマル K2マート" />
+                </p>
+                <p>
+                  <Image
+                    src={Normal03}
+                    alt="ヒラメのヅケ丼ノーマル 居酒屋 良治"
+                  />
+                </p>
+                <p>
+                  <Image src={Normal04} alt="ヒラメのヅケ丼ノーマル お富久" />
+                </p>
+                <p>
+                  <Image
+                    src={Normal05}
+                    alt="ヒラメのヅケ丼ノーマル 割烹 水天閣"
+                  />
+                </p>
+                <p>
+                  <Image
+                    src={Normal06}
+                    alt="ヒラメのヅケ丼ノーマル ドライブイン汐風"
+                  />
+                </p>
+                <p>
+                  <Image
+                    src={Normal07}
+                    alt="ヒラメのヅケ丼ノーマル 網野仕出し店"
+                  />
+                </p>
+                <p>
+                  <Image
+                    src={Normal08}
+                    alt="ヅケ丼ノーマル ロックウッドホテル&スパ"
+                  />
+                </p>
+                <p>
+                  <Image src={Normal09} alt="ヅケ丼ノーマル 児雷也" />
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex">
+          <div class="flex__item">
+            <Image
+              src={Dukedon__premiumText}
+              alt="ヒラメのヅケ丼プレミアム説明"
+              class="dukedon__image"
+            />
+            <Image src={Dukedon__premiumImage} alt="ヒラメのヅケ丼画像" />
+          </div>
+          <div class="flex__item">
+            <p class="lanove">
+              ヒラメのヅケに、ウニやアワビ、幻の魚「イトウ」などをトッピングしたイベント限定丼です。
+            </p>
+            <ul class="drpdwn">
+              <li>
+                <input
+                  type="checkbox"
+                  class="toggleCheckbox"
+                  data-target="dropdownContent2"
+                />
+                <h2>
+                  <span>
+                    <Image
+                      src={Dukedon__premiumBanner}
+                      alt="ヒラメのヅケ丼プレミアム"
+                    />
+                  </span>
+                </h2>
+              </li>
+            </ul>
+          </div>
+          <ul class="drpdwn" id="dropdownContent2" style="display: none;">
+            <li>
+              <div>
+                <p>
+                  <Image
+                    src={Premium01}
+                    alt="ヒラメのヅケ丼プレミアム スーパーとびしま"
+                  />
+                </p>
+                <p>
+                  <Image
+                    src={Premium02}
+                    alt="ヒラメのヅケ丼プレミアム K2マート"
+                  />
+                </p>
+                <p>
+                  <Image
+                    src={Premium03}
+                    alt="ヒラメのヅケ丼プレミアム 漁師メシ 波"
+                  />
+                </p>
+                <p>
+                  <Image
+                    src={Premium04}
+                    alt="ヒラメのヅケ丼プレミアム お富久"
+                  />
+                </p>
+                <p>
+                  <Image
+                    src={Premium05}
+                    alt="ヒラメのヅケ丼プレミアム 割烹 水天閣"
+                  />
+                </p>
+                <p>
+                  <Image
+                    src={Premium06}
+                    alt="ヒラメのヅケ丼プレミアム ドライブイン汐風"
+                  />
+                </p>
+                <p>
+                  <Image
+                    src={Premium07}
+                    alt="ヒラメのヅケ丼プレミアム 児雷也"
+                  />
+                </p>
+              </div>
+            </li>
+
+            <!-- <ul class="drpdwn" id="oniku-open">
         <li id="oniku">
           <input type="checkbox" checked />
           <h2><span>お肉コーナー</span></h2>
@@ -296,7 +391,10 @@ import Map from "../images/map.svg";
             </p>
           </div>
         </li>
-      </ul>
+      </ul> -->
+          </ul>
+        </div>
+      </div>
     </div>
   </main>
   <div class="map-wrapper">
@@ -394,7 +492,7 @@ import Map from "../images/map.svg";
     }
   }
   .container {
-    max-width: 1280px;
+    max-width: 1920px;
     margin: 0 auto;
   }
   .header__image {
@@ -493,7 +591,7 @@ import Map from "../images/map.svg";
   }
   // ドロップダウン
   .drpdwn {
-    max-width: 1280px;
+    width: 100%;
     list-style: none;
     perspective: 900px;
     padding: 0;
@@ -501,28 +599,18 @@ import Map from "../images/map.svg";
     margin: 0 auto;
 
     h2 {
-      color: #510102;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 2rem;
-
       span {
-        flex: 1;
-      }
-      &::after {
-        content: "";
-        display: flex;
-        width: 2em;
-        height: 2em;
-        background: url("/images/after.svg") no-repeat center / contain;
+        img {
+          width: 80%;
+          display: block;
+        }
       }
     }
 
     div {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: clamp(8px, 16px, 24px);
 
       p {
         flex: 1;
@@ -531,26 +619,23 @@ import Map from "../images/map.svg";
           height: auto;
         }
       }
+    }
 
-      @include desktop {
-        gap: 24px;
-        p {
-          flex: 0 0 calc(33.33% - 24px);
-        }
+    @media (min-width: 900px) {
+      div p {
+        flex: 0 0 calc(33.33% - 24px);
       }
+    }
 
-      @include tablet {
-        gap: 16px;
-        p {
-          flex: 0 0 calc(50% - 16px);
-        }
+    @media (min-width: 600px) and (max-width: 899px) {
+      div p {
+        flex: 0 0 calc(50% - 16px);
       }
+    }
 
-      @include mobile {
-        gap: 8px;
-        p {
-          flex: 0 0 100%;
-        }
+    @media (max-width: 599px) {
+      div p {
+        flex: 0 0 100%;
       }
     }
 
@@ -655,4 +740,105 @@ import Map from "../images/map.svg";
       height: auto;
     }
   }
+
+  .header__title-desc {
+    margin: clamp(4rem, 3.2rem + 4vw, 8rem) 0;
+    padding: 0 clamp(1rem, 0.8rem + 1vw, 2rem);
+    img {
+      width: clamp(100%, 100%, 80%);
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    @media (max-width: 599px) {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .flex__item {
+      flex: 1;
+      position: relative;
+      .dukedon__image {
+        width: 80%;
+        display: block;
+        height: auto;
+        margin: 0 auto;
+        position: inherit;
+        z-index: 3;
+        margin-bottom: clamp(-3rem, 100%, -6rem);
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+      p {
+        font-size: clamp(0.875rem, 0.667rem + 1.04vw, 4rem);
+        line-height: 1.5;
+        margin-top: 1rem;
+        color: #510102;
+      }
+    }
+    .flex__item:nth-child(1) {
+      flex: 0.7;
+    }
+    .flex__item:nth-child(2) {
+      width: 100%;
+    }
+  }
+  @font-face {
+    font-family: "lanove";
+    src: url("/fonts/lanove.woff") format("woff");
+  }
+
+  .lanove {
+    font-family: lanove;
+  }
+  .desc {
+    background-color: #510102;
+    padding: 2rem;
+    border-radius: 16px 16px 0 0;
+    width: fit-content;
+    color: #fff;
+    margin: 0 auto 0;
+
+    h3 {
+      font-size: clamp(1.5rem, 1.267rem + 1.17vw, 5rem);
+      margin: 0;
+    }
+    p {
+      font-size: clamp(0.875rem, 0.667rem + 1.04vw, 4rem);
+      line-height: 1.5;
+      margin: 0;
+    }
+  }
+  .border {
+    border: 15px solid #510102;
+    border-radius: 24px;
+    padding: clamp(2rem, 1.6rem + 2vw, 4rem);
+    @media (max-width: 599px) {
+      border-radius: 0 0 24px 24px;
+    }
+  }
 </style>
+<script>
+  // すべてのチェックボックスにイベントリスナーを追加
+  document.querySelectorAll(".toggleCheckbox").forEach(function (checkbox) {
+    checkbox.addEventListener("change", function () {
+      // data-target 属性で指定された要素のIDを取得
+      const targetId = this.getAttribute("data-target");
+      const targetElement = document.getElementById(targetId);
+
+      // チェックボックスの状態に応じて表示/非表示を切り替える
+      if (this.checked) {
+        targetElement.style.display = "block"; // チェックされたら表示
+      } else {
+        targetElement.style.display = "none"; // チェックが外れたら非表示
+      }
+    });
+  });
+</script>
