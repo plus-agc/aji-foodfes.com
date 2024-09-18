@@ -64,6 +64,14 @@ import Dukedon__normalBanner from "../images/dukedon__normal-banner.svg";
 import Dukedon__premiumBanner from "../images/dukedon__premium-banner.svg";
 import Dukedon__premiumImage from "../images/dukedon__premium-image.webp";
 import Dukedon__premiumText from "../images/dukedon__premium-text.svg";
+import Oniku__text from "../images/oniku__text.svg";
+import Oniku__image from "../images/oniku__image.webp";
+import Oniku__banner from "../images/oniku__banner.svg";
+import Open__text from "../images/open__text.svg";
+import Opne__banner from "../images/open__banner.svg";
+import Sweets__text from "../images/sweets__text.svg";
+import Sweets__image from "../images/sweets__image.webp";
+import Sweets__banner from "../images/sweets__banner.svg";
 ---
 
 <Layout title="あじがさわフードフェス2024">
@@ -103,6 +111,7 @@ import Dukedon__premiumText from "../images/dukedon__premium-text.svg";
   </header>
   <main>
     <div class="main__desc">
+      <!-- ヅケ丼 -->
       <div class="lanove desc">
         <h3>鯵ヶ沢ご当地丼「ヒラメのヅケ丼」</h3>
         <div>
@@ -273,7 +282,6 @@ import Dukedon__premiumText from "../images/dukedon__premium-text.svg";
                 </p>
               </div>
             </li>
-
             <!-- <ul class="drpdwn" id="oniku-open">
         <li id="oniku">
           <input type="checkbox" checked />
@@ -395,11 +403,238 @@ import Dukedon__premiumText from "../images/dukedon__premium-text.svg";
           </ul>
         </div>
       </div>
+      <!-- ヅケ丼終わり -->
+
+      <!-- お肉コーナー・オープンコーナー -->
+      <div class="lanove desc">
+        <p>鯵ヶ沢町産食材使用のオリジナルメニューも登場</p>
+        <h3>お肉コーナー・オープンコーナー</h3>
+      </div>
+      <div class="container border">
+        <div class="flex">
+          <div class="flex__item">
+            <Image
+              src={Oniku__text}
+              alt="お肉コーナー説明"
+              class="dukedon__image"
+            />
+            <Image src={Oniku__image} alt="お肉コーナー画像" />
+          </div>
+          <div class="flex__item">
+            <p class="lanove">
+              鰺ヶ沢町の2大牧場「長谷川自然牧場」の豚肉や「ABITANiAジャージーファーム」の牛肉、鰺ヶ沢産の野菜・果物などを使用したメニューが登場！鰺ヶ沢町の交流都市「岩手県久慈市」もやって来ます！
+            </p>
+            <ul class="drpdwn">
+              <li>
+                <input
+                  type="checkbox"
+                  class="toggleCheckbox"
+                  data-target="dropdownContent3"
+                />
+                <h2>
+                  <span>
+                    <Image src={Oniku__banner} alt="ヒラメのヅケ丼ノーマル" />
+                  </span>
+                </h2>
+              </li>
+            </ul>
+          </div>
+          <ul class="drpdwn" id="dropdownContent3" style="display: none;">
+            <li>
+              <div>
+                <p>
+                  <Image src={Meat01} alt="長谷川自然牧場" />
+                </p>
+                <p>
+                  <Image src={Meat02} alt="ABITANiAジャージーファーム" />
+                </p>
+                <p>
+                  <Image src={Meat03} alt="たこやき西海" />
+                </p>
+                <p>
+                  <Image src={Meat04} alt="焼肉レストラン一心亭 鰺ヶ沢店" />
+                </p>
+                <p>
+                  <Image src={Meat05} alt="居酒屋 良治" />
+                </p>
+                <p>
+                  <Image src={Meat06} alt="精肉・惣菜 のろ" />
+                </p>
+                <p>
+                  <Image src={Meat07} alt="會津めん 浜さき" />
+                </p>
+                <p>
+                  <Image src={Meat08} alt="West Side Kitchen" />
+                </p>
+                <p>
+                  <Image src={Meat09} alt="から揚げ専門店 こばしょぐ" />
+                </p>
+                <p>
+                  <Image src={Meat10} alt="からあげ専門店 鶏笑" />
+                </p>
+                <p>
+                  <Image src={Meat11} alt="キッチンBANBAN by幡龍" />
+                </p>
+                <p>
+                  <Image
+                    src={Meat12}
+                    alt="岩手県久慈市 鰺ヶ沢高等学校SBP研究会"
+                  />
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="flex">
+          <div class="flex__item">
+            <Image
+              src={Open__text}
+              alt="オープンコーナー説明"
+              class="dukedon__image"
+            />
+            <Image src={Dukedon__premiumImage} alt="オープンコーナー画像" />
+          </div>
+          <div class="flex__item">
+            <p class="lanove">
+              鰺ヶ沢産の魚介類、野菜、果物を使ったメニューが盛り沢山！<br
+              />趣向を凝らしたオリジナルメニューを食べ尽くそう！
+            </p>
+            <ul class="drpdwn">
+              <li>
+                <input
+                  type="checkbox"
+                  class="toggleCheckbox"
+                  data-target="dropdownContent4"
+                />
+                <h2>
+                  <span>
+                    <Image src={Opne__banner} alt="オープンコーナー" />
+                  </span>
+                </h2>
+              </li>
+            </ul>
+          </div>
+          <ul class="drpdwn" id="dropdownContent4" style="display: none;">
+            <li>
+              <div>
+                <p>
+                  <Image src={Open01} alt="赤石水産漁協女性部" />
+                </p>
+                <p>
+                  <Image src={Open02} alt="らーめん寛" />
+                </p>
+                <p>
+                  <Image
+                    src={Open03}
+                    alt="鰺ヶ沢町農林水産課「元気屋台AJIYA」"
+                  />
+                </p>
+                <p>
+                  <Image
+                    src={Open04}
+                    alt="農産物直売所「あじ・彩・感」倶楽部"
+                  />
+                </p>
+                <p>
+                  <Image src={Open05} alt="いちごや" />
+                </p>
+                <p>
+                  <Image src={Open06} alt="CAFÉ水とコーヒー" />
+                </p>
+                <p>
+                  <Image src={Open07} alt="株式会社SATO FARM" />
+                </p>
+                <p>
+                  <Image src={Open08} alt="Pizza NAPOURA" />
+                </p>
+                <p>
+                  <Image src={Open09} alt="活味屋" />
+                </p>
+                <p>
+                  <Image src={Open10} alt="大湊海軍カレーパン" />
+                </p>
+                <p>
+                  <Image src={Open11} alt="カフェデリーナ" />
+                </p>
+                <p>
+                  <Image src={Open12} alt="福士豆腐店" />
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- お肉コーナー・オープンコーナー終わり -->
+
+      <!-- スイーツコーナー -->
+      <div class="lanove desc">
+        <p>町内8店舗が集結！</p>
+        <h3>スイーツコーナー</h3>
+      </div>
+      <div class="container border">
+        <div class="flex">
+          <div class="flex__item">
+            <Image
+              src={Sweets__text}
+              alt="スイーツコーナー説明"
+              class="dukedon__image"
+            />
+            <Image src={Sweets__image} alt="スイーツコーナー画像" />
+          </div>
+          <div class="flex__item">
+            <p class="lanove">
+              鰺ヶ沢産のりんごやメロンなどの果物やジャージー牛乳、野菜を使用したスイーツを販売！数量限定で「深谷の栗」スイーツも販売予定です！
+            </p>
+            <ul class="drpdwn">
+              <li>
+                <input
+                  type="checkbox"
+                  class="toggleCheckbox"
+                  data-target="dropdownContent5"
+                />
+                <h2>
+                  <span>
+                    <Image src={Sweets__banner} alt="スイーツコーナー" />
+                  </span>
+                </h2>
+              </li>
+            </ul>
+          </div>
+          <ul class="drpdwn" id="dropdownContent5" style="display: none;">
+            <li>
+              <div>
+                <p>
+                  <Image src={Sweets01} alt="菓子工房TATUYA" />
+                </p>
+                <p>
+                  <Image src={Sweets02} alt="café MilMu" />
+                </p>
+                <p>
+                  <Image src={Sweets03} alt="銘菓の店 山ざき" />
+                </p>
+                <p>
+                  <Image src={Sweets04} alt="まつみや酒店" />
+                </p>
+                <p>
+                  <Image src={Sweets05} alt="あっことさっとのアップルパイ" />
+                </p>
+                <p>
+                  <Image src={Sweets06} alt="food&design CONVEY" />
+                </p>
+                <p>
+                  <Image src={Sweets07} alt="Sanny Blue" />
+                </p>
+                <p>
+                  <Image src={Sweets08} alt="サトウコーヒー" />
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- スイーツコーナー終わり -->
     </div>
   </main>
-  <div class="map-wrapper">
-    <Image src={Map} alt="会場図" />
-  </div>
   <footer>
     <div class="footer__image">
       <div class="container">
@@ -601,8 +836,9 @@ import Dukedon__premiumText from "../images/dukedon__premium-text.svg";
     h2 {
       span {
         img {
-          width: 80%;
+          width: clamp(80%, 80%, 80%);
           display: block;
+          margin: 0 auto;
         }
       }
     }
@@ -643,7 +879,6 @@ import Dukedon__premiumText from "../images/dukedon__premium-text.svg";
       position: relative;
       padding: 0 0 4px;
       margin: 0;
-      padding-top: 18px;
       border-top: 1px dotted $grey;
       @extend %flipIn;
 
@@ -798,13 +1033,15 @@ import Dukedon__premiumText from "../images/dukedon__premium-text.svg";
   .lanove {
     font-family: lanove;
   }
+
   .desc {
     background-color: #510102;
     padding: 2rem;
     border-radius: 16px 16px 0 0;
-    width: fit-content;
+    width: 60%;
     color: #fff;
     margin: 0 auto 0;
+    text-align: center;
 
     h3 {
       font-size: clamp(1.5rem, 1.267rem + 1.17vw, 5rem);
@@ -816,15 +1053,21 @@ import Dukedon__premiumText from "../images/dukedon__premium-text.svg";
       margin: 0;
     }
   }
+
   .border {
     border: 15px solid #510102;
     border-radius: 24px;
     padding: clamp(2rem, 1.6rem + 2vw, 4rem);
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-bottom: 120px;
     @media (max-width: 599px) {
       border-radius: 0 0 24px 24px;
     }
   }
 </style>
+
 <script>
   // すべてのチェックボックスにイベントリスナーを追加
   document.querySelectorAll(".toggleCheckbox").forEach(function (checkbox) {
