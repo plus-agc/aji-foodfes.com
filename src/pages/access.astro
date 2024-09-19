@@ -1,0 +1,295 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import Maintext from "../images/main-text.svg";
+import HeaderTitle from "../images/header-title.svg";
+import FooterDesc from "../images/footer__image-desc.svg";
+import FooterBgSp from "../images/footer__image-sp.svg";
+import Menubar from "../modules/Menubar.astro";
+import MainImage from "../images/main-image.webp";
+import MainImageSP from "../images/main-image-sp.webp";
+import StageEvent01 from "../images/stage-event01.png";
+import StageEvent02 from "../images/stage-event02.png";
+import StageEvent02Hover from "../images/stage-event02-hover.png";
+import StageEvent03 from "../images/stage-event03.png";
+import Baloon from "../images/baloon.webp";
+import Butter from "../images/butter.webp";
+import Golf from "../images/golf.webp";
+import Survey from "../images/survey.webp";
+---
+
+<Layout title="アクセスと会場図 | あじがさわフードフェス2024">
+  <Menubar />
+  <header class="header">
+    <div class="pc">
+      <div class="header__image">
+        <div class="container">
+          <Image
+            src={MainImage}
+            alt="あじがさわフードフェス2024 メインイメージ"
+          />
+        </div>
+      </div>
+      <div class="header__title">
+        <div class="container">
+          <Image
+            src={Maintext}
+            alt="メインテキスト"
+            class="header__title-text"
+          />
+          <Image src={HeaderTitle} alt="あじがさわフードフェス2024 タイトル" />
+        </div>
+      </div>
+    </div>
+    <div class="sp">
+      <Image src={MainImageSP} alt="あじがさわフードフェス2024" />
+    </div>
+  </header>
+  <main>
+    <div class="main__desc">
+      <div class="container">
+        <div class="stage-event">
+          <div class="grid">
+            <div class="grid-item">
+              <Image src={StageEvent01} alt="ステージイベント01" />
+              <a href="/kinniku-fes">
+                <Image
+                  src={StageEvent02}
+                  alt="ステージイベント02"
+                  onMouseOver={(e) => (e.currentTarget.src = StageEvent02Hover)}
+                  onMouseOut={(e) => (e.currentTarget.src = StageEvent02)}
+                />
+              </a>
+              <Image src={StageEvent03} alt="ステージイベント03" />
+            </div>
+            <div class="grid-item">
+              <Image src={Baloon} alt="アートバルーン体験" />
+            </div>
+            <div class="grid-item">
+              <Image src={Butter} alt="バター作り体験" />
+            </div>
+            <div class="grid-item">
+              <Image src={Golf} alt="バター作り体験" />
+            </div>
+            <div class="grid-item">
+              <Image src={Survey} alt="アンケート抽選会" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="footer__image">
+      <div class="container">
+        <div class="forward">
+          <Image src={FooterDesc} alt="概要欄" class="pc" />
+          <Image src={FooterBgSp} alt="概要欄" class="sp" />
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <style lang="scss">
+    img {
+      vertical-align: bottom;
+    }
+    header,
+    main,
+    footer {
+      background-color: #fffcd1;
+    }
+    header {
+      position: relative;
+      z-index: 1;
+    }
+    main {
+      padding: clamp(1rem, 0.8rem + 1vw, 4rem);
+      @media (max-width: 767px) {
+        margin-bottom: 50px;
+      }
+    }
+    .container {
+      max-width: 1920px;
+      margin: 0 auto;
+    }
+    .stage-event {
+      max-width: 1920px;
+      margin: 0 auto 120px;
+      @media (max-width: 599px) {
+        margin-bottom: 50px;
+      }
+    }
+    .header__image {
+      width: 100%;
+      position: relative;
+      z-index: 1;
+      .back {
+        position: relative;
+        z-index: 1;
+      }
+      .forward {
+        position: absolute;
+        bottom: -1rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        height: auto;
+        z-index: 3;
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .header__title {
+      background-color: #330001;
+      position: relative;
+      padding: 5rem 5rem 1rem 5rem;
+      z-index: 2;
+      margin-top: -7rem;
+      img {
+        width: 100%;
+        height: auto;
+      }
+      .header__title-text {
+        width: 100%;
+        height: auto;
+        margin-top: -20rem;
+      }
+    }
+    .main__desc {
+      width: 100%;
+      margin: 0 auto;
+      img {
+        width: 100%;
+        height: auto;
+      }
+      .sp {
+        img {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+    .footer__image {
+      background-image: url(/images/footer-bg.svg);
+      background-size: cover;
+      background-position: top;
+      .forward {
+        padding: 3rem 0;
+      }
+      img {
+        width: 100% !important;
+        height: auto !important;
+      }
+    }
+    .pc {
+      display: none;
+      @media (min-width: 768px) {
+        & {
+          display: block;
+        }
+      }
+    }
+    .sp {
+      display: none;
+      @media (max-width: 767px) {
+        & {
+          display: block;
+        }
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px; /* アイテム間の隙間 */
+    }
+
+    .grid-item {
+      padding: 10px;
+      box-sizing: border-box;
+      width: calc(33.333% - 10px); /* PC時の3列レイアウト */
+    }
+
+    .grid-item.wide {
+      width: calc(66.666% - 10px); /* 2列分の幅 */
+    }
+
+    @media (max-width: 1024px) {
+      .grid-item {
+        width: calc(50% - 10px); /* タブレット時の2列レイアウト */
+      }
+
+      .grid-item.wide {
+        width: calc(100% - 10px); /* 1列分の幅 */
+      }
+    }
+
+    @media (max-width: 768px) {
+      .grid-item {
+        width: calc(100% - 10px); /* スマートフォン時の1列レイアウト */
+      }
+
+      .grid-item.wide {
+        width: calc(100% - 10px); /* 1列分の幅 */
+      }
+    }
+  </style>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"
+  ></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var elem = document.querySelector(".grid");
+      if (elem) {
+        var msnry = new Masonry(elem, {
+          itemSelector: ".grid-item",
+          percentPosition: true,
+          gutter: 10,
+        });
+
+        function updateMasonryLayout() {
+          if (window.matchMedia("(max-width: 599px)").matches) {
+            // SP時の設定
+            elem.style.columnWidth = "100%";
+          } else if (window.matchMedia("(max-width: 1024px)").matches) {
+            // タブレット時の設定
+            elem.style.columnWidth = "50%";
+          } else {
+            // デフォルトの設定
+            elem.style.columnWidth = "33.33%"; // 必要に応じて変更
+          }
+          msnry.layout();
+        }
+
+        // 初期レイアウトの設定
+        updateMasonryLayout();
+
+        // ウィンドウのリサイズ時にレイアウトを更新
+        window.addEventListener("resize", updateMasonryLayout);
+
+        // 事前にホバー用の画像をプリロード
+        const hoverImage = new Image();
+        hoverImage.src = "/images/stage-event02-hover.png";
+
+        // マウスオーバー時に画像を変更
+        var image = document.querySelector(
+          'img[src="../images/stage-event02.png"]'
+        );
+        if (image) {
+          image.addEventListener("mouseover", function () {
+            image.src = "/images/stage-event02-hover.png";
+          });
+
+          // マウスアウト時に元の画像に戻す
+          image.addEventListener("mouseout", function () {
+            image.src = "../images/stage-event02.png";
+          });
+        }
+      }
+    });
+  </script>
+</Layout>
