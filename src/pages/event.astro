@@ -10,7 +10,7 @@ import MainImage from "../images/main-image.webp";
 import MainImageSP from "../images/main-image-sp.webp";
 import StageEvent01 from "../images/stage-event01.png";
 import StageEvent02 from "../images/stage-event02.png";
-import StageEvent02Hover from "../images/stage-event02-hover.png";
+import StageEvent02Sp from "../images/stage-event02-sp.png";
 import StageEvent03 from "../images/stage-event03.png";
 import Baloon from "../images/baloon.webp";
 import Butter from "../images/butter.webp";
@@ -52,13 +52,8 @@ import Survey from "../images/survey.webp";
           <div class="grid">
             <div class="grid-item">
               <Image src={StageEvent01} alt="ステージイベント01" />
-              <a href="/kinniku-fes">
-                <Image
-                  src={StageEvent02}
-                  alt="ステージイベント02"
-                  onMouseOver={(e) => (e.currentTarget.src = StageEvent02Hover)}
-                  onMouseOut={(e) => (e.currentTarget.src = StageEvent02)}
-                />
+              <a href="/kinniku-fes" class="hov">
+                <Image src={StageEvent02Sp} alt="ステージイベント02" />
               </a>
               <Image src={StageEvent03} alt="ステージイベント03" />
             </div>
@@ -238,6 +233,11 @@ import Survey from "../images/survey.webp";
         width: calc(100% - 10px); /* 1列分の幅 */
       }
     }
+    .hov {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
   </style>
   <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"
   ></script>
@@ -270,25 +270,6 @@ import Survey from "../images/survey.webp";
 
         // ウィンドウのリサイズ時にレイアウトを更新
         window.addEventListener("resize", updateMasonryLayout);
-
-        // 事前にホバー用の画像をプリロード
-        const hoverImage = new Image();
-        hoverImage.src = "/images/stage-event02-hover.png";
-
-        // マウスオーバー時に画像を変更
-        var image = document.querySelector(
-          'img[src="../images/stage-event02.png"]'
-        );
-        if (image) {
-          image.addEventListener("mouseover", function () {
-            image.src = "/images/stage-event02-hover.png";
-          });
-
-          // マウスアウト時に元の画像に戻す
-          image.addEventListener("mouseout", function () {
-            image.src = "../images/stage-event02.png";
-          });
-        }
       }
     });
   </script>

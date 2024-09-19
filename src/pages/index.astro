@@ -58,25 +58,19 @@ import Sweets07 from "../images/sweets-07.svg";
 import Sweets08 from "../images/sweets-08.svg";
 import Sbp01 from "../images/sbp-01.webp";
 import Sbp02 from "../images/sbp-02.webp";
-import Map from "../images/map.svg";
 import Header__titleDesk from "../images/header__title-desc.svg";
 import Dukedon__text from "../images/dukedon__text.svg";
-import Dukedon__image from "../images/dukedon__image.webp";
 import Dukedon__normalBanner from "../images/dukedon__normal-banner.svg";
 import Dukedon__premiumBanner from "../images/dukedon__premium-banner.svg";
-import Dukedon__premiumImage from "../images/dukedon__premium-image.webp";
 import Dukedon__premiumText from "../images/dukedon__premium-text.svg";
 import Oniku__text from "../images/oniku__text.svg";
-import Oniku__image from "../images/oniku__image.webp";
 import Oniku__banner from "../images/oniku__banner.svg";
 import Open__text from "../images/open__text.svg";
 import Opne__banner from "../images/open__banner.svg";
 import Sweets__text from "../images/sweets__text.svg";
-import Sweets__image from "../images/sweets__image.webp";
 import Sweets__banner from "../images/sweets__banner.svg";
 import Sbp__text from "../images/sbp__text.svg";
 import Sbp__banner from "../images/sbp__banner.svg";
-import Sbp__image from "../images/sbp__image.svg";
 ---
 
 <Layout title="あじがさわフードフェス2024">
@@ -84,7 +78,7 @@ import Sbp__image from "../images/sbp__image.svg";
   <header class="header">
     <div class="pc">
       <div class="header__image">
-        <div class="container">
+        <div class="container-fluid">
           <Image
             src={MainImage}
             alt="あじがさわフードフェス2024 メインイメージ"
@@ -92,7 +86,7 @@ import Sbp__image from "../images/sbp__image.svg";
         </div>
       </div>
       <div class="header__title">
-        <div class="container">
+        <div class="container-fluid">
           <Image
             src={Maintext}
             alt="メインテキスト"
@@ -105,7 +99,7 @@ import Sbp__image from "../images/sbp__image.svg";
     <div class="sp">
       <Image src={MainImageSP} alt="あじがさわフードフェス2024" />
     </div>
-    <div class="container">
+    <div class="container-fluid">
       <p class="header__title-desc">
         <Image
           src={Header__titleDesk}
@@ -134,6 +128,9 @@ import Sbp__image from "../images/sbp__image.svg";
                   alt="ヒラメのヅケ丼説明"
                   class="dukedon__image"
                 />
+                <p class="blue">
+                  鯵ヶ沢産の極上ヒラメを贅沢にヅケにし、たっぷりとご飯にのせた鯵ヶ沢町の名物丼です。
+                </p>
                 <ul class="drpdwn">
                   <li>
                     <input
@@ -152,9 +149,6 @@ import Sbp__image from "../images/sbp__image.svg";
                   </li>
                 </ul>
               </div>
-              <p class="blue">
-                鯵ヶ沢産の極上ヒラメを贅沢にヅケにし、たっぷりとご飯にのせた鯵ヶ沢町の名物丼です。
-              </p>
             </div>
           </div>
           <div class="flex__item">
@@ -165,6 +159,9 @@ import Sbp__image from "../images/sbp__image.svg";
                   alt="ヒラメのヅケ丼プレミアム説明"
                   class="dukedon__image"
                 />
+                <p class="green">
+                  ヒラメのヅケに、ウニやアワビ、幻の魚「イトウ」などをトッピングしたイベント限定丼です。
+                </p>
                 <ul class="drpdwn">
                   <li>
                     <input
@@ -183,9 +180,6 @@ import Sbp__image from "../images/sbp__image.svg";
                   </li>
                 </ul>
               </div>
-              <p class="green">
-                ヒラメのヅケに、ウニやアワビ、幻の魚「イトウ」などをトッピングしたイベント限定丼です。
-              </p>
             </div>
           </div>
           <ul class="drpdwn" id="dropdownContent1" style="display: none;">
@@ -306,6 +300,9 @@ import Sbp__image from "../images/sbp__image.svg";
                   alt="お肉コーナー説明"
                   class="dukedon__image"
                 />
+                <p class="orange">
+                  鰺ヶ沢町の2大牧場「長谷川自然牧場」の豚肉や「ABITANiAジャージーファーム」の牛肉、鰺ヶ沢産の野菜・果物などを使用したメニューが登場！
+                </p>
                 <ul class="drpdwn">
                   <li>
                     <input
@@ -324,9 +321,6 @@ import Sbp__image from "../images/sbp__image.svg";
                   </li>
                 </ul>
               </div>
-              <p class="orange">
-                鰺ヶ沢町の2大牧場「長谷川自然牧場」の豚肉や「ABITANiAジャージーファーム」の牛肉、鰺ヶ沢産の野菜・果物などを使用したメニューが登場！
-              </p>
             </div>
           </div>
           <div class="flex__item">
@@ -337,6 +331,10 @@ import Sbp__image from "../images/sbp__image.svg";
                   alt="オープンコーナー説明"
                   class="dukedon__image"
                 />
+                <p class="beige">
+                  鰺ヶ沢産の魚介類、野菜、果物を使ったメニューが盛り沢山！<br
+                  />趣向を凝らしたオリジナルメニューを食べ尽くそう！
+                </p>
                 <ul class="drpdwn">
                   <li>
                     <input
@@ -352,10 +350,6 @@ import Sbp__image from "../images/sbp__image.svg";
                   </li>
                 </ul>
               </div>
-              <p class="beige">
-                鰺ヶ沢産の魚介類、野菜、果物を使ったメニューが盛り沢山！<br
-                />趣向を凝らしたオリジナルメニューを食べ尽くそう！
-              </p>
             </div>
           </div>
           <ul class="drpdwn" id="dropdownContent3" style="display: none;">
@@ -464,6 +458,9 @@ import Sbp__image from "../images/sbp__image.svg";
                   alt="スイーツコーナー説明"
                   class="dukedon__image"
                 />
+                <p class="pink">
+                  鰺ヶ沢産のりんごやメロンなどの果物やジャージー牛乳、野菜を使用したスイーツを販売！数量限定で「深谷の栗」スイーツも販売予定です！
+                </p>
                 <ul class="drpdwn">
                   <li>
                     <input
@@ -479,9 +476,6 @@ import Sbp__image from "../images/sbp__image.svg";
                   </li>
                 </ul>
               </div>
-              <p class="pink">
-                鰺ヶ沢産のりんごやメロンなどの果物やジャージー牛乳、野菜を使用したスイーツを販売！数量限定で「深谷の栗」スイーツも販売予定です！
-              </p>
             </div>
           </div>
           <div class="flex__item">
@@ -492,6 +486,9 @@ import Sbp__image from "../images/sbp__image.svg";
                   alt="SBPコーナー説明"
                   class="dukedon__image"
                 />
+                <p class="red">
+                  岩手県久慈市と鯵ヶ沢高等学校SBP研究会が、この度特別出店いたします。久慈市の豊かな自然と文化を背景にした特産品や、地元ならではの美味しいグルメをご用意。
+                </p>
                 <ul class="drpdwn">
                   <li>
                     <input
@@ -507,9 +504,6 @@ import Sbp__image from "../images/sbp__image.svg";
                   </li>
                 </ul>
               </div>
-              <p class="red">
-                岩手県久慈市と鯵ヶ沢高等学校SBP研究会が、この度特別出店いたします。久慈市の豊かな自然と文化を背景にした特産品や、地元ならではの美味しいグルメをご用意。
-              </p>
             </div>
           </div>
           <ul class="drpdwn" id="dropdownContent5" style="display: none;">
@@ -651,6 +645,10 @@ import Sbp__image from "../images/sbp__image.svg";
       }
     }
     .container {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+    .container-fluid {
       max-width: 1920px;
       margin: 0 auto;
     }
@@ -900,10 +898,13 @@ import Sbp__image from "../images/sbp__image.svg";
     }
 
     .header__title-desc {
-      margin: clamp(4rem, 3.2rem + 4vw, 8rem) 0;
+      margin: clamp(2rem, 0.8rem + 6vw, 8rem) 0;
       padding: 0 clamp(1rem, 0.8rem + 1vw, 2rem);
       img {
-        width: clamp(100%, 100%, 80%);
+        width: 55%;
+        @media (max-width: 599px) {
+          width: 100%;
+        }
         height: auto;
         margin: 0 auto;
         display: block;
@@ -923,11 +924,11 @@ import Sbp__image from "../images/sbp__image.svg";
         position: relative;
 
         img:nth-of-type(1) {
-          width: 50%;
+          width: 100%;
           height: auto;
         }
         img:nth-of-type(2) {
-          width: 50%;
+          width: 100%;
           height: auto;
         }
 
@@ -936,7 +937,7 @@ import Sbp__image from "../images/sbp__image.svg";
           line-height: 1.5;
           margin: 0;
           color: #fff;
-          padding: 2rem;
+          padding: clamp(1rem, 0.8rem + 1vw, 2rem);
           border-radius: 16px;
         }
       }
@@ -952,6 +953,7 @@ import Sbp__image from "../images/sbp__image.svg";
 
     .inline {
       display: flex;
+      flex-direction: column;
       * {
         flex: 1;
       }
@@ -983,7 +985,7 @@ import Sbp__image from "../images/sbp__image.svg";
     .border {
       border: 15px solid #510102;
       border-radius: 24px;
-      padding: clamp(2rem, 1.6rem + 2vw, 4rem);
+      padding: clamp(1rem, 0.6rem + 2vw, 4rem);
       display: flex;
       flex-direction: column;
       gap: 4rem;
@@ -1023,16 +1025,37 @@ import Sbp__image from "../images/sbp__image.svg";
   <script>
     // すべてのチェックボックスにイベントリスナーを追加
     document.querySelectorAll(".toggleCheckbox").forEach(function (checkbox) {
-      checkbox.addEventListener("change", function () {
+      checkbox.addEventListener("change", function (event) {
+        // すべてのターゲット要素を非表示にする
+        document.querySelectorAll(".toggleCheckbox").forEach(function (cb) {
+          const targetId = cb.getAttribute("data-target");
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            targetElement.style.display = "none";
+          }
+        });
+
         // data-target 属性で指定された要素のIDを取得
         const targetId = this.getAttribute("data-target");
         const targetElement = document.getElementById(targetId);
 
-        // チェックボックスの状態に応じて表示/非表示を切り替える
-        if (this.checked) {
-          targetElement.style.display = "block"; // チェックされたら表示
-        } else {
-          targetElement.style.display = "none"; // チェックが外れたら非表示
+        // クリックされたチェックボックスのターゲット要素を表示
+        if (targetElement) {
+          targetElement.style.display = "block";
+        }
+
+        // イベントのバブリングを停止
+        event.stopPropagation();
+      });
+    });
+
+    // 要素外をクリックしたときにすべてのターゲット要素を非表示にする
+    document.addEventListener("click", function () {
+      document.querySelectorAll(".toggleCheckbox").forEach(function (cb) {
+        const targetId = cb.getAttribute("data-target");
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.style.display = "none";
         }
       });
     });

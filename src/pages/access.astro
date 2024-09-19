@@ -8,14 +8,7 @@ import FooterBgSp from "../images/footer__image-sp.svg";
 import Menubar from "../modules/Menubar.astro";
 import MainImage from "../images/main-image.webp";
 import MainImageSP from "../images/main-image-sp.webp";
-import StageEvent01 from "../images/stage-event01.png";
-import StageEvent02 from "../images/stage-event02.png";
-import StageEvent02Hover from "../images/stage-event02-hover.png";
-import StageEvent03 from "../images/stage-event03.png";
-import Baloon from "../images/baloon.webp";
-import Butter from "../images/butter.webp";
-import Golf from "../images/golf.webp";
-import Survey from "../images/survey.webp";
+import Map from "../images/map.svg";
 ---
 
 <Layout title="アクセスと会場図 | あじがさわフードフェス2024">
@@ -48,33 +41,12 @@ import Survey from "../images/survey.webp";
   <main>
     <div class="main__desc">
       <div class="container">
-        <div class="stage-event">
-          <div class="grid">
-            <div class="grid-item">
-              <Image src={StageEvent01} alt="ステージイベント01" />
-              <a href="/kinniku-fes">
-                <Image
-                  src={StageEvent02}
-                  alt="ステージイベント02"
-                  onMouseOver={(e) => (e.currentTarget.src = StageEvent02Hover)}
-                  onMouseOut={(e) => (e.currentTarget.src = StageEvent02)}
-                />
-              </a>
-              <Image src={StageEvent03} alt="ステージイベント03" />
-            </div>
-            <div class="grid-item">
-              <Image src={Baloon} alt="アートバルーン体験" />
-            </div>
-            <div class="grid-item">
-              <Image src={Butter} alt="バター作り体験" />
-            </div>
-            <div class="grid-item">
-              <Image src={Golf} alt="バター作り体験" />
-            </div>
-            <div class="grid-item">
-              <Image src={Survey} alt="アンケート抽選会" />
-            </div>
-          </div>
+        <div class="map">
+          <Image src={Map} alt="会場図" />
+          <iframe
+            src="https://www.google.com/maps/d/embed?mid=1QdeJXAS45WJu1kenk8O6unet2ZGjSd4&ehbc=2E312F&noprof=1"
+            width="100%"
+            height="600"></iframe>
         </div>
       </div>
     </div>
@@ -113,11 +85,11 @@ import Survey from "../images/survey.webp";
       max-width: 1920px;
       margin: 0 auto;
     }
-    .stage-event {
+    .map {
       max-width: 1920px;
-      margin: 0 auto 120px;
+      margin: 120px 0;
       @media (max-width: 599px) {
-        margin-bottom: 50px;
+        margin: 50px 0;
       }
     }
     .header__image {
@@ -201,41 +173,6 @@ import Survey from "../images/survey.webp";
       img {
         width: 100%;
         height: auto;
-      }
-    }
-    .grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px; /* アイテム間の隙間 */
-    }
-
-    .grid-item {
-      padding: 10px;
-      box-sizing: border-box;
-      width: calc(33.333% - 10px); /* PC時の3列レイアウト */
-    }
-
-    .grid-item.wide {
-      width: calc(66.666% - 10px); /* 2列分の幅 */
-    }
-
-    @media (max-width: 1024px) {
-      .grid-item {
-        width: calc(50% - 10px); /* タブレット時の2列レイアウト */
-      }
-
-      .grid-item.wide {
-        width: calc(100% - 10px); /* 1列分の幅 */
-      }
-    }
-
-    @media (max-width: 768px) {
-      .grid-item {
-        width: calc(100% - 10px); /* スマートフォン時の1列レイアウト */
-      }
-
-      .grid-item.wide {
-        width: calc(100% - 10px); /* 1列分の幅 */
       }
     }
   </style>
