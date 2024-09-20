@@ -1,13 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import Maintext from "../images/main-text.svg";
-import HeaderTitle from "../images/header-title.svg";
-import FooterDesc from "../images/footer__image-desc.svg";
-import FooterBgSp from "../images/footer__image-sp.svg";
+import Mainimage from "../images/main-image.webp";
+import FooterDesc from "../images/footer__image-sp.svg";
 import Menubar from "../modules/Menubar.astro";
-import MainImage from "../images/main-image.webp";
-import MainImageSP from "../images/main-image-sp.webp";
 import Normal01 from "../images/normal-01.webp";
 import Normal02 from "../images/normal-02.webp";
 import Normal03 from "../images/normal-03.webp";
@@ -35,7 +31,6 @@ import Meat08 from "../images/meat-08.svg";
 import Meat09 from "../images/meat-09.svg";
 import Meat10 from "../images/meat-10.svg";
 import Meat11 from "../images/meat-11.svg";
-import Meat12 from "../images/meat-12.svg";
 import Open01 from "../images/open-01.svg";
 import Open02 from "../images/open-02.svg";
 import Open03 from "../images/open-03.svg";
@@ -48,6 +43,8 @@ import Open09 from "../images/open-09.svg";
 import Open10 from "../images/open-10.svg";
 import Open11 from "../images/open-11.svg";
 import Open12 from "../images/open-12.svg";
+import Open13 from "../images/open-13.svg";
+import Open14 from "../images/open-14.svg";
 import Sweets01 from "../images/sweets-01.svg";
 import Sweets02 from "../images/sweets-02.svg";
 import Sweets03 from "../images/sweets-03.svg";
@@ -76,28 +73,13 @@ import Sbp__banner from "../images/sbp__banner.svg";
 <Layout title="あじがさわフードフェス2024">
   <Menubar />
   <header class="header">
-    <div class="pc">
+    <div>
       <div class="header__image">
-        <div class="container-fluid">
-          <Image
-            src={MainImage}
-            alt="あじがさわフードフェス2024 メインイメージ"
-          />
-        </div>
+        <Image
+          src={Mainimage}
+          alt="あじがさわフードフェス2024 メインビジュアル"
+        />
       </div>
-      <div class="header__title">
-        <div class="container-fluid">
-          <Image
-            src={Maintext}
-            alt="メインテキスト"
-            class="header__title-text"
-          />
-          <Image src={HeaderTitle} alt="あじがさわフードフェス2024 タイトル" />
-        </div>
-      </div>
-    </div>
-    <div class="sp">
-      <Image src={MainImageSP} alt="あじがさわフードフェス2024" />
     </div>
     <div class="container-fluid">
       <p class="header__title-desc">
@@ -142,7 +124,7 @@ import Sbp__banner from "../images/sbp__banner.svg";
                       <span>
                         <Image
                           src={Dukedon__normalBanner}
-                          alt="ヒラメのヅケ丼ノーマル"
+                          alt="ヒラメのヅケ丼ノーマルバナー"
                         />
                       </span>
                     </h2>
@@ -173,7 +155,7 @@ import Sbp__banner from "../images/sbp__banner.svg";
                       <span>
                         <Image
                           src={Dukedon__premiumBanner}
-                          alt="ヒラメのヅケ丼プレミアム"
+                          alt="ヒラメのヅケ丼プレミアムバナー"
                         />
                       </span>
                     </h2>
@@ -312,10 +294,7 @@ import Sbp__banner from "../images/sbp__banner.svg";
                     />
                     <h2>
                       <span>
-                        <Image
-                          src={Oniku__banner}
-                          alt="ヒラメのヅケ丼ノーマル"
-                        />
+                        <Image src={Oniku__banner} alt="お肉コーナーバナー" />
                       </span>
                     </h2>
                   </li>
@@ -344,7 +323,10 @@ import Sbp__banner from "../images/sbp__banner.svg";
                     />
                     <h2>
                       <span>
-                        <Image src={Opne__banner} alt="オープンコーナー" />
+                        <Image
+                          src={Opne__banner}
+                          alt="オープンコーナーバナー"
+                        />
                       </span>
                     </h2>
                   </li>
@@ -436,6 +418,12 @@ import Sbp__banner from "../images/sbp__banner.svg";
                 <p>
                   <Image src={Open12} alt="福士豆腐店" />
                 </p>
+                <p>
+                  <Image src={Open13} alt="清野菓子店" />
+                </p>
+                <p>
+                  <Image src={Open14} alt="マルヨシ木村商店" />
+                </p>
               </div>
             </li>
           </ul>
@@ -470,7 +458,10 @@ import Sbp__banner from "../images/sbp__banner.svg";
                     />
                     <h2>
                       <span>
-                        <Image src={Sweets__banner} alt="スイーツコーナー" />
+                        <Image
+                          src={Sweets__banner}
+                          alt="スイーツコーナーバナー"
+                        />
                       </span>
                     </h2>
                   </li>
@@ -483,7 +474,7 @@ import Sbp__banner from "../images/sbp__banner.svg";
               <div class="inline">
                 <Image
                   src={Sbp__text}
-                  alt="SBPコーナー説明"
+                  alt="特別出店コーナー説明"
                   class="dukedon__image"
                 />
                 <p class="red">
@@ -498,7 +489,7 @@ import Sbp__banner from "../images/sbp__banner.svg";
                     />
                     <h2>
                       <span>
-                        <Image src={Sbp__banner} alt="特別出店コーナー" />
+                        <Image src={Sbp__banner} alt="特別出店コーナーバナー" />
                       </span>
                     </h2>
                   </li>
@@ -555,502 +546,468 @@ import Sbp__banner from "../images/sbp__banner.svg";
   </main>
   <footer>
     <div class="footer__image">
-      <div class="container">
-        <div class="forward">
-          <Image src={FooterDesc} alt="概要欄" class="pc" />
-          <Image src={FooterBgSp} alt="概要欄" class="sp" />
-        </div>
+      <div class="forward">
+        <Image src={FooterDesc} alt="概要欄" />
       </div>
     </div>
   </footer>
+</Layout>
+<style lang="scss">
+  // 変数定義
+  $primary-color: #0047ba;
+  $white: #fff;
+  $grey: #dce7eb;
+  $red: #ff6873;
+  $mobile-breakpoint: 599px;
+  $tablet-breakpoint: 900px;
 
-  <style lang="scss">
-    // ミックスイン
-    @mixin mobile {
-      @media (max-width: $mobile-breakpoint) {
-        @content;
-      }
-    }
-    @mixin tablet {
-      @media (min-width: $mobile-breakpoint + 1) and (max-width: $tablet-breakpoint - 1) {
-        @content;
-      }
-    }
-    @mixin desktop {
-      @media (min-width: $tablet-breakpoint) {
-        @content;
-      }
-    }
+  :root {
+    --blue: #0b318f;
+    --green: #006934;
+    --orange: #f08d08;
+    --beige: #b28247;
+    --pink: #ee8485;
+    --red: #e60012;
+  }
 
-    @mixin responsive-font($desktop-size, $mobile-size) {
-      font-size: $desktop-size;
-      @include mobile {
-        font-size: $mobile-size;
-      }
+  // ミックスイン
+  @mixin mobile {
+    @media (max-width: $mobile-breakpoint) {
+      @content;
     }
-    // 変数定義
-    $primary-color: #0047ba;
-    $white: #fff;
-    $grey: #dce7eb;
-    $red: #ff6873;
-    $mobile-breakpoint: 599px;
-    $tablet-breakpoint: 900px;
-    // プレースホルダーセレクタ
-    %centered-content {
-      max-width: 95%;
-      margin: 0 auto;
+  }
+  @mixin tablet {
+    @media (min-width: $mobile-breakpoint + 1) and (max-width: $tablet-breakpoint - 1) {
+      @content;
     }
+  }
+  @mixin desktop {
+    @media (min-width: $tablet-breakpoint) {
+      @content;
+    }
+  }
+  @mixin responsive-font($desktop-size, $mobile-size) {
+    font-size: $desktop-size;
+    @include mobile {
+      font-size: $mobile-size;
+    }
+  }
 
-    %transition {
-      transition: all 0.25s ease-in-out;
-    }
-    %no-select {
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      -webkit-touch-callout: none;
-      user-select: none;
-    }
-    %flipIn {
-      animation: flipdown 0.5s ease both;
-    }
+  // プレースホルダーセレクタ
+  %centered-content {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+  %transition {
+    transition: all 0.25s ease-in-out;
+  }
+  %no-select {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+    user-select: none;
+  }
+  %flipIn {
+    animation: flipdown 0.5s ease both;
+  }
 
-    // 色定義
-    $colors: (
-      "lightblue": #fffcd2,
-      "brown": #510102,
-      "pink": #feb3d2,
-      "teal": #a0d9f3,
-      "lightteal": #c0e9e5,
-      "red": #ff0000,
-      "white": #fff,
-    );
+  // 色定義
+  $colors: (
+    "lightblue": #fffcd2,
+    "brown": #510102,
+    "pink": #feb3d2,
+    "teal": #a0d9f3,
+    "lightteal": #c0e9e5,
+    "red": #ff0000,
+    "white": #fff,
+  );
 
-    @each $name, $color in $colors {
-      .bg-#{$name} {
-        background-color: $color;
-      }
+  @each $name, $color in $colors {
+    .bg-#{$name} {
+      background-color: $color;
     }
-    header,
-    main,
-    footer {
-      background-color: #fffcd1;
+  }
+
+  // 共通スタイル
+  header,
+  main,
+  footer {
+    background-color: #fffcd1;
+  }
+  header {
+    position: relative;
+    z-index: 1;
+  }
+  main {
+    padding: clamp(1rem, 0.8rem + 1vw, 4rem);
+    @include mobile {
+      margin-bottom: 50px;
     }
-    header {
+  }
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  .container-fluid {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+  .header__image {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    .back {
       position: relative;
       z-index: 1;
     }
-    main {
-      padding: clamp(1rem, 0.8rem + 1vw, 4rem);
-      @media (max-width: 767px) {
-        margin-bottom: 50px;
-      }
+    .forward {
+      position: absolute;
+      bottom: -1rem;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      height: auto;
+      z-index: 3;
     }
-    .container {
-      max-width: 1440px;
-      margin: 0 auto;
-    }
-    .container-fluid {
-      max-width: 1920px;
-      margin: 0 auto;
-    }
-    .header__image {
+    img {
       width: 100%;
-      position: relative;
-      z-index: 1;
-      .back {
-        position: relative;
-        z-index: 1;
-      }
-      .forward {
-        position: absolute;
-        bottom: -1rem;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 90%;
-        height: auto;
-        z-index: 3;
-      }
-      img {
-        width: 100%;
-        height: auto;
-      }
+      height: auto;
     }
-    .header__title {
-      background-color: #330001;
-      position: relative;
-      padding: 5rem 5rem 1rem 5rem;
-      z-index: 2;
-      margin-top: -7rem;
-      img {
-        width: 100%;
-        height: auto;
-      }
-      .header__title-text {
-        width: 100%;
-        height: auto;
-        margin-top: -20rem;
-      }
-    }
-    .main__desc {
+  }
+  .header__title {
+    background-color: #330001;
+    position: relative;
+    padding: 5rem 5rem 1rem 5rem;
+    z-index: 2;
+    margin-top: -7rem;
+    img {
       width: 100%;
-      margin: 0 auto;
-      img {
-        width: 100%;
-        height: auto;
-      }
-      .sp {
+      height: auto;
+    }
+    .header__title-text {
+      width: 100%;
+      height: auto;
+      margin-top: -20rem;
+    }
+  }
+  .main__desc {
+    width: 100%;
+    margin: 0 auto;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .footer__image {
+    background-size: cover;
+    background-position: bottom 400px;
+    .forward {
+      padding: 3rem 0;
+    }
+    img {
+      width: 100% !important;
+      height: auto !important;
+    }
+  }
+  .pc {
+    display: none;
+    @include tablet {
+      display: block;
+    }
+  }
+  .sp {
+    display: none;
+    @include mobile {
+      display: block;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  h1 {
+    font-size: clamp(1.125rem, 0.627rem + 2.03vw, 2.25rem);
+    text-align: center;
+    background-color: #e60012;
+    color: #fff;
+    margin-bottom: 5rem;
+    width: fit-content;
+    padding: 16px 32px;
+    margin: 0 auto;
+    border-radius: 16px;
+  }
+  // ドロップダウン
+  .drpdwn {
+    width: 100%;
+    list-style: none;
+    perspective: 900px;
+    padding: 0;
+    overflow: hidden;
+    margin: 0 auto;
+
+    h2 {
+      span {
         img {
-          margin-bottom: 1rem;
-        }
-      }
-    }
-    .footer__image {
-      background-image: url(/images/footer-bg.svg);
-      background-size: cover;
-      background-position: top;
-      .forward {
-        padding: 3rem 0;
-      }
-      img {
-        width: 100% !important;
-        height: auto !important;
-      }
-    }
-    .pc {
-      display: none;
-      @media (min-width: 768px) {
-        & {
+          width: clamp(80%, 80%, 80%);
           display: block;
-        }
-      }
-    }
-    .sp {
-      display: none;
-      @media (max-width: 767px) {
-        & {
-          display: block;
-        }
-      }
-      img {
-        width: 100%;
-        height: auto;
-      }
-    }
-    h1 {
-      font-size: clamp(1.125rem, 0.627rem + 2.03vw, 2.25rem);
-      text-align: center;
-      background-color: #e60012;
-      color: #fff;
-      margin-bottom: 5rem;
-      width: fit-content;
-      padding: 16px 32px;
-      margin: 0 auto;
-      border-radius: 16px;
-    }
-    // ドロップダウン
-    .drpdwn {
-      width: 100%;
-      list-style: none;
-      perspective: 900px;
-      padding: 0;
-      overflow: hidden;
-      margin: 0 auto;
-
-      h2 {
-        span {
-          img {
-            width: clamp(80%, 80%, 80%);
-            display: block;
-            margin: 0 0 0 auto;
-          }
-        }
-      }
-
-      div {
-        display: flex;
-        flex-wrap: wrap;
-        gap: clamp(8px, 16px, 24px);
-
-        p {
-          flex: 1;
-          img {
-            width: 100%;
-            height: auto;
-          }
-        }
-      }
-
-      @media (min-width: 900px) {
-        div p {
-          flex: 0 0 calc(33.33% - 24px);
-        }
-      }
-
-      @media (min-width: 600px) and (max-width: 899px) {
-        div p {
-          flex: 0 0 calc(50% - 16px);
-        }
-      }
-
-      @media (max-width: 599px) {
-        div p {
-          flex: 0 0 100%;
-        }
-      }
-
-      li {
-        position: relative;
-        padding: 0 0 4px;
-        margin: 0;
-        @extend %flipIn;
-
-        @for $i from 1 through 3 {
-          &:nth-of-type(#{$i}) {
-            animation-delay: #{0.25 + $i * 0.25}s;
-          }
-        }
-
-        &:last-of-type {
-          padding-bottom: 0;
-        }
-
-        i {
-          position: absolute;
-          transform: translate(-6px, 0);
-          margin-top: 16px;
-          right: 0;
-
-          &::before,
-          &::after {
-            content: "";
-            @extend %transition;
-            position: absolute;
-            background-color: $red;
-            width: 3px;
-            height: 9px;
-          }
-
-          &::before {
-            transform: translate(-2px, 0) rotate(45deg);
-          }
-          &::after {
-            transform: translate(2px, 0) rotate(-45deg);
-          }
-        }
-
-        input[type="checkbox"] {
-          position: absolute;
-          cursor: pointer;
-          width: 100%;
-          height: 100%;
-          z-index: 1;
-          opacity: 0;
-
-          &:checked {
-            & ~ div {
-              margin-top: 0;
-              max-height: 0;
-              opacity: 0;
-              transform: translate(0, 50%);
-            }
-
-            & ~ i {
-              &::before {
-                transform: translate(2px, 0) rotate(45deg);
-              }
-              &::after {
-                transform: translate(-2px, 0) rotate(-45deg);
-              }
-            }
-          }
+          margin: 0 0 0 auto;
         }
       }
     }
 
-    @keyframes flipdown {
-      0% {
-        opacity: 0;
-        transform: rotateX(-90deg);
-      }
-      5% {
-        opacity: 1;
-      }
-      80% {
-        transform: rotateX(8deg);
-      }
-      83% {
-        transform: rotateX(6deg);
-      }
-      92% {
-        transform: rotateX(-3deg);
-      }
-      100% {
-        transform: rotateX(0deg);
-      }
-    }
-    .map-wrapper {
-      max-width: 1280px;
-      margin: 0 auto 60px auto;
-      padding: clamp(1rem, 0.8rem + 1vw, 4rem);
-      img {
-        width: 100%;
-        height: auto;
-      }
-    }
-
-    .header__title-desc {
-      margin: clamp(2rem, 0.8rem + 6vw, 8rem) 0;
-      padding: 0 clamp(1rem, 0.8rem + 1vw, 2rem);
-      img {
-        width: 55%;
-        @media (max-width: 599px) {
-          width: 100%;
-        }
-        height: auto;
-        margin: 0 auto;
-        display: block;
-      }
-    }
-    .flex {
+    div {
       display: flex;
       flex-wrap: wrap;
-      gap: 4rem;
-      @media (max-width: 599px) {
-        flex-direction: column;
-        gap: 2rem;
-      }
+      gap: clamp(8px, 16px, 24px);
 
-      .flex__item {
+      p {
         flex: 1;
-        position: relative;
-
-        img:nth-of-type(1) {
+        img {
           width: 100%;
           height: auto;
         }
-        img:nth-of-type(2) {
-          width: 100%;
-          height: auto;
-        }
-
-        p {
-          font-size: clamp(0.875rem, 0.667rem + 1.04vw, 4rem);
-          line-height: 1.5;
-          margin: 0;
-          color: #fff;
-          padding: clamp(1rem, 0.8rem + 1vw, 2rem);
-          border-radius: 16px;
-        }
-      }
-    }
-    @font-face {
-      font-family: "lanove";
-      src: url("/fonts/lanove.woff") format("woff");
-    }
-
-    .lanove {
-      font-family: lanove;
-    }
-
-    .inline {
-      display: flex;
-      flex-direction: column;
-      * {
-        flex: 1;
       }
     }
 
-    .desc {
-      background-color: #510102;
-      padding: 2rem 0;
-      border-radius: 16px 16px 0 0;
-      width: 60%;
-      @media (max-width: 599px) {
+    @include desktop {
+      div p {
+        flex: 0 0 calc(33.33% - 24px);
+      }
+    }
+
+    @include tablet {
+      div p {
+        flex: 0 0 calc(50% - 16px);
+      }
+    }
+
+    @include mobile {
+      div p {
+        flex: 0 0 100%;
+      }
+    }
+
+    li {
+      position: relative;
+      padding: 0 0 4px;
+      margin: 0;
+      @extend %flipIn;
+
+      @for $i from 1 through 3 {
+        &:nth-of-type(#{$i}) {
+          animation-delay: #{0.25 + $i * 0.25}s;
+        }
+      }
+
+      &:last-of-type {
+        padding-bottom: 0;
+      }
+
+      i {
+        position: absolute;
+        transform: translate(-6px, 0);
+        margin-top: 16px;
+        right: 0;
+
+        &::before,
+        &::after {
+          content: "";
+          @extend %transition;
+          position: absolute;
+          background-color: $red;
+          width: 3px;
+          height: 9px;
+        }
+
+        &::before {
+          transform: translate(-2px, 0) rotate(45deg);
+        }
+        &::after {
+          transform: translate(2px, 0) rotate(-45deg);
+        }
+      }
+
+      input[type="checkbox"] {
+        position: absolute;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: 0;
+
+        &:checked {
+          & ~ div {
+            margin-top: 0;
+            max-height: 0;
+            opacity: 0;
+            transform: translate(0, 50%);
+          }
+
+          & ~ i {
+            &::before {
+              transform: translate(2px, 0) rotate(45deg);
+            }
+            &::after {
+              transform: translate(-2px, 0) rotate(-45deg);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @keyframes flipdown {
+    0% {
+      opacity: 0;
+      transform: rotateX(-90deg);
+    }
+    5% {
+      opacity: 1;
+    }
+    80% {
+      transform: rotateX(8deg);
+    }
+    83% {
+      transform: rotateX(6deg);
+    }
+    92% {
+      transform: rotateX(-3deg);
+    }
+    100% {
+      transform: rotateX(0deg);
+    }
+  }
+  .map-wrapper {
+    max-width: 1280px;
+    margin: 0 auto 60px auto;
+    padding: clamp(1rem, 0.8rem + 1vw, 4rem);
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .header__title-desc {
+    margin: clamp(2rem, 0.8rem + 6vw, 8rem) 0;
+    padding: 0 clamp(1rem, 0.8rem + 1vw, 2rem);
+    img {
+      width: 55%;
+      @include mobile {
         width: 100%;
       }
-      color: #fff;
-      margin: 0 auto 0;
-      text-align: center;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    @include mobile {
+      flex-direction: column;
+      gap: 2rem;
+    }
 
-      h3 {
-        font-size: clamp(1.5rem, 1.267rem + 1.17vw, 5rem);
-        margin: 0;
+    .flex__item {
+      flex: 1;
+      position: relative;
+
+      img:nth-of-type(1) {
+        width: 100%;
+        height: auto;
       }
+      img:nth-of-type(2) {
+        width: 100%;
+        height: auto;
+      }
+
       p {
         font-size: clamp(0.875rem, 0.667rem + 1.04vw, 4rem);
         line-height: 1.5;
         margin: 0;
+        color: #fff;
+        padding: clamp(1rem, 0.8rem + 1vw, 2rem);
+        border-radius: 16px;
       }
     }
+  }
+  @font-face {
+    font-family: "lanove";
+    src: url("/fonts/lanove.woff") format("woff");
+  }
 
-    .border {
-      border: 15px solid #510102;
-      border-radius: 24px;
-      padding: clamp(1rem, 0.6rem + 2vw, 4rem);
-      display: flex;
-      flex-direction: column;
-      gap: 4rem;
-      margin-bottom: 120px;
-      @media (max-width: 599px) {
-        border-radius: 0 0 24px 24px;
-      }
-    }
-    .blue {
-      background-color: var(--blue);
-    }
-    .green {
-      background-color: var(--green);
-    }
-    .orange {
-      background-color: var(--orange);
-    }
-    .beige {
-      background-color: var(--beige);
-    }
-    .pink {
-      background-color: var(--pink);
-    }
-    .red {
-      background-color: var(--red);
-    }
-    :root {
-      --blue: #0b318f;
-      --green: #006934;
-      --orange: #f08d08;
-      --beige: #b28247;
-      --pink: #ee8485;
-      --red: #e60012;
-    }
-  </style>
+  .lanove {
+    font-family: lanove;
+  }
 
-  <script>
-    // すべてのチェックボックスにイベントリスナーを追加
-    document.querySelectorAll(".toggleCheckbox").forEach(function (checkbox) {
-      checkbox.addEventListener("change", function (event) {
-        // すべてのターゲット要素を非表示にする
-        document.querySelectorAll(".toggleCheckbox").forEach(function (cb) {
-          const targetId = cb.getAttribute("data-target");
-          const targetElement = document.getElementById(targetId);
-          if (targetElement) {
-            targetElement.style.display = "none";
-          }
-        });
+  .inline {
+    display: flex;
+    flex-direction: column;
+    * {
+      flex: 1;
+    }
+  }
 
-        // data-target 属性で指定された要素のIDを取得
-        const targetId = this.getAttribute("data-target");
-        const targetElement = document.getElementById(targetId);
+  .desc {
+    background-color: #510102;
+    padding: 2rem 0;
+    border-radius: 16px 16px 0 0;
+    width: 60%;
+    @include mobile {
+      width: 100%;
+    }
+    color: #fff;
+    margin: 0 auto 0;
+    text-align: center;
 
-        // クリックされたチェックボックスのターゲット要素を表示
-        if (targetElement) {
-          targetElement.style.display = "block";
-        }
+    h3 {
+      font-size: clamp(1.5rem, 1.267rem + 1.17vw, 5rem);
+      margin: 0;
+    }
+    p {
+      font-size: clamp(0.875rem, 0.667rem + 1.04vw, 4rem);
+      line-height: 1.5;
+      margin: 0;
+    }
+  }
 
-        // イベントのバブリングを停止
-        event.stopPropagation();
-      });
-    });
+  .border {
+    border: 15px solid #510102;
+    border-radius: 24px;
+    padding: clamp(1rem, 0.6rem + 2vw, 4rem);
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-bottom: 120px;
+    @include mobile {
+      border-radius: 0 0 24px 24px;
+    }
+  }
+  .blue {
+    background-color: var(--blue);
+  }
+  .green {
+    background-color: var(--green);
+  }
+  .orange {
+    background-color: var(--orange);
+  }
+  .beige {
+    background-color: var(--beige);
+  }
+  .pink {
+    background-color: var(--pink);
+  }
+  .red {
+    background-color: var(--red);
+  }
+</style>
 
-    // 要素外をクリックしたときにすべてのターゲット要素を非表示にする
-    document.addEventListener("click", function () {
+<script>
+  // すべてのチェックボックスにイベントリスナーを追加
+  document.querySelectorAll(".toggleCheckbox").forEach(function (checkbox) {
+    checkbox.addEventListener("change", function (event) {
+      // すべてのターゲット要素を非表示にする
       document.querySelectorAll(".toggleCheckbox").forEach(function (cb) {
         const targetId = cb.getAttribute("data-target");
         const targetElement = document.getElementById(targetId);
@@ -1058,6 +1015,29 @@ import Sbp__banner from "../images/sbp__banner.svg";
           targetElement.style.display = "none";
         }
       });
+
+      // data-target 属性で指定された要素のIDを取得
+      const targetId = this.getAttribute("data-target");
+      const targetElement = document.getElementById(targetId);
+
+      // クリックされたチェックボックスのターゲット要素を表示
+      if (targetElement) {
+        targetElement.style.display = "block";
+      }
+
+      // イベントのバブリングを停止
+      event.stopPropagation();
     });
-  </script>
-</Layout>
+  });
+
+  // 要素外をクリックしたときにすべてのターゲット要素を非表示にする
+  document.addEventListener("click", function () {
+    document.querySelectorAll(".toggleCheckbox").forEach(function (cb) {
+      const targetId = cb.getAttribute("data-target");
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.style.display = "none";
+      }
+    });
+  });
+</script>
