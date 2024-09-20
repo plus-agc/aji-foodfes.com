@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import Mainimage from "../images/main-image.webp";
-import FooterDesc from "../images/footer__image-sp.svg";
+import FooterDesc from "../images/footer__image.svg";
 import Menubar from "../modules/Menubar.astro";
 import Normal01 from "../images/normal-01.webp";
 import Normal02 from "../images/normal-02.webp";
@@ -73,13 +73,11 @@ import Sbp__banner from "../images/sbp__banner.svg";
 <Layout title="あじがさわフードフェス2024">
   <Menubar />
   <header class="header">
-    <div>
-      <div class="header__image">
-        <Image
-          src={Mainimage}
-          alt="あじがさわフードフェス2024 メインビジュアル"
-        />
-      </div>
+    <div class="header__image">
+      <Image
+        src={Mainimage}
+        alt="あじがさわフードフェス2024 メインビジュアル"
+      />
     </div>
     <div class="container-fluid">
       <p class="header__title-desc">

@@ -1,41 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import Maintext from "../images/main-text.svg";
-import HeaderTitle from "../images/header-title.svg";
-import FooterDesc from "../images/footer__image-desc.svg";
-import FooterBgSp from "../images/footer__image-sp.svg";
+import Mainimage from "../images/main-image.webp";
+import FooterDesc from "../images/footer__image.svg";
 import Menubar from "../modules/Menubar.astro";
-import MainImage from "../images/main-image.webp";
-import MainImageSP from "../images/main-image-sp.webp";
 import Map from "../images/map.svg";
 ---
 
 <Layout title="アクセスと会場図 | あじがさわフードフェス2024">
   <Menubar />
   <header class="header">
-    <div class="pc">
-      <div class="header__image">
-        <div class="container">
-          <Image
-            src={MainImage}
-            alt="あじがさわフードフェス2024 メインイメージ"
-          />
-        </div>
-      </div>
-      <div class="header__title">
-        <div class="container">
-          <Image
-            src={Maintext}
-            alt="メインテキスト"
-            class="header__title-text"
-          />
-          <Image src={HeaderTitle} alt="あじがさわフードフェス2024 タイトル" />
-        </div>
-      </div>
-    </div>
-    <div class="sp">
-      <Image src={MainImageSP} alt="あじがさわフードフェス2024" />
+    <div class="header__image">
+      <Image
+        src={Mainimage}
+        alt="あじがさわフードフェス2024 メインビジュアル"
+      />
     </div>
   </header>
   <main>
@@ -53,11 +32,8 @@ import Map from "../images/map.svg";
   </main>
   <footer>
     <div class="footer__image">
-      <div class="container">
-        <div class="forward">
-          <Image src={FooterDesc} alt="概要欄" class="pc" />
-          <Image src={FooterBgSp} alt="概要欄" class="sp" />
-        </div>
+      <div class="forward">
+        <Image src={FooterDesc} alt="概要欄" />
       </div>
     </div>
   </footer>
