@@ -21,31 +21,9 @@ import StorelistTitle from "../images/storelist-title.svg";
   <main>
     <div class="main__desc">
       <div class="storelist__about">
-        <h2>あじがさわフードフェス商品券について</h2>
-        <ul>
-          <li>
-            商品券はあじがさわフードフェス2024取扱店舗のみでご使用いただけます。
-          </li>
-          <li>商品券は現金とのお引換えはできません。</li>
-          <li>商品券で購入した商品の返品はできません。</li>
-          <li>ご使用に際してのつり銭はご容赦ください。</li>
-          <li>
-            商品券は、金券類、その他取扱店舗で指定した商品等の購入にはご使用いただくことができません。
-          </li>
-          <li>
-            商品券の盗難・紛失または滅失の場合には、責任は負いませんので大切にお取り扱いください。
-          </li>
-          <li>
-            著しく破損、汚損した場合はご使用いただくことができなくなります。また、再発行もいたしかねますのでご了承ください。
-          </li>
-          <li>
-            商品券は、使用期間（令和6年11月30日）を経過したものは無効です。
-          </li>
-        </ul>
-        <Image
-          src={StorelistLimit}
-          alt="あじがさわフードフェス2024 メインビジュアル"
-        />
+        <p>簡単なアンケートに答えて地元特産品や商品券をGET！</p>
+        <p>デジタル抽選会開催！</p>
+        <p>商品券が当たった場合は、下記店舗でご利用いただけます。</p>
       </div>
       <div class="storelist">
         <Image
@@ -970,9 +948,10 @@ import StorelistTitle from "../images/storelist-title.svg";
     margin: 0 auto;
     position: relative;
     overflow: hidden; /* 波状の背景がはみ出さないようにする */
-    h2 {
-      padding: 2rem;
-      background: #2f0707;
+    p {
+      font-size: 3rem;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: #2f0707;
       color: $white;
       text-align: center;
       border-radius: 5px;
