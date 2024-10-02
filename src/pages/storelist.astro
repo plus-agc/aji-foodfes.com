@@ -5,6 +5,7 @@ import Mainimage from "../images/main-image.webp";
 import FooterDesc from "../images/footer__image.svg";
 import Menubar from "../modules/Menubar.astro";
 import StorelistLimit from "../images/storelist-limit.svg";
+import StorelistTitle from "../images/storelist-title.svg";
 ---
 
 <Layout title="商品券取扱店舗一覧 | あじがさわフードフェス2024">
@@ -47,8 +48,10 @@ import StorelistLimit from "../images/storelist-limit.svg";
         />
       </div>
       <div class="storelist">
-        <p>あじがさわフードフェス2024</p>
-        <h1>商品券取扱店舗一覧</h1>
+        <Image
+          src={StorelistTitle}
+          alt="あじがさわフードフェス2024 メインビジュアル"
+        />
       </div>
       <div class="flex">
         <p class="area">鰺ヶ沢地区</p>
@@ -845,8 +848,6 @@ import StorelistLimit from "../images/storelist-limit.svg";
     max-width: 1280px;
     margin: 2rem auto 0;
     padding: 2rem;
-    color: $white;
-    background-color: #2f0707;
     text-align: center;
     border-radius: 5px;
     p,
