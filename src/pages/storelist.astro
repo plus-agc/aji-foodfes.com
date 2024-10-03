@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 import Mainimage from "../images/main-image.webp";
 import FooterDesc from "../images/footer__image.svg";
 import Menubar from "../modules/Menubar.astro";
-import StorelistLimit from "../images/storelist-limit.svg";
+import StorelistDesc from "../images/storelist-desc.svg";
 import StorelistTitle from "../images/storelist-title.svg";
 ---
 
@@ -21,9 +21,10 @@ import StorelistTitle from "../images/storelist-title.svg";
   <main>
     <div class="main__desc">
       <div class="storelist__about">
-        <p>簡単なアンケートに答えて地元特産品や商品券をGET！</p>
-        <p>デジタル抽選会開催！</p>
-        <p>商品券が当たった場合は、下記店舗でご利用いただけます。</p>
+        <Image
+          src={StorelistDesc}
+          alt="あじがさわフードフェス2024 メインビジュアル"
+        />
       </div>
       <div class="storelist">
         <Image
