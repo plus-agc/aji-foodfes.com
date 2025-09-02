@@ -1,0 +1,19 @@
+title: アクセス・会場図
+venue: 海の駅わんど向かい 特設会場
+address: 青森県西津軽郡鰺ヶ沢町本町246-4（海の駅わんど付近）
+map:
+  google_embed_url: https://www.google.com/maps?q=海の駅わんど&output=embed
+parking:
+  summary: 臨時駐車場あり。場内混雑時は係員の指示に従ってください。
+  lots:
+    - name: 臨時駐車場A
+      capacity: TBD
+      note: 会場まで徒歩5〜10分
+    - name: 臨時駐車場B
+      capacity: TBD
+      note: シャトル運行の有無は後日案内
+notices:
+  - 天候等により内容を一部変更する場合があります。
+  - 飲酒運転は絶対におやめください。
+  - 近隣住民の迷惑となる路上駐車はご遠慮ください。
+

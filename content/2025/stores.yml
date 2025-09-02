@@ -1,0 +1,16 @@
+title: 出店者一覧（予定）
+notes: 原稿確定後に差し替え。カテゴリ別・検索対応を想定。
+categories:
+  - name: ヒラメのヅケ丼
+    vendors:
+      - name: 町内10店舗（後日公開）
+        menu: ヒラメのヅケ丼
+        price: TBD
+  - name: 肉・グリル
+    vendors: []
+  - name: スイーツ・ベーカリー
+    vendors:
+      - name: 深谷の栗スイーツ（数量限定）
+        menu: TBD
+        price: TBD
+

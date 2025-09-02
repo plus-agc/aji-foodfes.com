@@ -1,54 +1,18 @@
-# Astro Starter Kit: Basics
+Ajigasawa Food Fes 2025 — content package
 
-```sh
-npm create astro@latest -- --template basics
-```
+This folder contains structured content extracted from the 2025 flyer and a migration checklist to refresh the current Astro site (https://aji-foodfes.com/) for the 2025 edition.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+What this is
+- YAML under `content/2025/` describing event basics, stage schedule, experiences, and venue.
+- Alt-text and copy blocks that can replace text-in-image assets to improve SEO and accessibility.
+- A migration checklist for the existing Astro site.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+How to use
+1) Copy `content/2025/*.yml` into your Astro repo (e.g. `src/data/2025/`).
+2) Replace hard-coded strings and images on pages with data-driven components reading these files.
+3) Update `<title>`, meta description, OGP images, and canonical URLs to 2025.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+Notes
+- Some fine-grained times/names were unreadable from the flyer image and are marked as `TBD`. Please confirm via final manuscript (.ai) and update the fields.
+- All times are local (JST).
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

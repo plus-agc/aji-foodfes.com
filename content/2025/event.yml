@@ -1,0 +1,64 @@
+year: 2025
+title: あじがさわフードフェス2025
+tagline: ヒラメのヅケ丼 × 肉 × スイーツが一堂に！
+date: 2025-10-05
+weekday: 日
+open_time: "09:30"
+start_time: "10:00"
+end_time: "15:00"
+venue:
+  name: 海の駅わんど向かい 特設会場
+  address: 青森県西津軽郡鰺ヶ沢町（会場詳細は追って案内）
+  notes:
+    - 臨時駐車場あり（詳細はアクセスページに掲載予定）
+
+hero:
+  headline_image_alt: あじがさわフードフェス2025 メインビジュアル
+  description: >-
+    鰺ヶ沢町の名物「ヒラメのヅケ丼」と、自慢の肉・スイーツが大集合。
+    家族で楽しめる体験や抽選会、ステージイベントも盛りだくさん。
+
+food_highlights:
+  - label: ヒラメのヅケ丼
+    sale_time: "10:00"
+    note: なくなり次第終了
+  - label: 肉グルメ
+    note: 町内外の人気店が出店（詳細は後日公開）
+  - label: スイーツ
+    note: 深谷の栗スイーツなど限定販売（要確認）
+
+stage:
+  - time: "10:00"
+    title: オープニングセレモニー
+    description: 鰺ヶ沢中学校吹奏楽部 ほか（要確認）
+  - time: "11:00"
+    title: あべこうじ トークショー
+    description: お笑い芸人・MCとして活躍。鰺ヶ沢の皆さんと遊びにきてね！
+  - time: "13:00"
+    title: りんご娘 スペシャルライブ
+    description: ステージ出演
+
+experiences:
+  - title: アートバルーンでお魚をつくろう！
+    times: [TBD]
+    price: 無料（予定）
+  - title: ものづくり体験（ワークショップ）
+    times: [TBD]
+    price: 有料（500〜1500円想定／要確認）
+
+lottery:
+  name: デジタル抽選会
+  howto: 会場のポスターQRから参加。アンケート回答で景品GET（要確認）
+
+cta:
+  - label: アクセス・駐車場情報
+    href: /access
+  - label: 出店者一覧
+    href: /storelist
+  - label: ステージタイムテーブル
+    href: /event
+
+meta:
+  title: あじがさわフードフェス2025 | 公式サイト
+  description: 2025年10月5日(日) 10:00〜15:00 開場9:30／海の駅わんど向かい特設会場。ヒラメのヅケ丼×肉×スイーツが一堂に！ステージや体験イベント、抽選会も開催。
+
