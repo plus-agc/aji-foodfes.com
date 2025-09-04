@@ -12,18 +12,11 @@
 </div>
 <nav>
   <ul>
-    <li><a href="/"><span>2024あじがさわフードフェス</span></a></li>
-    <li><a href="/event"><span>催し物</span></a></li>
-    <li>
-      <a href="/kinniku-fes"><span>第2回あじがさわ筋肉のフェスティバル</span></a
-      >
-    </li>
-    <li>
-      <a href="/access"><span>アクセスと会場図</span></a>
-    </li>
-    <li>
-      <a href="/storelist"><span>商品券取扱店舗一覧</span></a>
-    </li>
+    <li><a href="/"><span>トップ</span></a></li>
+    <li><a href="/#food"><span>フード</span></a></li>
+    <li><a href="/#stage"><span>ステージイベント</span></a></li>
+    <li><a href="/#experience"><span>体験コーナー</span></a></li>
+    <li><a href="/#rogaining"><span>ロゲイニングイベント</span></a></li>
   </ul>
 </nav>
 
@@ -131,6 +124,58 @@
     -ms-filter: blur(8px);
     filter: blur(8px);
     transition: 0.5s;
+  }
+
+  /* Desktop (PC) layout: top menubar */
+  @media (min-width: 900px) {
+    /* hide hamburger icon */
+    #nav_toggle {
+      display: none;
+    }
+
+    /* show nav as top bar */
+    nav {
+      position: sticky;
+      top: 0;
+      opacity: 1;
+      z-index: 100;
+      transform: none;
+      height: auto;
+      background-color: rgba(255, 255, 255, 0.9);
+      backdrop-filter: saturate(180%) blur(8px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      margin: 0;
+    }
+
+    nav ul li {
+      border: none;
+    }
+
+    nav ul li a {
+      padding: 8px 12px;
+      font-size: 16px;
+      color: #40220f;
+      border-radius: 8px;
+    }
+
+    nav ul li a:hover {
+      padding: 8px 12px;
+      opacity: 1;
+      background: rgba(0, 0, 0, 0.06);
+    }
+
+    /* avoid blurring the page on desktop */
+    .add_container {
+      filter: none;
+    }
   }
 </style>
 

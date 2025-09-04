@@ -1,0 +1,553 @@
+---
+import { Image } from "astro:assets";
+import Decoration1 from "../images/2025/decoration_1.svg";
+import Decoration2 from "../images/2025/decoration_2.svg";
+import Decoration3 from "../images/2025/decoration_3.svg";
+import Decoration4 from "../images/2025/decoration_4.svg";
+import ExMilk from "../images/2025/experience_milk.svg";
+import ExRaffle from "../images/2025/experience_raffle.svg";
+import ExFish from "../images/2025/experience_fish.webp";
+import ExFish2 from "../images/2025/experience_fish2.svg";
+---
+
+<section id="experience" class="experience-corner anchor-section">
+  <!-- 背景装飾（紙吹雪） -->
+  <div class="experience-corner__decorations">
+    <div class="decoration decoration--1">
+      <Image src={Decoration1} alt="装飾1" />
+    </div>
+    <div class="decoration decoration--2">
+      <Image src={Decoration2} alt="装飾2" />
+    </div>
+    <div class="decoration decoration--3">
+      <Image src={Decoration3} alt="装飾3" />
+    </div>
+    <div class="decoration decoration--4">
+      <Image src={Decoration4} alt="装飾4" />
+    </div>
+    <div class="decoration decoration--5">
+      <Image src={Decoration1} alt="装飾5" />
+    </div>
+    <div class="decoration decoration--6">
+      <Image src={Decoration2} alt="装飾6" />
+    </div>
+    <div class="decoration decoration--7">
+      <Image src={Decoration3} alt="装飾7" />
+    </div>
+    <div class="decoration decoration--8">
+      <Image src={Decoration4} alt="装飾8" />
+    </div>
+  </div>
+
+  <div class="experience-corner__title">
+    <h2 class="lanove">体験コーナー</h2>
+  </div>
+  <div class="experience-corner__content">
+    <!-- 体験カード -->
+    <div class="experience-grid">
+      <!-- 左側: アートバルーン -->
+      <article class="experience-card">
+        <div class="card-deco card-deco--fish" aria-hidden="true">
+          <Image src={ExFish} alt="" />
+        </div>
+        <header class="card-head">
+          <div class="card-head__text">
+            <div class="overline">アートバルーンでお魚をつくろう！</div>
+            <h3 class="card-title">アートバルーン体験</h3>
+          </div>
+          <span class="badge free">無料</span>
+        </header>
+        <ul class="meta">
+          <li>受付場所：本部（整理券をお渡しします）</li>
+          <li>体験料：無料</li>
+          <li>定員：各回15名様</li>
+        </ul>
+        <div class="time-title lanove">タイムスケジュール</div>
+        <div class="chips">
+          <span class="chip">10:00</span>
+          <span class="chip">10:30</span>
+          <span class="chip">11:00</span>
+          <span class="chip">11:30</span>
+          <span class="chip">12:00</span>
+          <span class="chip">13:00</span>
+          <span class="chip">13:30</span>
+          <span class="chip">14:00</span>
+        </div>
+      </article>
+
+      <!-- 左側: バター作り体験 -->
+      <article class="experience-card">
+        <div class="card-deco card-deco--milk" aria-hidden="true">
+          <Image src={ExMilk} alt="" />
+        </div>
+        <header class="card-head">
+          <div class="card-head__text">
+            <div class="overline">ABITANIAジャージーファームテント</div>
+            <h3 class="card-title">ジャージー牛乳でバター作り体験</h3>
+          </div>
+          <span class="badge paid">有料</span>
+        </header>
+        <ul class="meta">
+          <li>受付場所：本部（お会計いただきます）</li>
+          <li>体験料：1組 1,500円(材料費)</li>
+          <li>定員：各回30組様</li>
+        </ul>
+        <div class="time-title lanove">タイムスケジュール</div>
+        <div class="chips">
+          <span class="chip">10:15</span>
+          <span class="chip">14:00</span>
+        </div>
+      </article>
+
+      <!-- 右側: デジタル抽選会 -->
+      <article class="experience-card">
+        <div class="card-deco card-deco--raffle" aria-hidden="true">
+          <Image src={ExRaffle} alt="" />
+        </div>
+        <header class="card-head">
+          <div class="card-head__text">
+            <h3 class="card-title">デジタル抽選会</h3>
+          </div>
+          <span class="badge">抽選会</span>
+        </header>
+        <p class="card-type">
+          簡単なアンケートに答えるだけで鰺ヶ沢町内で使える商品券が当たるチャンス！
+        </p>
+        <ul class="meta">
+          <li>1等：商品券5,000円分</li>
+          <li>2等：商品券3,000円分</li>
+          <li>3等：商品券2,000円分</li>
+          <li>4等：商品券1,000円分</li>
+          <li>5等：商品券500円分</li>
+          <li>6等：白神山地の水350ml</li>
+        </ul>
+      </article>
+
+      <!-- 右側: 磁石で釣ろう！ -->
+      <article class="experience-card">
+        <div class="card-deco card-deco--fish2" aria-hidden="true">
+          <Image src={ExFish2} alt="" />
+        </div>
+        <header class="card-head">
+          <div class="card-head__text">
+            <div class="overline">鰺ヶ沢高等学校テント</div>
+            <h3 class="card-title">鰺ヶ沢町のお魚を磁石で釣ってみよう！</h3>
+          </div>
+          <span class="badge free">無料</span>
+        </header>
+        <ul class="meta">
+          <li>釣れた分だけ「飴ちゃん」プレゼント！</li>
+          <li>場所：鰺ヶ沢高校テント</li>
+          <li>時間：10:00〜（景品が無くなり次第終了）</li>
+          <li>体験料：無料</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience-corner {
+    width: 100%;
+    max-width: 1920px;
+    padding: 3rem 0;
+    background-color: #fff;
+    margin: 2rem auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .experience-corner__decorations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .decoration {
+    position: absolute;
+    opacity: 0.6;
+    z-index: 1;
+  }
+
+  .decoration img {
+    width: 40px;
+    height: 40px;
+    opacity: 0.8;
+  }
+
+  /* カード内装飾（各体験に1つ） */
+  .experience-card {
+    position: relative;
+    overflow: hidden;
+  }
+  .card-deco {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 88px;
+    opacity: 0.16;
+    pointer-events: none;
+  }
+  .card-deco img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .card-deco--milk {
+    transform: rotate(6deg);
+  }
+  .card-deco--fish {
+    transform: rotate(-6deg);
+  }
+  .card-deco--raffle {
+    transform: rotate(4deg);
+  }
+  .card-deco--fish2 {
+    transform: rotate(-10deg);
+  }
+  @media (min-width: 600px) and (max-width: 899px) {
+    .card-deco {
+      width: 72px;
+    }
+  }
+  @media (max-width: 599px) {
+    .card-deco {
+      width: 60px;
+      opacity: 0.2;
+    }
+  }
+
+  .decoration--1 {
+    top: 10%;
+    left: 5%;
+    transform: rotate(15deg);
+  }
+  .decoration--2 {
+    top: 20%;
+    right: 10%;
+    transform: rotate(-20deg);
+  }
+  .decoration--3 {
+    top: 40%;
+    left: 15%;
+    transform: rotate(45deg);
+  }
+  .decoration--4 {
+    top: 30%;
+    right: 20%;
+    transform: rotate(-30deg);
+  }
+  .decoration--5 {
+    top: 60%;
+    left: 8%;
+    transform: rotate(60deg);
+  }
+  .decoration--6 {
+    top: 70%;
+    right: 15%;
+    transform: rotate(-15deg);
+  }
+  .decoration--7 {
+    top: 80%;
+    left: 25%;
+    transform: rotate(25deg);
+  }
+  .decoration--8 {
+    top: 50%;
+    right: 5%;
+    transform: rotate(-45deg);
+  }
+
+  .experience-corner__title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .experience-corner__title h2 {
+    font-size: 2.5rem;
+    color: #40220f;
+    font-family: "lanove", Arial, sans-serif;
+    margin: 0;
+    font-weight: bold;
+  }
+
+  .experience-corner__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  }
+
+  .overline {
+    font-size: 0.9rem;
+    color: #8a5b4a;
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
+  }
+  /* スケジュール */
+  .experience-schedule {
+    background: #fff;
+    border: 2px solid rgba(230, 0, 18, 0.12);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  }
+  .schedule-title {
+    margin: 0 0 0.5rem;
+    color: #40220f;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .schedule-timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+  }
+  .schedule-timeline::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(
+      180deg,
+      rgba(230, 0, 18, 0.3),
+      rgba(255, 138, 0, 0.3)
+    );
+  }
+  .schedule-item {
+    position: relative;
+    padding-left: 76px;
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .schedule-item::before {
+    content: "";
+    position: absolute;
+    left: 14px;
+    top: 1.1em;
+    width: 14px;
+    height: 14px;
+    background: linear-gradient(135deg, #e60012, #ff8a00);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(230, 0, 18, 0.15);
+    transform: translateY(-50%);
+  }
+  .sc-time {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(230, 0, 18, 0.08);
+    border: 1px solid rgba(230, 0, 18, 0.15);
+    font-weight: 800;
+    color: #40220f;
+    font-size: 0.95rem;
+  }
+  .sc-label {
+    color: #5a4036;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  /* 体験カード */
+  .experience-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  @media (max-width: 899px) {
+    .experience-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .experience-card {
+    background: #fff;
+    border: 2px solid rgba(230, 0, 18, 0.12);
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+  }
+  .card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+  .card-title {
+    font-size: 1.25rem;
+    margin: 0;
+    color: #40220f;
+  }
+  .badge {
+    display: inline-block;
+    background: #e60012;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 0.85rem;
+  }
+  .badge.free {
+    background: #22ac38;
+  }
+  .badge.paid {
+    background: #00a0e9;
+  }
+  .card-type {
+    margin: 0;
+    color: #5a4036;
+    font-weight: 600;
+  }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .time-title {
+    margin-top: 8px;
+    margin-bottom: 4px;
+    color: #40220f;
+    font-weight: 800;
+    font-size: 0.95rem;
+  }
+  .chip {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(230, 0, 18, 0.08);
+    border: 1px solid rgba(230, 0, 18, 0.15);
+    font-weight: 700;
+    color: #40220f;
+    font-size: 0.9rem;
+  }
+  .meta {
+    list-style: none;
+    padding: 0;
+    margin: 6px 0 0 0;
+    color: #5a4036;
+    font-weight: 600;
+  }
+  .meta li {
+    margin: 2px 0;
+  }
+
+  /* カード内装飾（見えやすく安全に配置） */
+  .card-deco {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 100px;
+    opacity: 0.22;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .card-deco img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.18));
+  }
+  .card-deco--milk {
+    transform: rotate(6deg);
+  }
+  .card-deco--raffle {
+    transform: rotate(4deg);
+    top: 28px;
+  }
+  /* 魚系はやや大きく・下寄せで見やすく */
+  .card-deco--fish,
+  .card-deco--fish2 {
+    width: 140px;
+    opacity: 0.3;
+    right: 10px;
+    top: auto;
+    bottom: 8px;
+    transform: rotate(-6deg);
+  }
+  .card-deco--fish2 {
+    transform: rotate(-10deg);
+  }
+  @media (min-width: 600px) and (max-width: 899px) {
+    .card-deco {
+      width: 84px;
+    }
+    .card-deco--fish,
+    .card-deco--fish2 {
+      width: 112px;
+    }
+    .card-deco--raffle {
+      top: 22px;
+    }
+  }
+  @media (max-width: 599px) {
+    .card-deco {
+      width: 72px;
+      opacity: 0.24;
+    }
+    .card-deco--fish,
+    .card-deco--fish2 {
+      width: 100px;
+      opacity: 0.32;
+    }
+    .card-deco--raffle {
+      top: 18px;
+    }
+  }
+
+  /* タブレット（600px〜899px） */
+  @media (min-width: 600px) and (max-width: 899px) {
+    .experience-corner__content {
+      gap: 1.5rem;
+      padding: 0 1.5rem;
+      max-width: 700px;
+    }
+    .experience-corner__title h2 {
+      font-size: 2rem;
+    }
+    .card-title {
+      font-size: 1.15rem;
+    }
+  }
+
+  /* モバイル（〜599px） */
+  @media (max-width: 599px) {
+    .experience-corner__content {
+      gap: 1rem;
+      padding: 0 1rem;
+      max-width: 100%;
+    }
+    .experience-corner__title h2 {
+      font-size: 1.8rem;
+    }
+    .card-title {
+      font-size: 1.1rem;
+    }
+    .experience-corner {
+      padding: 2rem 0;
+      margin: 1rem 0;
+    }
+  }
+</style>

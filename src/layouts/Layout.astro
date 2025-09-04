@@ -61,11 +61,22 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 </html>
 <style is:global>
   html {
+    scroll-behavior: smooth;
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
       "Hiragino Sans", Meiryo, sans-serif;
   }
   body {
     background-color: #fffcd1;
     margin: 0;
+  }
+  /* Global content wrapper */
+  .site-container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 0.8rem + 1vw, 2rem);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
   }
 </style>
