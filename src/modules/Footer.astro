@@ -1,0 +1,123 @@
+---
+import FooterWave from "../images/footer__image.svg";
+import FooterWaveSp from "../images/footer__image-sp.svg";
+import FooterBg from "../images/footer-bg.webp";
+---
+
+<footer
+  class="footer"
+  style={`--footer-bg: url(${FooterWave}); --footer-bg-sp: url(${FooterWaveSp}); --wave-img: url(${FooterBg});`}
+>
+  <div class="footer__wave footer__wave--top" aria-hidden="true"></div>
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <section class="footer__block">
+        <h3 class="footer__heading">主催</h3>
+        <p class="footer__text">鰺ヶ沢町</p>
+      </section>
+      <section class="footer__block">
+        <h3 class="footer__heading">共催</h3>
+        <ul class="footer__list">
+          <li>鰺ヶ沢町商工会</li>
+          <li>鰺ヶ沢町観光協会</li>
+          <li>鰺ヶ沢町地域資源活用推進協議会</li>
+        </ul>
+      </section>
+      <section class="footer__block">
+        <h3 class="footer__heading">協力</h3>
+        <ul class="footer__list">
+          <li>青森県立鰺ヶ沢高等学校</li>
+          <li>鰺ヶ沢町立鰺ヶ沢中学校</li>
+        </ul>
+      </section>
+      <section class="footer__block">
+        <h3 class="footer__heading">お問い合わせ</h3>
+        <p class="footer__text">企画・運営受託 株式会社プラス</p>
+        <p class="footer__text">070-1145-1304（平日9:00〜17:00）</p>
+      </section>
+    </div>
+
+    <section class="footer__notice">
+      <h3 class="footer__heading">注意事項</h3>
+      <ul class="footer__list">
+        <li>※商品数には限りがございます。売り切れの際はご容赦ください。</li>
+        <li>※荒天の場合、内容の変更または中止になる場合がございます。</li>
+        <li>※写真はイメージです。</li>
+      </ul>
+    </section>
+  </div>
+  <div class="footer__wave footer__wave--bottom" aria-hidden="true"></div>
+</footer>
+
+<style>
+  .footer {
+    width: 100%;
+    color: #fff;
+    background-color: #00a0e9; /* ベース色 */
+    /* 上部に波形SVGを背景として重ねる */
+    background-image: var(--footer-bg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+  }
+  @media (max-width: 899px) {
+    .footer {
+      background-image: var(--footer-bg-sp);
+    }
+  }
+
+  .footer__inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 48px 16px 56px;
+  }
+
+  .footer__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+  }
+  @media (max-width: 1023px) {
+    .footer__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 599px) {
+    .footer__grid { grid-template-columns: 1fr; gap: 16px; }
+  }
+
+  .footer__block {}
+
+  .footer__heading {
+    margin: 0 0 8px 0;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+  }
+
+  .footer__text { margin: 0 0 4px 0; line-height: 1.7; }
+
+  .footer__list { margin: 0; padding: 0 0 0 1.2em; }
+  .footer__list li { line-height: 1.7; margin: 2px 0; }
+
+  .footer__notice { margin-top: 24px; }
+  .footer__notice .footer__list { padding-left: 1.2em; }
+
+  /* 追加の波形（上/下） */
+  .footer__wave {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    background-image: var(--wave-img);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+  .footer__wave--top { top: 0; }
+  .footer__wave--bottom { bottom: 0; transform: scaleY(-1); }
+  @media (max-width: 899px) { .footer__wave { height: 110px; opacity: 0.3; } }
+  @media (max-width: 599px) { .footer__wave { height: 90px; opacity: 0.28; } }
+</style>

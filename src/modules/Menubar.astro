@@ -12,21 +12,171 @@ import MenubarScript from "../scripts/Menubar.js?url";
 </div>
 <nav>
   <ul>
-    <li><a href="/"><span>2024あじがさわフードフェス</span></a></li>
-    <li><a href="/event"><span>催し物</span></a></li>
-    <li>
-      <a href="/kinniku-fes"><span>第2回あじがさわ筋肉のフェスティバル</span></a
-      >
-    </li>
-    <li>
-      <a href="/access"><span>アクセスと会場図</span></a>
-    </li>
-    <li>
-      <a href="/storelist"><span>商品券取扱店舗一覧</span></a>
-    </li>
+    <li><a href="/"><span>トップ</span></a></li>
+    <li><a href="/#food"><span>フード</span></a></li>
+    <li><a href="/#stage"><span>ステージイベント</span></a></li>
+    <li><a href="/#experience"><span>体験コーナー</span></a></li>
+    <li><a href="/#rogaining"><span>ロゲイニングイベント</span></a></li>
   </ul>
 </nav>
 
-<style src="../styles/Menubar.css"></style>
+<style is:inline>
+  /*hamburger menu style*/
+  #nav_toggle {
+    position: absolute;
+    top: 2em;
+    right: 2em;
+    z-index: 20;
+  }
+  #nav_toggle div {
+    position: relative;
+    display: block;
+    top: 4px;
+    width: 32px;
+    height: 32px;
+    z-index: 100;
+  }
+  #nav_toggle span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #000;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+  }
+  /*hamburger menu close style*/
+  #nav_toggle span:nth-child(1) {
+    top: 0px;
+  }
+  #nav_toggle span:nth-child(2) {
+    top: 12px;
+  }
+  /*hamburger menu open style*/
+  .open #nav_toggle span:nth-child(1) {
+    top: 6px;
+    -webkit-transform: rotate(155deg);
+    -moz-transform: rotate(155deg);
+    transform: rotate(155deg);
+  }
+  .open #nav_toggle span:nth-child(2) {
+    top: 6px;
+    -webkit-transform: rotate(-155deg);
+    -moz-transform: rotate(-155deg);
+    transform: rotate(-155deg);
+  }
+  /*nav style*/
+  nav {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: -1;
+    -webkit-transform: scale(0.85);
+    -ms-transform: scale(0.85);
+    transform: scale(0.85);
+    transition: 0.5s;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+  /*nav list style*/
+  nav ul {
+    list-style-type: none;
+    padding: 2em;
+  }
+  nav ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  /*nav link style*/
+  nav ul li a {
+    padding: 1.5em 0;
+    display: block;
+    text-decoration: none;
+    font-size: clamp(20px, 2.5vw, 5vw);
+    font-weight: 300;
+    color: #000;
+    transition: 0.5s;
+  }
+  nav ul li a:hover {
+    padding: 1.5em 1em;
+    opacity: 0.5;
+    transition: 0.5s;
+  }
+  nav ul li:last-child {
+    border: none;
+  }
+  .add_nav {
+    display: block;
+    opacity: 1;
+    z-index: 10;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    transition: 0.5s;
+  }
+  .container {
+    position: relative;
+  }
+  .add_container {
+    -webkit-filter: blur(8px);
+    -moz-filter: blur(8px);
+    -o-filter: blur(8px);
+    -ms-filter: blur(8px);
+    filter: blur(8px);
+    transition: 0.5s;
+  }
+
+  /* Desktop (PC) layout: top menubar */
+  @media (min-width: 900px) {
+    /* hide hamburger icon */
+    #nav_toggle {
+      display: none;
+    }
+
+    /* show nav as top bar */
+    nav {
+      position: sticky;
+      top: 0;
+      opacity: 1;
+      z-index: 100;
+      transform: none;
+      height: auto;
+      background-color: rgba(255, 255, 255, 0.9);
+      backdrop-filter: saturate(180%) blur(8px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      margin: 0;
+    }
+
+    nav ul li {
+      border: none;
+    }
+
+    nav ul li a {
+      padding: 8px 12px;
+      font-size: 16px;
+      color: #40220f;
+      border-radius: 8px;
+    }
+
+    nav ul li a:hover {
+      padding: 8px 12px;
+      opacity: 1;
+      background: rgba(0, 0, 0, 0.06);
+    }
+
+    /* avoid blurring the page on desktop */
+    .add_container {
+      filter: none;
+    }
+  }
+</style>
 
 <script src={MenubarScript}></script>

@@ -2,197 +2,42 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import Mainimage from "../images/2025/main-image.webp";
-import FooterDesc from "../images/footer__image.svg";
+import Footer from "../modules/Footer.astro";
 import Menubar from "../modules/Menubar.astro";
-import Decoration1 from "../images/2025/decoration_1.svg";
-import Decoration2 from "../images/2025/decoration_2.svg";
-import Decoration3 from "../images/2025/decoration_3.svg";
-import Decoration4 from "../images/2025/decoration_4.svg";
-import Abekouji from "../images/2025/abekouji.webp";
-import AbekoujiTitle from "../images/2025/abekouji_title.svg";
-import Abakouji from "../images/2025/abakouji.webp";
-import RingomusumeTitle from "../images/2025/ringomusume_title.svg";
-import Ringomusume from "../images/2025/ringomusume.webp";
-import OpeningCeremony from "../images/2025/opening_ceremony.svg";
 import Header__titleDesk from "../images/header__title-desc.svg";
 import TabComponent from "../modules/TabComponent.astro";
 import IndexScript from "../scripts/index.js?url";
 import FoodTitle from "../images/2025/food_title.svg";
+import StageEvents from "../modules/StageEvents.astro";
+import ExperienceCorner from "../modules/ExperienceCorner.astro";
+import RogainingEvent from "../modules/RogainingEvent.astro";
+import "../styles/index.scss";
+import indexScriptUrl from "../scripts/index.js?url";
 ---
 
 <Layout title="あじがさわフードフェス2024">
   <Menubar />
-  <header class="header">
-    <div class="header__image">
-      <Image
-        src={Mainimage}
-        alt="あじがさわフードフェス2025 メインビジュアル"
-      />
-    </div>
-  </header>
   <main>
-    <div class="container-fluid">
-      <p class="header__title-desc">
-        <Image
-          src={Header__titleDesk}
-          alt="鯵ヶ沢町の3大食イベント春の「ヒラメフェス」夏の「肉のフェスティバル」秋の「スイーツフェス」を一堂に会した「食」盛り沢山に開催！"
-        />
-      </p>
-      <div class="food__title">
-        <Image src={FoodTitle} alt="お肉・スイーツなど28店集結!!" />
-      </div>
+    <div class="site-container">
+      <header class="header">
+        <div class="header__image">
+          <Image
+            src={Mainimage}
+            alt="あじがさわフードフェス2025 メインビジュアル"
+          />
+        </div>
+      </header>
+      <!-- タブコンポーネント -->
       <TabComponent />
-
-      <!-- ステージイベントセクション -->
-      <div class="stage-events">
-        <!-- 背景装飾（紙吹雪） -->
-        <div class="stage-events__decorations">
-          <div class="decoration decoration--1">
-            <Image src={Decoration1} alt="装飾1" />
-          </div>
-          <div class="decoration decoration--2">
-            <Image src={Decoration2} alt="装飾2" />
-          </div>
-          <div class="decoration decoration--3">
-            <Image src={Decoration3} alt="装飾3" />
-          </div>
-          <div class="decoration decoration--4">
-            <Image src={Decoration4} alt="装飾4" />
-          </div>
-          <div class="decoration decoration--5">
-            <Image src={Decoration1} alt="装飾5" />
-          </div>
-          <div class="decoration decoration--6">
-            <Image src={Decoration2} alt="装飾6" />
-          </div>
-          <div class="decoration decoration--7">
-            <Image src={Decoration3} alt="装飾7" />
-          </div>
-          <div class="decoration decoration--8">
-            <Image src={Decoration4} alt="装飾8" />
-          </div>
-        </div>
-
-        <div class="stage-events__title">
-          <h2>ステージイベント</h2>
-        </div>
-        <div class="stage-events__content">
-          <div class="stage-event">
-            <div class="event-content">
-              <div class="opening-ceremony-image">
-                <Image src={OpeningCeremony} alt="オープニングセレモニー" />
-              </div>
-            </div>
-          </div>
-          <div class="stage-event">
-            <div class="event-content">
-              <div class="abekouji-content">
-                <div class="abekouji-title">
-                  <Image src={AbekoujiTitle} alt="あべこうじトークショー" />
-                </div>
-                <div class="abekouji-image">
-                  <Image src={Abakouji} alt="あべこうじ" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="stage-event">
-            <div class="event-content">
-              <div class="ringomusume-content">
-                <div class="ringomusume-title">
-                  <Image src={RingomusumeTitle} alt="りんご娘" />
-                </div>
-                <div class="ringomusume-image">
-                  <Image src={Ringomusume} alt="りんご娘" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- 体験コーナーセクション -->
-      <div class="experience-corner">
-        <!-- 背景装飾（紙吹雪） -->
-        <div class="experience-corner__decorations">
-          <div class="decoration decoration--1">
-            <Image src={Decoration1} alt="装飾1" />
-          </div>
-          <div class="decoration decoration--2">
-            <Image src={Decoration2} alt="装飾2" />
-          </div>
-          <div class="decoration decoration--3">
-            <Image src={Decoration3} alt="装飾3" />
-          </div>
-          <div class="decoration decoration--4">
-            <Image src={Decoration4} alt="装飾4" />
-          </div>
-          <div class="decoration decoration--5">
-            <Image src={Decoration1} alt="装飾5" />
-          </div>
-          <div class="decoration decoration--6">
-            <Image src={Decoration2} alt="装飾6" />
-          </div>
-          <div class="decoration decoration--7">
-            <Image src={Decoration3} alt="装飾7" />
-          </div>
-          <div class="decoration decoration--8">
-            <Image src={Decoration4} alt="装飾8" />
-          </div>
-        </div>
-
-        <div class="experience-corner__title">
-          <h2>体験コーナー</h2>
-        </div>
-        <div class="experience-corner__content">
-          <div class="experience-item">
-            <div class="event-content">
-              <div class="experience-banner">
-                <h3>アートバルーンでお魚をつくろう！</h3>
-                <p class="experience-type">アートバルーン体験</p>
-                <div class="status">準備中</div>
-              </div>
-            </div>
-          </div>
-          <div class="experience-item">
-            <div class="event-content">
-              <div class="experience-banner">
-                <h3>ジャージー牛乳でバター作り体験</h3>
-                <p class="experience-type">バター作り体験</p>
-                <div class="status">準備中</div>
-              </div>
-            </div>
-          </div>
-          <div class="experience-item">
-            <div class="event-content">
-              <div class="experience-banner">
-                <h3>鰺ヶ沢町のお魚を磁石で釣ろう！</h3>
-                <p class="experience-type">磁石釣り体験</p>
-                <div class="status">準備中</div>
-              </div>
-            </div>
-          </div>
-          <div class="experience-item">
-            <div class="event-content">
-              <div class="experience-banner">
-                <h3>デジタル抽選会</h3>
-                <p class="experience-type">抽選会</p>
-                <div class="status">準備中</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- ステージイベントコンポーネント -->
+      <StageEvents />
+      <!-- 体験コーナーコンポーネント -->
+      <ExperienceCorner />
+      <!-- ロゲイニングイベントコンポーネント -->
+      <RogainingEvent />
     </div>
-
-    <footer>
-      <div class="footer__image">
-        <div class="forward">
-          <Image src={FooterDesc} alt="概要欄" />
-        </div>
-      </div>
-    </footer>
+    <!-- フッターコンポーネント -->
+    <Footer />
   </main>
-  <style lang="scss" src="../styles/index.scss"></style>
-
-  <script src={IndexScript}></script>
+  <script src={indexScriptUrl}></script>
 </Layout>

@@ -1,0 +1,403 @@
+---
+import { Image } from "astro:assets";
+import Decoration1 from "../images/2025/decoration_1.svg";
+import Decoration2 from "../images/2025/decoration_2.svg";
+import Decoration3 from "../images/2025/decoration_3.svg";
+import Decoration4 from "../images/2025/decoration_4.svg";
+import AbekoujiTitle from "../images/2025/abekouji_title.svg";
+import Abakouji from "../images/2025/abakouji.webp";
+import RingomusumeTitle from "../images/2025/ringomusume_title.svg";
+import Ringomusume from "../images/2025/ringomusume.webp";
+import OpeningCeremony from "../images/2025/opening_ceremony.svg";
+import StageImage from "../images/2025/stage-events.webp";
+---
+
+<section id="stage" class="stage-events anchor-section">
+  <!-- 背景装飾（紙吹雪） -->
+  <div class="stage-events__decorations">
+    <div class="decoration decoration--1">
+      <Image src={Decoration1} alt="装飾1" />
+    </div>
+    <div class="decoration decoration--2">
+      <Image src={Decoration2} alt="装飾2" />
+    </div>
+    <div class="decoration decoration--3">
+      <Image src={Decoration3} alt="装飾3" />
+    </div>
+    <div class="decoration decoration--4">
+      <Image src={Decoration4} alt="装飾4" />
+    </div>
+    <div class="decoration decoration--5">
+      <Image src={Decoration1} alt="装飾5" />
+    </div>
+    <div class="decoration decoration--6">
+      <Image src={Decoration2} alt="装飾6" />
+    </div>
+    <div class="decoration decoration--7">
+      <Image src={Decoration3} alt="装飾7" />
+    </div>
+    <div class="decoration decoration--8">
+      <Image src={Decoration4} alt="装飾8" />
+    </div>
+  </div>
+  <div class="stage-events__title">
+    <h2>ステージイベント</h2>
+  </div>
+  <div class="stage-events__content">
+    <!-- タイムスケジュール -->
+    <div class="stage-schedule">
+      <h3 class="schedule-title lanove">タイムスケジュール</h3>
+      <ol
+        class="schedule-timeline"
+        aria-label="ステージイベントのタイムスケジュール"
+      >
+        <li class="schedule-item">
+          <span class="sc-time">10:00〜</span>
+          <span class="sc-label"
+            >オープニングセレモニー 鰺ヶ沢中学校吹奏楽部 津軽三味線演奏</span
+          >
+        </li>
+        <li class="schedule-item">
+          <span class="sc-time">11:00〜</span>
+          <span class="sc-label">あべこうじ トークショー</span>
+        </li>
+        <li class="schedule-item">
+          <span class="sc-time">13:00〜</span>
+          <span class="sc-label">りんご娘 ライブ</span>
+        </li>
+      </ol>
+    </div>
+    <!-- ステージイベント 下部イメージ -->
+    <div class="stage-events__image">
+      <Image src={StageImage} alt="ステージイベント イメージ" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .stage-events {
+    width: 100%;
+    max-width: 1920px;
+    padding: 3rem 0;
+    background-color: #fff;
+    margin: 2rem auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* 背景装飾（紙吹雪） */
+  .stage-events__decorations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .decoration {
+    position: absolute;
+    opacity: 0.6;
+    z-index: 1;
+  }
+
+  .decoration img {
+    width: 40px;
+    height: 40px;
+    opacity: 0.8;
+  }
+
+  .decoration--1 {
+    top: 10%;
+    left: 5%;
+    transform: rotate(15deg);
+  }
+
+  .decoration--2 {
+    top: 20%;
+    right: 10%;
+    transform: rotate(-20deg);
+  }
+
+  .decoration--3 {
+    top: 40%;
+    left: 15%;
+    transform: rotate(45deg);
+  }
+
+  .decoration--4 {
+    top: 30%;
+    right: 20%;
+    transform: rotate(-30deg);
+  }
+
+  .decoration--5 {
+    top: 60%;
+    left: 8%;
+    transform: rotate(60deg);
+  }
+
+  .decoration--6 {
+    top: 70%;
+    right: 15%;
+    transform: rotate(-15deg);
+  }
+
+  .decoration--7 {
+    top: 80%;
+    left: 25%;
+    transform: rotate(25deg);
+  }
+
+  .decoration--8 {
+    top: 50%;
+    right: 5%;
+    transform: rotate(-45deg);
+  }
+
+  .stage-events__title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .stage-events__title h2 {
+    font-size: 2.5rem;
+    color: #40220f;
+    font-family: "lanove", Arial, sans-serif;
+    margin: 0;
+    font-weight: bold;
+  }
+
+  .stage-events__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  }
+
+  /* スケジュール */
+  .stage-schedule {
+    background: #fff;
+    border: 2px solid rgba(230, 0, 18, 0.12);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  }
+  .schedule-title {
+    margin: 0 0 0.5rem;
+    color: #40220f;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .schedule-timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+  }
+  .schedule-timeline::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(
+      180deg,
+      rgba(230, 0, 18, 0.3),
+      rgba(255, 138, 0, 0.3)
+    );
+  }
+  .schedule-item {
+    position: relative;
+    padding-left: 76px;
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .schedule-item::before {
+    content: "";
+    position: absolute;
+    left: 14px;
+    top: 1.1em;
+    width: 14px;
+    height: 14px;
+    background: linear-gradient(135deg, #e60012, #ff8a00);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(230, 0, 18, 0.15);
+    transform: translateY(-50%);
+  }
+  .sc-time {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(230, 0, 18, 0.08);
+    border: 1px solid rgba(230, 0, 18, 0.15);
+    font-weight: 800;
+    color: #40220f;
+    font-size: 0.95rem;
+  }
+  .sc-label {
+    color: #5a4036;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .stage-event {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 8px solid #ffefb1;
+    position: relative;
+    z-index: 2;
+    margin-left: 0;
+  }
+
+  /* removed decorative before/after */
+
+  .stage-event .event-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* あべこうじトークショー用のスタイリング */
+  .abekouji-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .abekouji-title {
+    width: 100%;
+    text-align: center;
+  }
+
+  .abekouji-title img {
+    width: 85%;
+    height: auto;
+  }
+
+  .abekouji-image {
+    width: 100%;
+    text-align: center;
+  }
+
+  .abekouji-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* りんご娘コンテンツのスタイリング */
+  .ringomusume-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .ringomusume-title {
+    width: 100%;
+    text-align: center;
+  }
+
+  .ringomusume-title img {
+    width: 100%;
+    height: auto;
+  }
+
+  .ringomusume-image {
+    width: 100%;
+    text-align: center;
+  }
+
+  .ringomusume-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* 下部イメージ */
+  .stage-events__image {
+    margin-top: 0.5rem;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .stage-events__image img {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  /* オープニングセレモニー画像のスタイリング */
+  .opening-ceremony-image {
+    width: 100%;
+    text-align: center;
+  }
+
+  .opening-ceremony-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  /* タブレット（600px〜899px） */
+  @media (min-width: 600px) and (max-width: 899px) {
+    .stage-events__content {
+      gap: 1.5rem;
+      padding: 0 1.5rem;
+      max-width: 700px;
+    }
+
+    .stage-events__title h2 {
+      font-size: 2rem;
+    }
+
+    .stage-event h3 {
+      font-size: 1.3rem;
+    }
+  }
+
+  /* モバイル（〜599px） */
+  @media (max-width: 599px) {
+    .stage-events__content {
+      gap: 1rem;
+      padding: 0 1rem;
+      max-width: 100%;
+    }
+
+    .stage-events__title h2 {
+      font-size: 1.8rem;
+    }
+
+    .stage-event h3 {
+      font-size: 1.2rem;
+    }
+
+    .stage-events {
+      padding: 2rem 0;
+      margin: 1rem 0;
+    }
+
+    .stage-event {
+      margin-left: 0;
+    }
+
+    /* removed decorative before/after adjustments */
+  }
+</style>

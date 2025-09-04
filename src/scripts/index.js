@@ -1,4 +1,3 @@
-// Extracted from src/pages/index.astro
 // すべてのチェックボックスにイベントリスナーを追加
 document.querySelectorAll(".toggleCheckbox").forEach(function (checkbox) {
   checkbox.addEventListener("change", function (event) {

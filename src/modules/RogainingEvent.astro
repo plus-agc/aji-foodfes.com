@@ -1,0 +1,646 @@
+---
+import { Image } from "astro:assets";
+import RogainingMd from "../content/rogaining.md";
+import mdText from "../content/rogaining.md?raw";
+import Flyer from "../images/2025/ajiroge.jpg";
+
+function pickValue(label) {
+  const lines = mdText.split(/\r?\n/);
+  const idx = lines.findIndex((l) => l.startsWith("### ") && l.includes(label));
+  if (idx !== -1) {
+    const line = lines[idx];
+    return line
+      .replace(/^###\s*/, "")
+      .replace(label, "")
+      .trim();
+  }
+  return null;
+}
+
+function pickCircleValue(label) {
+  const lines = mdText.split(/\r?\n/);
+  const rx = new RegExp(
+    `^[_・\u25CF\u25CB\u25A0\u25A1\u25C6\u25C7\u3007]?\u3007?\u25CB?\u25CF?\u25A0?\u25C6?\u25C7?\u3000?`,
+  ); // tolerant prefix
+  for (const raw of lines) {
+    const s = raw.trim();
+    if (s.startsWith(`〇${label}`) || s.startsWith(`${label}`)) {
+      return s
+        .replace(/^〇?/, "")
+        .replace(label, "")
+        .replace(/^[\s\u3000:：-]+/, "")
+        .trim();
+    }
+  }
+  return null;
+}
+
+function extractTimeline() {
+  const lines = mdText.split(/\r?\n/);
+  const hIdx = lines.findIndex(
+    (l) => l.startsWith("### ") && l.includes("当日の流れ"),
+  );
+  if (hIdx === -1) return [];
+  const items = [];
+  const timeRx =
+    /^(\d{1,2}[:：]\d{2}\s*～\s*(?:\d{1,2}[:：]\d{2})?)\s*[\s\u3000]+(.+?)\s*$/;
+
+  // 1) parse if the heading line itself contains a time and label
+  const head = lines[hIdx].replace(/^###\s*/, "").trim();
+  const headAfter = head.replace(/^当日の流れ[\s\u3000]*/, "");
+  const mh = headAfter.match(timeRx);
+  if (mh) items.push({ time: mh[1], label: mh[2] });
+
+  // 2) parse subsequent lines until next heading; skip blanks
+  for (let i = hIdx + 1; i < lines.length; i++) {
+    const raw = lines[i];
+    if (raw.startsWith("### ")) break;
+    const s = raw.trim();
+    if (!s) continue;
+    const m = s.match(timeRx);
+    if (m) {
+      items.push({ time: m[1], label: m[2] });
+      continue;
+    }
+    // stop if we hit something that's clearly a different section/list
+    if (/^[-・*]/.test(s)) break;
+  }
+  return items;
+}
+
+function extractIntroParas() {
+  const lines = mdText.split(/\r?\n/);
+  let i = 0;
+  if (lines[0] === "---") {
+    const end = lines.indexOf("---", 1);
+    if (end !== -1) i = end + 1;
+  }
+  // skip leading blanks
+  while (i < lines.length && lines[i].trim() === "") i++;
+  const body = [];
+  for (; i < lines.length; i++) {
+    const l = lines[i];
+    if (/^###\s/.test(l)) break;
+    body.push(l);
+  }
+  // group into paragraphs by blank lines
+  const paras = [];
+  let bucket = [];
+  for (const l of body) {
+    if (l.trim() === "") {
+      if (bucket.length) {
+        paras.push(bucket.join(" ").trim());
+        bucket = [];
+      }
+    } else {
+      bucket.push(l.trim());
+    }
+  }
+  if (bucket.length) paras.push(bucket.join(" ").trim());
+  return paras;
+}
+
+const receptionTime = pickCircleValue("受付時間");
+const receptionPlace = pickCircleValue("受付場所");
+const info = [
+  { label: "開催日時", icon: "📅", value: pickValue("開催日時") },
+  receptionTime && { label: "受付時間", icon: "⏱️", value: receptionTime },
+  receptionPlace && { label: "受付場所", icon: "🧭", value: receptionPlace },
+  { label: "開催場所", icon: "📍", value: pickValue("開催場所") },
+  { label: "募集定員", icon: "👥", value: pickValue("募集定員") },
+  { label: "募集締切", icon: "⏰", value: pickValue("募集締切") },
+].filter((i) => i && i.value);
+
+const timelineItems = extractTimeline();
+const introParas = extractIntroParas();
+---
+
+<section id="rogaining" class="anchor-section rogaining">
+  <div class="rogaining__inner">
+    <h2 class="rogaining__title lanove">ロゲイニングイベント</h2>
+    <div class="rogaining__content border">
+      {
+        introParas.length > 0 && (
+          <div class="rogaining__intro lanove">
+            {introParas.map((t) => (
+              <p>{t}</p>
+            ))}
+          </div>
+        )
+      }
+      {
+        info.length > 0 && (
+          <div class="rogaining__summary">
+            {info.map((it) => (
+              <div class="summary-card">
+                <div class="summary-icon">{it.icon}</div>
+                <div class="summary-text">
+                  <div class="summary-label">{it.label}</div>
+                  <div class="summary-value">{it.value}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )
+      }
+      {
+        timelineItems.length > 0 && (
+          <div class="rogaining__timeline">
+            <div class="timeline-title">当日の流れ</div>
+            <ol class="timeline" aria-label="当日の流れ">
+              {timelineItems.map((it) => (
+                <li class="timeline-item">
+                  <div class="t-time" aria-hidden="false">
+                    {it.time}
+                  </div>
+                  <div class="t-card">
+                    <div class="t-label">{it.label}</div>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        )
+      }
+      <div class="rogaining__body">
+        <RogainingMd />
+      </div>
+      <div class="rogaining__cta">
+        <a
+          class="btn btn-primary"
+          href="https://ws.formzu.net/fgen/S45515801/"
+          target="_blank"
+          rel="noopener">📝 お申込みはこちら</a
+        >
+        <button class="btn btn-outline" id="openFlyer" type="button"
+          >📰 チラシを見る</button
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<style is:inline>
+  .rogaining {
+    padding: clamp(1rem, 0.8rem + 1vw, 4rem) 0;
+  }
+  .rogaining__inner {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .rogaining__title {
+    font-size: clamp(1.75rem, 1.2rem + 2vw, 3rem);
+    margin: 0 0 1rem 0;
+    color: #40220f;
+    text-align: center;
+    position: relative;
+  }
+  .rogaining__title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 6px;
+    background: #e60012;
+    border-radius: 3px;
+    margin: 12px auto 0;
+  }
+  .rogaining__content {
+    background: #fff;
+    position: relative;
+    border-radius: 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+  }
+  .rogaining__content::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        1200px 200px at 50% -20%,
+        rgba(255, 230, 140, 0.35),
+        transparent 60%
+      ),
+      radial-gradient(
+        800px 160px at -10% 110%,
+        rgba(255, 150, 150, 0.25),
+        transparent 60%
+      ),
+      radial-gradient(
+        800px 160px at 110% 110%,
+        rgba(160, 210, 255, 0.25),
+        transparent 60%
+      );
+    pointer-events: none;
+    z-index: 0;
+  }
+  .rogaining__body {
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+  }
+  .rogaining__content {
+    display: block;
+  }
+  .rogaining__intro {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 1rem 0;
+    color: #40220f;
+  }
+  .rogaining__intro p {
+    margin: 0 0 0.5rem 0;
+    font-weight: 700;
+    font-size: clamp(1rem, 0.9rem + 0.6vw, 1.4rem);
+  }
+  .rogaining__content :is(h1, h2, h3) {
+    margin: 0 0 0.5rem 0;
+    color: #40220f;
+  }
+  .rogaining__content h3 {
+    font-size: clamp(1.125rem, 0.9rem + 0.8vw, 1.75rem);
+    padding-left: 0.75rem;
+    border-left: 6px solid #e60012;
+    background: linear-gradient(90deg, rgba(230, 0, 18, 0.12), transparent);
+    border-radius: 6px;
+  }
+  .rogaining__content :is(h1, h2, h3) {
+    margin-top: 0;
+  }
+  .rogaining__content :is(p, li) {
+    line-height: 1.9;
+    color: #40220f;
+  }
+  .rogaining__content p {
+    margin: 0 0 0.75rem 0;
+  }
+  .rogaining__content ul {
+    padding-left: 1.25rem;
+    margin: 0.5rem 0 1rem;
+  }
+  .rogaining__content ul {
+    list-style: none;
+  }
+  .rogaining__content ul li {
+    margin: 0.25rem 0;
+    position: relative;
+    padding-left: 1.25rem;
+  }
+  .rogaining__content ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e60012, #ff8a00);
+    box-shadow: 0 0 0 2px rgba(230, 0, 18, 0.12);
+    transform: translateY(-50%);
+  }
+
+  /* Summary vertical emphasis */
+  .rogaining__summary {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin: 0 0 1.25rem 0;
+    position: relative;
+    z-index: 1;
+  }
+  .summary-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 18px;
+    border-radius: 16px;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 250, 240, 0.9)
+    );
+    border: 2px solid rgba(230, 0, 18, 0.12);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(6px);
+  }
+  .summary-icon {
+    font-size: 22px;
+    line-height: 1;
+  }
+  .summary-label {
+    font-size: 13px;
+    color: #8a5b4a;
+    letter-spacing: 0.04em;
+  }
+  .summary-value {
+    font-size: 16px;
+    font-weight: 800;
+    color: #40220f;
+  }
+  .summary-sub {
+    margin-top: 6px;
+    display: grid;
+    gap: 4px;
+  }
+  .summary-sub-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #5a4036;
+  }
+  .summary-sub-item .sub-icn {
+    font-size: 16px;
+  }
+
+  /* Flyer modal */
+  .flyer-modal[hidden] {
+    display: none;
+  }
+  .flyer-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .flyer-inner {
+    position: relative;
+    max-width: min(100%, 960px);
+    max-height: calc(100vh - 48px);
+    margin: auto;
+  }
+  .flyer-inner .close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #fff;
+    border: none;
+    border-radius: 999px;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .flyer-img {
+    display: block;
+    max-width: 100%;
+    max-height: calc(100vh - 96px);
+    width: auto;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  }
+
+  /* Timeline UI */
+  .rogaining__timeline {
+    position: relative;
+    z-index: 1;
+    margin: 1rem 0 1.25rem;
+    padding: 0 0.25rem;
+  }
+  .timeline-title {
+    font-weight: 800;
+    color: #40220f;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+  }
+  .timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(
+      180deg,
+      rgba(230, 0, 18, 0.3),
+      rgba(255, 138, 0, 0.3)
+    );
+  }
+  .timeline-item {
+    position: relative;
+    padding-left: 76px;
+    margin: 14px 0;
+  }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: 14px;
+    top: 1.2em;
+    width: 14px;
+    height: 14px;
+    background: linear-gradient(135deg, #e60012, #ff8a00);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(230, 0, 18, 0.15);
+    transform: translateY(-50%);
+  }
+  .t-time {
+    font-weight: 900;
+    color: #40220f;
+    font-size: 0.95rem;
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(230, 0, 18, 0.08);
+    border: 1px solid rgba(230, 0, 18, 0.15);
+  }
+  .t-card {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  }
+  .t-label {
+    color: #5a4036;
+    font-size: 0.98rem;
+    font-weight: 600;
+  }
+
+  /* Callouts for inline TODO comments */
+  .rogaining__content :is(p, div, section) > code {
+    background: #fff6f6;
+    color: #b30000;
+  }
+
+  /* CTA buttons */
+  .rogaining__cta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  .btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+      background 0.2s ease,
+      color 0.2s ease,
+      opacity 0.2s ease,
+      transform 0.15s ease,
+      box-shadow 0.15s ease;
+  }
+  .btn[aria-disabled="true"] {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, #e60012, #ff6a00);
+    color: #fff;
+    box-shadow: 0 6px 16px rgba(230, 0, 18, 0.25);
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(230, 0, 18, 0.3);
+  }
+  .btn-outline {
+    background: #fff;
+    color: #e60012;
+    border: 2px solid #e60012;
+  }
+  .btn-outline:hover {
+    background: #fff3f4;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(230, 0, 18, 0.15);
+  }
+
+  /* Summary cards */
+  .rogaining__summary {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin: 0 0 1.25rem 0;
+    position: relative;
+    z-index: 1;
+  }
+  .summary-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 18px;
+    border-radius: 16px;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 250, 240, 0.9)
+    );
+    border: 2px solid rgba(230, 0, 18, 0.12);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(6px);
+  }
+  .summary-icon {
+    font-size: 22px;
+    line-height: 1;
+  }
+  .summary-label {
+    font-size: 13px;
+    color: #8a5b4a;
+    letter-spacing: 0.04em;
+  }
+  .summary-value {
+    font-size: 16px;
+    font-weight: 800;
+    color: #40220f;
+  }
+
+  /* Duplicate suppression handled via script for robustness */
+</style>
+
+<!-- Flyer Modal -->
+<div
+  class="flyer-modal"
+  id="flyerModal"
+  hidden
+  role="dialog"
+  aria-modal="true"
+  aria-label="チラシ"
+>
+  <div class="flyer-inner">
+    <button class="close" id="closeFlyer" aria-label="閉じる">×</button>
+    <Image class="flyer-img" src={Flyer} alt="アジロゲ2025 チラシ" />
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const root = document.querySelector(".rogaining__body");
+    if (!root) return;
+    const hideStartsWith = ["〇受付時間", "〇受付場所", "ホームページ内の原稿"];
+    const timeRx = /^\d{1,2}[:：]\d{2}\s*～\s*(?:\d{1,2}[:：]\d{2})?/;
+    // Hide paragraphs that are timeline lines or circle items
+    root.querySelectorAll("p").forEach((p) => {
+      const t = (p.textContent || "").trim();
+      if (hideStartsWith.some((s) => t.startsWith(s)) || timeRx.test(t)) {
+        p.style.display = "none";
+      }
+    });
+    // Hide headings that duplicate summary (and the timeline heading)
+    const hideHeadingIncludes = [
+      "開催日時",
+      "開催場所",
+      "募集定員",
+      "募集締切",
+      "受付時間",
+      "受付場所",
+      "当日の流れ",
+    ];
+    root.querySelectorAll("h2, h3, h4").forEach((h) => {
+      const t = (h.textContent || "").trim();
+      if (hideHeadingIncludes.some((s) => t.includes(s))) {
+        h.style.display = "none";
+      }
+    });
+    // Hide intro paragraphs (those before the first event detail heading)
+    const firstDetail = Array.from(root.querySelectorAll("h2,h3,h4")).find(
+      (h) => /開催日時|開催場所|募集定員|募集締切/.test(h.textContent || ""),
+    );
+    if (firstDetail) {
+      let el = firstDetail.previousElementSibling;
+      while (el) {
+        if (/^H\d$/i.test(el.tagName)) break;
+        if (el.tagName === "P") el.style.display = "none";
+        el = el.previousElementSibling;
+      }
+    }
+    // Flyer modal open/close
+    const openBtn = document.getElementById("openFlyer");
+    const modal = document.getElementById("flyerModal");
+    const closeBtn = document.getElementById("closeFlyer");
+    const closeModal = () => {
+      modal.hidden = true;
+      document.removeEventListener("keydown", onKey);
+    };
+    const onKey = (e) => {
+      if (e.key === "Escape") closeModal();
+    };
+    if (openBtn && modal) {
+      openBtn.addEventListener("click", () => {
+        modal.hidden = false;
+        document.addEventListener("keydown", onKey);
+      });
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+      });
+    }
+    if (closeBtn) closeBtn.addEventListener("click", closeModal);
+  });
+</script>
