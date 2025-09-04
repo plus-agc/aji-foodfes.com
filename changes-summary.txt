@@ -1,0 +1,80 @@
+Title: Work Summary and Git Diff
+Date: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
+Branch: fix-indentation
+
+Overview
+- Added RogainingEvent component with Markdown-driven content, CTA, flyer modal, auto summary + timeline extraction.
+- Converted Word doc (docx) to Markdown via Node script (`tools/extract-docx.cjs`).
+- Integrated Rogaining section into `index.astro`; styled headings, lists, and CTAs.
+- Enhanced StageEvents with schedule timeline and bottom image; unified max-widths to 1440px.
+- Rebuilt ExperienceCorner: timeline + responsive cards; per-card themed decorations; badge colors; content updated per provided copy.
+- Menubar anchors updated; site container wrapper and footer max-width alignment.
+- Replaced footer image-only block with responsive, text-based footer over ocean wave background (PC/SP), plus additional subtle waves.
+
+Key Files Touched
+- src/modules/RogainingEvent.astro
+- src/content/rogaining.md (from src/content/rogaining.docx)
+- tools/extract-docx.cjs
+- src/modules/StageEvents.astro
+- src/modules/ExperienceCorner.astro
+- src/modules/Footer.astro
+- src/pages/index.astro, src/layouts/Layout.astro
+- src/styles/index.scss
+- src/images/2025/* (new decorative and flyer assets)
+
+Git Changed Files (relative to main)
+A	src/content/rogaining.docx
+A	src/content/rogaining.md
+A	src/images/2025/ajiroge.jpg
+A	src/images/2025/experience_butter.svg
+A	src/images/2025/experience_fish.webp
+A	src/images/2025/experience_fish2.svg
+A	src/images/2025/experience_milk.svg
+A	src/images/2025/experience_raffle.svg
+A	src/images/2025/sankou.webp
+A	src/images/2025/stage-events.webp
+D	src/layouts/Layout-Kinniku.astro
+D	src/layouts/Layout-Special.astro
+M	src/layouts/Layout.astro
+A	src/modules/ExperienceCorner.astro
+A	src/modules/Footer.astro
+M	src/modules/Menubar.astro
+A	src/modules/RogainingEvent.astro
+A	src/modules/StageEvents.astro
+M	src/modules/TabComponent.astro
+M	src/pages/index.astro
+A	src/scripts/index.js
+A	src/styles/index.scss
+A	tools/extract-docx.cjs
+
+Diffstat (main...HEAD)
+ src/content/rogaining.docx            |  Bin 0 -> 18882 bytes
+ src/content/rogaining.md              |   41 ++
+ src/images/2025/ajiroge.jpg           |  Bin 0 -> 566616 bytes
+ src/images/2025/experience_butter.svg |   52 ++
+ src/images/2025/experience_fish.webp  |  Bin 0 -> 77576 bytes
+ src/images/2025/experience_fish2.svg  |   60 ++
+ src/images/2025/experience_milk.svg   |   43 ++
+ src/images/2025/experience_raffle.svg |  168 +++++
+ src/images/2025/sankou.webp           |  Bin 0 -> 227258 bytes
+ src/images/2025/stage-events.webp     |  Bin 0 -> 3030212 bytes
+ src/layouts/Layout-Kinniku.astro      |   67 --
+ src/layouts/Layout-Special.astro      |   72 ---
+ src/layouts/Layout.astro              |   11 +
+ src/modules/ExperienceCorner.astro    |  553 ++++++++++++++++
+ src/modules/Footer.astro              |  123 ++++
+ src/modules/Menubar.astro             |   69 +-
+ src/modules/RogainingEvent.astro      |  646 +++++++++++++++++++
+ src/modules/StageEvents.astro         |  403 ++++++++++++
+ src/modules/TabComponent.astro        |   65 +-
+ src/pages/index.astro                 | 1130 +--------------------------------
+ src/scripts/index.js                  |   37 ++
+ src/styles/index.scss                 |  315 +++++++++
+ tools/extract-docx.cjs                |   89 +++
+ 23 files changed, 2638 insertions(+), 1306 deletions(-)
+
+Notes
+- Footer now renders text natively with ocean waves background and remains responsive.
+- ExperienceCorner cards include specific copy updates, per-card decorations, and schedule labels.
+- Rogaining section parses Markdown heading/lines to generate summary cards and a visual timeline.
+
