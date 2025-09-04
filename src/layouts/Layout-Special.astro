@@ -1,3 +1,5 @@
+import GTAG_INIT from "../scripts/gtag-init.js";
+import GTM_BOOT from "../scripts/gtm.js";
 ---
 interface Props {
   title: string;
@@ -22,9 +24,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       type="text/partytown"
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-SD3XGYX2B0"></script>
-    <script type="text/partytown" src={Astro.resolve('../scripts/gtag-init.js')}></script>
+    <script type="text/partytown" src={GTAG_INIT}></script>
     <!-- Google Tag Manager -->
-    <script src={Astro.resolve('../scripts/gtm.js')}></script>
+    <script src={GTM_BOOT}></script>
     <!-- End Google Tag Manager -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
