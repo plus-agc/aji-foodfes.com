@@ -1,0 +1,106 @@
+/* Extracted from src/modules/Menubar.astro */
+/*hamburger menu style*/
+#nav_toggle {
+  position: absolute;
+  top: 2em;
+  right: 2em;
+  z-index: 20;
+}
+#nav_toggle div {
+  position: relative;
+  display: block;
+  top: 4px;
+  width: 32px;
+  height: 32px;
+  z-index: 100;
+}
+#nav_toggle span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #000;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+/*hamburger menu close style*/
+#nav_toggle span:nth-child(1) {
+  top: 0px;
+}
+#nav_toggle span:nth-child(2) {
+  top: 12px;
+}
+/*hamburger menu open style*/
+.open #nav_toggle span:nth-child(1) {
+  top: 6px;
+  -webkit-transform: rotate(155deg);
+  -moz-transform: rotate(155deg);
+  transform: rotate(155deg);
+}
+.open #nav_toggle span:nth-child(2) {
+  top: 6px;
+  -webkit-transform: rotate(-155deg);
+  -moz-transform: rotate(-155deg);
+  transform: rotate(-155deg);
+}
+/*nav style*/
+nav {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: -1;
+  -webkit-transform: scale(0.85);
+  -ms-transform: scale(0.85);
+  transform: scale(0.85);
+  transition: 0.5s;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+/*nav list style*/
+nav ul {
+  list-style-type: none;
+  padding: 2em;
+}
+nav ul li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+/*nav link style*/
+nav ul li a {
+  padding: 1.5em 0;
+  display: block;
+  text-decoration: none;
+  font-size: clamp(20px, 2.5vw, 5vw);
+  font-weight: 300;
+  color: #000;
+  transition: 0.5s;
+}
+nav ul li a:hover {
+  padding: 1.5em 1em;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+nav ul li:last-child {
+  border: none;
+}
+.add_nav {
+  display: block;
+  opacity: 1;
+  z-index: 10;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  transition: 0.5s;
+}
+.container {
+  position: relative;
+}
+.add_container {
+  -webkit-filter: blur(8px);
+  -moz-filter: blur(8px);
+  -o-filter: blur(8px);
+  -ms-filter: blur(8px);
+  filter: blur(8px);
+  transition: 0.5s;
+}
+

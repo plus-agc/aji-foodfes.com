@@ -1,0 +1,10 @@
+/* Extracted from src/layouts/Layout.astro */
+html {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+}
+body {
+  background-color: #fffcd1;
+  margin: 0;
+}
+
