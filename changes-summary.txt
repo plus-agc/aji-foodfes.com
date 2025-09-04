@@ -1,53 +1,54 @@
-Title: Work Summary and Git Diff
-Date: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
-Branch: fix-indentation
+タイトル: 作業サマリーとGit差分
+日付: 2025-09-04
+ブランチ: fix-indentation
 
-Overview
-- Added RogainingEvent component with Markdown-driven content, CTA, flyer modal, auto summary + timeline extraction.
-- Converted Word doc (docx) to Markdown via Node script (`tools/extract-docx.cjs`).
-- Integrated Rogaining section into `index.astro`; styled headings, lists, and CTAs.
-- Enhanced StageEvents with schedule timeline and bottom image; unified max-widths to 1440px.
-- Rebuilt ExperienceCorner: timeline + responsive cards; per-card themed decorations; badge colors; content updated per provided copy.
-- Menubar anchors updated; site container wrapper and footer max-width alignment.
-- Replaced footer image-only block with responsive, text-based footer over ocean wave background (PC/SP), plus additional subtle waves.
+概要
+- RogainingEvent コンポーネントを追加（Markdown駆動のコンテンツ、CTA、フライヤーモーダル、自動サマリー＋タイムライン抽出）。
+- Word(docx) を Node スクリプト（`tools/extract-docx.cjs`）で Markdown に変換。
+- Rogaining セクションを `index.astro` に統合し、見出し・リスト・CTA のスタイルを整備。
+- StageEvents を強化（タイムスケジュール、下部イメージ、最大幅を 1440px に統一）。
+- ExperienceCorner を再構築（タイムライン＋レスポンシブカード、カード装飾、バッジ色、文言更新）。
+- Menubar のアンカー更新、サイト全体のラッパーとフッターの最大幅を調整。
+- フッターを画像のみからテキスト主体に刷新。海の波背景（PC/SP）を維持し、控えめな波を追加。
 
-Key Files Touched
+変更した主なファイル
 - src/modules/RogainingEvent.astro
-- src/content/rogaining.md (from src/content/rogaining.docx)
+- src/content/rogaining.md（元: src/content/rogaining.docx）
 - tools/extract-docx.cjs
 - src/modules/StageEvents.astro
 - src/modules/ExperienceCorner.astro
 - src/modules/Footer.astro
 - src/pages/index.astro, src/layouts/Layout.astro
 - src/styles/index.scss
-- src/images/2025/* (new decorative and flyer assets)
+- src/images/2025/*（新規の装飾・フライヤー用アセット）
 
-Git Changed Files (relative to main)
-A	src/content/rogaining.docx
-A	src/content/rogaining.md
-A	src/images/2025/ajiroge.jpg
-A	src/images/2025/experience_butter.svg
-A	src/images/2025/experience_fish.webp
-A	src/images/2025/experience_fish2.svg
-A	src/images/2025/experience_milk.svg
-A	src/images/2025/experience_raffle.svg
-A	src/images/2025/sankou.webp
-A	src/images/2025/stage-events.webp
-D	src/layouts/Layout-Kinniku.astro
-D	src/layouts/Layout-Special.astro
-M	src/layouts/Layout.astro
-A	src/modules/ExperienceCorner.astro
-A	src/modules/Footer.astro
-M	src/modules/Menubar.astro
-A	src/modules/RogainingEvent.astro
-A	src/modules/StageEvents.astro
-M	src/modules/TabComponent.astro
-M	src/pages/index.astro
-A	src/scripts/index.js
-A	src/styles/index.scss
-A	tools/extract-docx.cjs
+Git 変更ファイル（main 比）
+注記: A=追加, M=変更, D=削除
+A\tsrc/content/rogaining.docx
+A\tsrc/content/rogaining.md
+A\tsrc/images/2025/ajiroge.jpg
+A\tsrc/images/2025/experience_butter.svg
+A\tsrc/images/2025/experience_fish.webp
+A\tsrc/images/2025/experience_fish2.svg
+A\tsrc/images/2025/experience_milk.svg
+A\tsrc/images/2025/experience_raffle.svg
+A\tsrc/images/2025/sankou.webp
+A\tsrc/images/2025/stage-events.webp
+D\tsrc/layouts/Layout-Kinniku.astro
+D\tsrc/layouts/Layout-Special.astro
+M\tsrc/layouts/Layout.astro
+A\tsrc/modules/ExperienceCorner.astro
+A\tsrc/modules/Footer.astro
+M\tsrc/modules/Menubar.astro
+A\tsrc/modules/RogainingEvent.astro
+A\tsrc/modules/StageEvents.astro
+M\tsrc/modules/TabComponent.astro
+M\tsrc/pages/index.astro
+A\tsrc/scripts/index.js
+A\tsrc/styles/index.scss
+A\ttools/extract-docx.cjs
 
-Diffstat (main...HEAD)
+差分統計（main...HEAD）
  src/content/rogaining.docx            |  Bin 0 -> 18882 bytes
  src/content/rogaining.md              |   41 ++
  src/images/2025/ajiroge.jpg           |  Bin 0 -> 566616 bytes
@@ -61,20 +62,38 @@ Diffstat (main...HEAD)
  src/layouts/Layout-Kinniku.astro      |   67 --
  src/layouts/Layout-Special.astro      |   72 ---
  src/layouts/Layout.astro              |   11 +
- src/modules/ExperienceCorner.astro    |  553 ++++++++++++++++
+ src/modules/ExperienceCorner.astro    |  553 +++++++++++++++
  src/modules/Footer.astro              |  123 ++++
- src/modules/Menubar.astro             |   69 +-
+ src/modules/Menubar.astro             |   69 -
  src/modules/RogainingEvent.astro      |  646 +++++++++++++++++++
  src/modules/StageEvents.astro         |  403 ++++++++++++
- src/modules/TabComponent.astro        |   65 +-
- src/pages/index.astro                 | 1130 +--------------------------------
+ src/modules/TabComponent.astro        |   65 -
+ src/pages/index.astro                 | 1130 --------------------------------
  src/scripts/index.js                  |   37 ++
  src/styles/index.scss                 |  315 +++++++++
  tools/extract-docx.cjs                |   89 +++
- 23 files changed, 2638 insertions(+), 1306 deletions(-)
+ 23 ファイルを変更、+2638 行、-1306 行
 
-Notes
-- Footer now renders text natively with ocean waves background and remains responsive.
-- ExperienceCorner cards include specific copy updates, per-card decorations, and schedule labels.
-- Rogaining section parses Markdown heading/lines to generate summary cards and a visual timeline.
+メモ
+- フッターはテキストで描画し、海の波背景を維持したままレスポンシブに対応。
+- ExperienceCorner のカードは各カード装飾、スケジュール表示などを含む。
+- Rogaining セクションは Markdown の見出し/行を解析し、サマリーカードと可視タイムラインを生成。
 
+---
+追記: アクセスセクション＋www リダイレクト
+日付: 2025-09-04
+
+概要
+- アクセスコンポーネントを追加（既存セクションと同様のスタイリング、本文は「準備中」）。
+- ホーム内で <RogainingEvent /> の直下に <Access /> を配置。
+- メニュー（Menubar）に `/#access` アンカーリンクを追加。
+- `.htaccess` を修正し、HTTPS と www を強制（`localhost` は除外）。
+
+変更ファイル
+- src/modules/Access.astro（新規）
+- src/pages/index.astro（<Access /> の import と配置）
+- src/modules/Menubar.astro（`/#access` を追加）
+- public/.htaccess（https + www を強制）
+
+メモ
+- アクセス情報の YAML 連携は現状不要。
