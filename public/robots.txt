@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://aji-foodfes.com/sitemap-0.xml
+Sitemap: https://aji-foodfes.com/sitemap-index.xml
