@@ -19,7 +19,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href={canonicalURL} />
     <title>{title}</title>
-    <!-- Google tag (gtag.js) -->
     <script
       type="text/partytown"
       async
@@ -42,4 +41,4 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <slot />
   </body>
 </html>
-<style is:global src="../styles/global.css"></style>
+<style src="../styles/layout-kinniku.css"></style>
