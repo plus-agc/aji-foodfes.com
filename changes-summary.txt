@@ -97,3 +97,28 @@ A\ttools/extract-docx.cjs
 
 メモ
 - アクセス情報の YAML 連携は現状不要。
+
+---
+追記: 2025-09-05 作業ログ（UI/レスポンシブ・文言反映）
+
+概要
+- アクセス（Access.astro）: 原稿反映、コミュニティバス時刻表（往路/復路）を実装。凡例リストをチップ化、臨時駐車場SVGをフル幅・末尾に配置、見出し「臨時駐車場」追加。
+- アクセスのテーブル: SP時の横スクロール提案を経て元に戻し、はみ出し対策として 1100px 未満は1カラム化。さらに 499px 以下で `table-layout: fixed` などで親幅内に収める調整。
+- ロゲイニング（RogainingEvent.astro）: 一度シンプル化→要望により元のリッチ構成へ復旧。タイトルをカード内に移し、他セクションの h2 と同等のスタイルへ統一。タイムラインはSPで左余白縮小＆縦積みに変更。本文段落のフォントをデフォルト（通常）へ。
+- サマリーカード: デスクトップで3列2行に変更（モバイルは1列のまま）。
+- 体験コーナー（ExperienceCorner.astro）: `card-head` をGrid化し、バッジ（無料/有料/抽選会）を上下中央・SP/PCで高さと余白を統一し崩れを解消。
+- タブ（TabComponent）: SPで `.tab-button` を幅いっぱいに。鰺ヶ沢ご当地丼タイトルは `<picture>` で `dukedon__title_sp.svg` に切替。
+- ヘッダー（index.astro + styles）: メイン画像直下に `event-date.svg` を追加し、SPは `event-date-sp.svg` に自動切替。上下マージンを追加。
+- メニュー（Menubar）: SPでハンバーガーを高コントラストの丸ボタンに刷新、右上固定（position: fixed）。メニュー本体は全画面オーバーレイ化。PCの `sticky` トップバーは現状維持。
+
+主な変更ファイル
+- src/modules/Access.astro（本文・時刻表・凡例・駐車場画像・レスポンシブ調整）
+- src/modules/RogainingEvent.astro（タイトル配置/スタイル統一、タイムラインSP最適化、pのフォント指定）
+- src/modules/ExperienceCorner.astro（card-head再レイアウト、最小高さ・余白・バッジ整列）
+- src/modules/TabComponent.astro, src/styles/TabComponent.css（SP幅いっぱいボタン、タイトル画像の `<picture>` 切替）
+- src/pages/index.astro, src/styles/index.scss（event-date画像追加と余白、SP切替）
+- src/modules/Menubar.astro（SPハンバーガー固定＆視認性改善、ナビのオーバーレイ化）
+
+備考/注意
+- `.timetables` は中間幅では 1 カラム化、499px 以下はテーブルを固定レイアウトで縮め、overflow無しではみ出しを抑制。
+- 凡例（臨時駐車場の色スウォッチ）は特異性を高めてリストスタイル無効化（`!important`）を付与済み。
