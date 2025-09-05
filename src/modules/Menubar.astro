@@ -23,62 +23,59 @@ import MenubarScript from "../scripts/Menubar.js?url";
 
 <style is:inline>
   /*hamburger menu style*/
+  /* hamburger toggle (SP): fixed and high-contrast */
   #nav_toggle {
-    position: absolute;
-    top: 2em;
-    right: 2em;
-    z-index: 20;
+    position: fixed;
+    top: max(12px, env(safe-area-inset-top));
+    right: max(12px, env(safe-area-inset-right));
+    z-index: 1000;
   }
   #nav_toggle div {
     position: relative;
-    display: block;
-    top: 4px;
-    width: 32px;
-    height: 32px;
-    z-index: 100;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    background: rgba(64, 34, 15, 0.95);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    backdrop-filter: saturate(160%) blur(6px);
   }
   #nav_toggle span {
     position: absolute;
-    display: block;
-    width: 100%;
-    height: 3px;
-    background: #000;
-    -webkit-transition: 0.5s ease-in-out;
-    -moz-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
+    left: 50%;
+    top: 50%;
+    width: 22px;
+    height: 2.5px;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform 0.35s ease, opacity 0.25s ease, top 0.35s ease;
   }
-  /*hamburger menu close style*/
-  #nav_toggle span:nth-child(1) {
-    top: 0px;
-  }
-  #nav_toggle span:nth-child(2) {
-    top: 12px;
-  }
-  /*hamburger menu open style*/
+  /* closed state: two lines */
+  #nav_toggle span:nth-child(1) { transform: translate(-50%, -6px); }
+  #nav_toggle span:nth-child(2) { transform: translate(-50%, 6px); }
+  /* open -> X */
   .open #nav_toggle span:nth-child(1) {
-    top: 6px;
-    -webkit-transform: rotate(155deg);
-    -moz-transform: rotate(155deg);
-    transform: rotate(155deg);
+    transform: translate(-50%, -50%) rotate(45deg);
   }
   .open #nav_toggle span:nth-child(2) {
-    top: 6px;
-    -webkit-transform: rotate(-155deg);
-    -moz-transform: rotate(-155deg);
-    transform: rotate(-155deg);
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  .open #nav_toggle div {
+    background: rgba(230, 0, 18, 0.95);
   }
   /*nav style*/
   nav {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
     opacity: 0;
     z-index: -1;
-    -webkit-transform: scale(0.85);
-    -ms-transform: scale(0.85);
-    transform: scale(0.85);
-    transition: 0.5s;
-    background-color: rgba(255, 255, 255, 0.95);
+    transform: translateY(-8px) scale(0.98);
+    transition: 0.35s ease;
+    background-color: rgba(255, 255, 255, 0.96);
+    backdrop-filter: saturate(160%) blur(8px);
   }
   /*nav list style*/
   nav ul {
@@ -109,11 +106,9 @@ import MenubarScript from "../scripts/Menubar.js?url";
   .add_nav {
     display: block;
     opacity: 1;
-    z-index: 10;
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1);
-    transition: 0.5s;
+    z-index: 999;
+    transform: none;
+    transition: 0.35s ease;
   }
   .container {
     position: relative;

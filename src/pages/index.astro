@@ -14,9 +14,11 @@ import RogainingEvent from "../modules/RogainingEvent.astro";
 import Access from "../modules/Access.astro";
 import "../styles/index.scss";
 import indexScriptUrl from "../scripts/index.js?url";
+import EventDate from "../images/2025/event-date.svg";
+import EventDateSp from "../images/2025/event-date-sp.svg";
 ---
 
-<Layout title="あじがさわフードフェス2024">
+<Layout title="あじがさわフードフェス">
   <Menubar />
   <main>
     <div class="site-container">
@@ -26,6 +28,12 @@ import indexScriptUrl from "../scripts/index.js?url";
             src={Mainimage}
             alt="あじがさわフードフェス2025 メインビジュアル"
           />
+        </div>
+        <div class="header__event-date">
+          <picture>
+            <source srcset={EventDateSp.src} media="(max-width: 768px)" />
+            <Image src={EventDate} alt="開催日 2025年10月5日(日)" />
+          </picture>
         </div>
       </header>
       <!-- タブコンポーネント -->

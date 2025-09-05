@@ -352,8 +352,9 @@
         padding: 16px 20px;
         font-size: 15px;
         min-height: 70px;
-        min-width: 280px;
-        margin: 0 auto;
+        width: 100%;
+        min-width: 0;
+        margin: 0;
     }
 
     .tab-text {
@@ -382,8 +383,10 @@
     .tab-button {
         padding: 14px 16px;
         font-size: 14px;
-        min-width: 260px;
         min-height: 65px;
+        width: 100%;
+        min-width: 0;
+        margin: 0;
     }
 
     .tab-text {
@@ -411,4 +414,3 @@
         line-height: 1.3;
     }
 }
-

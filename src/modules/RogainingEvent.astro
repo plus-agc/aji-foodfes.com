@@ -117,11 +117,13 @@ const introParas = extractIntroParas();
 
 <section id="rogaining" class="anchor-section rogaining">
   <div class="rogaining__inner">
-    <h2 class="rogaining__title lanove">ロゲイニングイベント</h2>
-    <div class="rogaining__content border">
+    <div class="rogaining__content">
+      <div class="rogaining__title-wrap">
+        <h2 class="rogaining__title lanove">ロゲイニングイベント</h2>
+      </div>
       {
         introParas.length > 0 && (
-          <div class="rogaining__intro lanove">
+          <div class="rogaining__intro">
             {introParas.map((t) => (
               <p>{t}</p>
             ))}
@@ -188,28 +190,30 @@ const introParas = extractIntroParas();
     width: 100%;
     margin: 0 auto;
   }
-  .rogaining__title {
-    font-size: clamp(1.75rem, 1.2rem + 2vw, 3rem);
-    margin: 0 0 1rem 0;
-    color: #40220f;
+  /* Match Experience Corner title styles */
+  .rogaining__title-wrap {
+    width: 100%;
     text-align: center;
+    margin-bottom: 3rem;
     position: relative;
+    z-index: 2;
+  }
+  .rogaining__title {
+    font-size: 2.5rem;
+    color: #40220f;
+    font-family: "lanove", Arial, sans-serif;
+    margin: 0;
+    font-weight: bold;
   }
   .rogaining__title::after {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 6px;
-    background: #e60012;
-    border-radius: 3px;
-    margin: 12px auto 0;
+    content: none;
   }
   .rogaining__content {
     background: #fff;
     position: relative;
-    border-radius: 24px;
+    border-radius: 8px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
+    padding: clamp(1rem, 0.6rem + 2vw, 4rem);
   }
   .rogaining__content::before {
     content: "";
@@ -273,6 +277,9 @@ const introParas = extractIntroParas();
   }
   .rogaining__content p {
     margin: 0 0 0.75rem 0;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 400;
   }
   .rogaining__content ul {
     padding-left: 1.25rem;
@@ -472,6 +479,25 @@ const introParas = extractIntroParas();
     font-weight: 600;
   }
 
+  /* Mobile adjustments for timeline */
+  @media (max-width: 599px) {
+    .timeline::before { left: 10px; }
+    .timeline-item {
+      padding-left: 28px;
+      margin: 10px 0;
+    }
+    .timeline-item::before { left: 6px; top: 0.9em; width: 12px; height: 12px; }
+    .t-time {
+      display: inline-block;
+      margin: 0 0 6px 0;
+    }
+    .t-card {
+      display: block;
+      margin-left: 0;
+      padding: 10px 12px;
+    }
+  }
+
   /* Callouts for inline TODO comments */
   .rogaining__content :is(p, div, section) > code {
     background: #fff6f6;
@@ -562,7 +588,16 @@ const introParas = extractIntroParas();
     color: #40220f;
   }
 
+  /* Desktop: 3 columns x 2 rows */
+  @media (min-width: 900px) {
+    .rogaining__summary {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
   /* Duplicate suppression handled via script for robustness */
+
+  /* end simple version styles (reverted) */
 </style>
 
 <!-- Flyer Modal -->

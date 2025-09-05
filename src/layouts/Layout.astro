@@ -14,7 +14,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="あじがさわグルメフェス 2024" />
+    <meta name="description" content="あじがさわグルメフェス" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
@@ -46,8 +46,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <style is:global>
   html {
     scroll-behavior: smooth;
-    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
-      "Hiragino Sans", Meiryo, sans-serif;
+    font-family:
+      "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+      Meiryo, sans-serif;
   }
   body {
     background-color: #fffcd1;
@@ -61,6 +62,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     padding: 0 clamp(1rem, 0.8rem + 1vw, 2rem);
   }
   @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
+    html {
+      scroll-behavior: auto;
+    }
   }
 </style>

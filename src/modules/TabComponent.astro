@@ -4,6 +4,7 @@ import TabComponentScript from "../scripts/TabComponent.js?url";
 import { Image } from "astro:assets";
 import TabBg from "../images/2025/tab_bg.webp";
 import DukedonTitle from "../images/2025/dukedon__title.svg";
+import DukedonTitleSp from "../images/2025/dukedon__title_sp.svg";
 import DukedonNormal from "../images/2025/dukedon_normal.svg";
 import DukedonNormal1 from "../images/2025/dukedon_normal_1.webp";
 import DukedonNormal2 from "../images/2025/dukedon_normal_2.webp";
@@ -75,11 +76,17 @@ import Other4 from "../images/2025/other_4.svg";
                 <div class="dukedon-container">
                     <!-- タイトル画像 -->
                     <div class="dukedon-title-section">
-                        <Image
-                            src={DukedonTitle}
-                            alt="鰺ヶ沢ご当地丼"
-                            class="dukedon-title"
-                        />
+                        <picture>
+                            <source
+                                srcset={DukedonTitleSp.src}
+                                media="(max-width: 768px)"
+                            />
+                            <Image
+                                src={DukedonTitle}
+                                alt="鰺ヶ沢ご当地丼"
+                                class="dukedon-title"
+                            />
+                        </picture>
                     </div>
 
                     <!-- ノーマル漬け丼セクション -->
@@ -648,8 +655,9 @@ import Other4 from "../images/2025/other_4.svg";
             padding: 16px 20px;
             font-size: 15px;
             min-height: 70px;
-            min-width: 280px;
-            margin: 0 auto;
+            width: 100%;
+            min-width: 0;
+            margin: 0;
         }
 
         .tab-text {
@@ -681,8 +689,10 @@ import Other4 from "../images/2025/other_4.svg";
         .tab-button {
             padding: 14px 16px;
             font-size: 14px;
-            min-width: 260px;
             min-height: 65px;
+            width: 100%;
+            min-width: 0;
+            margin: 0;
         }
 
         .tab-text {

@@ -389,26 +389,34 @@ import ExFish2 from "../images/2025/experience_fish2.svg";
     overflow: hidden;
   }
   .card-head {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto;
     align-items: center;
-    justify-content: space-between;
-    gap: 12px;
+    column-gap: 12px;
+    row-gap: 6px;
+    padding: 8px 10px;
     margin-bottom: 6px;
+    min-height: 80px; /* 統一された高さ感（PC/タブレット） */
   }
+  .card-head__text { min-width: 0; padding-right: 4px; }
   .card-title {
     font-size: 1.25rem;
     margin: 0;
     color: #40220f;
   }
   .badge {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background: #e60012;
     color: #fff;
     padding: 6px 10px;
     border-radius: 999px;
     font-weight: 800;
     font-size: 0.85rem;
+    white-space: nowrap;
   }
+  .card-head .badge { align-self: center; }
   .badge.free {
     background: #22ac38;
   }
@@ -542,9 +550,10 @@ import ExFish2 from "../images/2025/experience_fish2.svg";
     .experience-corner__title h2 {
       font-size: 1.8rem;
     }
-    .card-title {
-      font-size: 1.1rem;
-    }
+    .card-head { column-gap: 8px; row-gap: 4px; padding: 10px 10px; min-height: 88px; }
+    .card-title { font-size: 1.1rem; margin: 0; }
+    .overline { font-size: 0.85rem; line-height: 1.4; }
+    .badge { font-size: 0.78rem; padding: 4px 10px; }
     .experience-corner {
       padding: 2rem 0;
       margin: 1rem 0;

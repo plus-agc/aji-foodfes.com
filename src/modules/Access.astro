@@ -4,6 +4,7 @@ import Decoration1 from "../images/2025/decoration_1.svg";
 import Decoration2 from "../images/2025/decoration_2.svg";
 import Decoration3 from "../images/2025/decoration_3.svg";
 import Decoration4 from "../images/2025/decoration_4.svg";
+import ParkingSvg from "../images/2025/parking.svg";
 ---
 
 <section id="access" class="access-section anchor-section">
@@ -39,9 +40,95 @@ import Decoration4 from "../images/2025/decoration_4.svg";
     <h2 class="lanove">アクセス</h2>
   </div>
   <div class="access-section__content">
-    <div class="access-placeholder" role="status" aria-live="polite">
-      <p class="placeholder-title">準備中</p>
-      <p class="placeholder-desc">アクセス情報は準備中です。公開までお待ちください。</p>
+    <div class="access-intro" aria-live="polite">
+      <p class="intro-note">
+        会場周辺の臨時駐車場には限りがありますので、できるだけ公共交通機関をご利用ください。
+      </p>
+      <p class="bus-free">
+        <span class="badge">あじバス</span> 鰺ヶ沢町コミュニティバス「あじバス」乗車無料!
+      </p>
+      <p class="bus-line">鰺ヶ沢駅前からは「市街地巡回線」が便利です。</p>
+    </div>
+
+    <div class="timetables">
+      <section
+        class="timetable-card"
+        aria-labelledby="timetable-outbound-title"
+      >
+        <h3 id="timetable-outbound-title" class="timetable-title">往路</h3>
+        <div class="table-wrap" role="region" aria-label="往路 時刻表">
+          <table class="bus-table">
+            <caption class="sr-only"
+              >往路：鰺ヶ沢駅前 発 → 海の駅わんど前 着</caption
+            >
+            <thead>
+              <tr>
+                <th scope="col">便</th>
+                <th scope="col">鰺ヶ沢駅前発</th>
+                <th scope="col">海の駅わんど前着</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">1便</th><td>8:00</td><td>8:20</td></tr>
+              <tr><th scope="row">2便</th><td>8:30</td><td>8:47</td></tr>
+              <tr><th scope="row">3便</th><td>9:45</td><td>10:02</td></tr>
+              <tr><th scope="row">4便</th><td>10:30</td><td>10:50</td></tr>
+              <tr><th scope="row">5便</th><td>11:10</td><td>11:19</td></tr>
+              <tr><th scope="row">6便</th><td>11:50</td><td>12:10</td></tr>
+              <tr><th scope="row">7便</th><td>13:30</td><td>13:47</td></tr>
+              <tr><th scope="row">8便</th><td>14:15</td><td>14:35</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="timetable-card" aria-labelledby="timetable-inbound-title">
+        <h3 id="timetable-inbound-title" class="timetable-title">復路</h3>
+        <div class="table-wrap" role="region" aria-label="復路 時刻表">
+          <table class="bus-table">
+            <caption class="sr-only"
+              >復路：鰺ヶ沢駅前 発 → 海の駅わんど前 着</caption
+            >
+            <thead>
+              <tr>
+                <th scope="col">便</th>
+                <th scope="col">鰺ヶ沢駅前発</th>
+                <th scope="col">海の駅わんど前着</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">1便</th><td>8:20</td><td>8:29</td></tr>
+              <tr><th scope="row">2便</th><td>8:47</td><td>9:07</td></tr>
+              <tr><th scope="row">3便</th><td>10:02</td><td>10:22</td></tr>
+              <tr><th scope="row">4便</th><td>10:50</td><td>10:59</td></tr>
+              <tr><th scope="row">5便</th><td>11:19</td><td>11:39</td></tr>
+              <tr><th scope="row">6便</th><td>12:10</td><td>12:19</td></tr>
+              <tr><th scope="row">7便</th><td>13:47</td><td>14:07</td></tr>
+              <tr><th scope="row">8便</th><td>14:35</td><td>14:52</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+    <!-- 臨時駐車場（フル幅） -->
+    <div class="parking-full" aria-label="臨時駐車場">
+      <div class="parking-full__title">
+        <h3 class="lanove">臨時駐車場のご案内</h3>
+        <ul class="parking-legend" aria-label="凡例">
+          <li>黄枠：臨時駐車場</li>
+          <li>青枠：イベント会場</li>
+          <li>赤枠：障がい者専用駐車場</li>
+        </ul>
+      </div>
+      <div class="parking-full__image">
+        <!-- <Image src={ParkingSvg} alt="臨時駐車場のご案内" /> -->
+        <iframe
+          src="https://www.google.com/maps/d/u/0/embed?mid=1QdeJXAS45WJu1kenk8O6unet2ZGjSd4&ehbc=2E312F&noprof=1"
+          width="100%"
+          height="600"
+        >
+        </iframe>
+      </div>
     </div>
   </div>
 </section>
@@ -79,14 +166,46 @@ import Decoration4 from "../images/2025/decoration_4.svg";
     height: 40px;
     opacity: 0.8;
   }
-  .decoration--1 { top: 10%; left: 5%; transform: rotate(15deg); }
-  .decoration--2 { top: 20%; right: 10%; transform: rotate(-20deg); }
-  .decoration--3 { top: 40%; left: 15%; transform: rotate(45deg); }
-  .decoration--4 { top: 30%; right: 20%; transform: rotate(-30deg); }
-  .decoration--5 { top: 60%; left: 8%; transform: rotate(60deg); }
-  .decoration--6 { top: 70%; right: 15%; transform: rotate(-15deg); }
-  .decoration--7 { top: 80%; left: 25%; transform: rotate(25deg); }
-  .decoration--8 { top: 50%; right: 5%; transform: rotate(-45deg); }
+  .decoration--1 {
+    top: 10%;
+    left: 5%;
+    transform: rotate(15deg);
+  }
+  .decoration--2 {
+    top: 20%;
+    right: 10%;
+    transform: rotate(-20deg);
+  }
+  .decoration--3 {
+    top: 40%;
+    left: 15%;
+    transform: rotate(45deg);
+  }
+  .decoration--4 {
+    top: 30%;
+    right: 20%;
+    transform: rotate(-30deg);
+  }
+  .decoration--5 {
+    top: 60%;
+    left: 8%;
+    transform: rotate(60deg);
+  }
+  .decoration--6 {
+    top: 70%;
+    right: 15%;
+    transform: rotate(-15deg);
+  }
+  .decoration--7 {
+    top: 80%;
+    left: 25%;
+    transform: rotate(25deg);
+  }
+  .decoration--8 {
+    top: 50%;
+    right: 5%;
+    transform: rotate(-45deg);
+  }
 
   .access-section__title {
     width: 100%;
@@ -115,25 +234,162 @@ import Decoration4 from "../images/2025/decoration_4.svg";
     width: 100%;
   }
 
-  .access-placeholder {
+  .parking-full {
+    width: 100%;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 2;
+  }
+  .parking-full__title {
+    text-align: center;
+    margin: 0 0 1rem;
+    padding: 0 2rem;
+  }
+  .parking-full__title h3 {
+    margin: 0;
+    color: #40220f;
+    font-size: 1.6rem;
+  }
+  .parking-full__title .parking-legend {
+    list-style: none !important;
+    padding: 0;
+    margin: 8px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    justify-content: center;
+    text-align: initial;
+  }
+  .parking-full__title .parking-legend li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(64, 34, 15, 0.12);
+    background: #fff;
+    color: #40220f;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+  .parking-full__title .parking-legend li::before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    box-shadow: 0 0 0 2px rgba(64, 34, 15, 0.06) inset;
+  }
+  .parking-full__title .parking-legend li:nth-child(1)::before {
+    background: #ffca28;
+  }
+  .parking-full__title .parking-legend li:nth-child(2)::before {
+    background: #1e88e5;
+  }
+  .parking-full__title .parking-legend li:nth-child(3)::before {
+    background: #e60012;
+  }
+  .parking-full__image img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .access-intro {
     background: #fff;
     border: 2px solid rgba(230, 0, 18, 0.12);
     border-radius: 8px;
-    padding: 2rem 1.5rem;
+    padding: 1.25rem 1rem;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-    text-align: center;
   }
-  .placeholder-title {
-    margin: 0 0 0.25rem;
+  .intro-note {
+    margin: 0 0 0.5rem;
+    color: #40220f;
+    font-weight: 700;
+    line-height: 1.7;
+  }
+  .bus-free {
+    margin: 0.25rem 0;
+    color: #e60012;
+    font-weight: 800;
+  }
+  .bus-line {
+    margin: 0.25rem 0 0;
+    color: #5a4036;
+    font-weight: 700;
+  }
+  .badge {
+    display: inline-block;
+    background: #e60012;
+    color: #fff;
+    font-weight: 800;
+    border-radius: 999px;
+    padding: 0.15rem 0.6rem;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .timetables {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+  }
+  .timetable-card {
+    background: #fffdfa;
+    border: 1px solid rgba(64, 34, 15, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  }
+  .timetable-title {
+    margin: 0 0 0.5rem;
     color: #40220f;
     font-weight: 800;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
-  .placeholder-desc {
-    margin: 0;
-    color: #5a4036;
-    font-weight: 600;
-    font-size: 1rem;
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .bus-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 420px;
+  }
+  .bus-table caption {
+    text-align: left;
+    color: #6a564e;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+  }
+  .bus-table th,
+  .bus-table td {
+    border: 1px solid rgba(64, 34, 15, 0.12);
+    padding: 0.5rem 0.6rem;
+    text-align: center;
+    color: #40220f;
+    background: #fff;
+  }
+  .bus-table thead th {
+    background: #f7efe7;
+    font-weight: 800;
+  }
+  .bus-table tbody tr:nth-child(odd) td,
+  .bus-table tbody tr:nth-child(odd) th[scope="row"] {
+    background: #fffaf5;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 1px, 1px);
+    white-space: nowrap;
+    border: 0;
   }
 
   /* タブレット（600px〜899px） */
@@ -146,8 +402,15 @@ import Decoration4 from "../images/2025/decoration_4.svg";
     .access-section__title h2 {
       font-size: 2rem;
     }
-    .placeholder-title {
-      font-size: 1.3rem;
+    .timetables {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* 中間幅（〜1100px）は1列にしてはみ出し防止 */
+  @media (max-width: 1100px) {
+    .timetables {
+      grid-template-columns: 1fr;
     }
   }
 
@@ -165,9 +428,25 @@ import Decoration4 from "../images/2025/decoration_4.svg";
       padding: 2rem 0;
       margin: 1rem 0;
     }
-    .placeholder-title {
-      font-size: 1.2rem;
+    .bus-table {
+      min-width: 360px;
+    }
+  }
+
+  /* 極小幅（〜499px）では完全に親幅に合わせて縮小し、はみ出し防止 */
+  @media (max-width: 499px) {
+    .timetable-card { padding: 0.75rem; }
+    .timetable-title { font-size: 1.1rem; }
+    .bus-table {
+      min-width: 0;
+      width: 100%;
+      table-layout: fixed;
+    }
+    .bus-table th,
+    .bus-table td {
+      padding: 0.4rem 0.35rem;
+      font-size: 0.9rem;
+      word-break: break-word;
     }
   }
 </style>
-
