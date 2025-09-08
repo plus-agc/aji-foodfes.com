@@ -119,7 +119,7 @@ const introParas = extractIntroParas();
   <div class="rogaining__inner">
     <div class="rogaining__content">
       <div class="rogaining__title-wrap">
-        <h2 class="rogaining__title lanove">ロゲイニングイベント</h2>
+        <h2 class="rogaining__title">ロゲイニングイベント</h2>
       </div>
       {
         introParas.length > 0 && (
@@ -193,17 +193,18 @@ const introParas = extractIntroParas();
   /* Match Experience Corner title styles */
   .rogaining__title-wrap {
     width: 100%;
-    text-align: center;
-    margin-bottom: 3rem;
+    text-align: left;
+    margin: 0 0 0.75rem 0; /* match body paragraph spacing */
     position: relative;
     z-index: 2;
   }
   .rogaining__title {
-    font-size: 2.5rem;
+    font-size: 1rem; /* match body */
+    line-height: 1.9; /* match body */
     color: #40220f;
-    font-family: "lanove", Arial, sans-serif;
+    font-family: inherit; /* match body */
     margin: 0;
-    font-weight: bold;
+    font-weight: 400; /* match body */
   }
   .rogaining__title::after {
     content: none;
@@ -481,12 +482,19 @@ const introParas = extractIntroParas();
 
   /* Mobile adjustments for timeline */
   @media (max-width: 599px) {
-    .timeline::before { left: 10px; }
+    .timeline::before {
+      left: 10px;
+    }
     .timeline-item {
       padding-left: 28px;
       margin: 10px 0;
     }
-    .timeline-item::before { left: 6px; top: 0.9em; width: 12px; height: 12px; }
+    .timeline-item::before {
+      left: 6px;
+      top: 0.9em;
+      width: 12px;
+      height: 12px;
+    }
     .t-time {
       display: inline-block;
       margin: 0 0 6px 0;
