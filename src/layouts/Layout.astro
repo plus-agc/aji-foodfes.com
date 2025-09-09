@@ -4,9 +4,10 @@ import GTM_BOOT from "../scripts/gtm.js?url";
 
 interface Props {
   title: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -14,7 +15,80 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="あじがさわグルメフェス" />
+    <meta
+      name="description"
+      content={description ??
+        "青森県鰺ヶ沢町で開催される『あじがさわフードフェス』は、ヒラメのヅケ丼や肉グルメ、スイーツなど多彩な味覚が集結する食の祭典。家族で楽しめる体験や抽選会、ステージイベントも多数開催。毎年多くの来場者で賑わう、地域の魅力を味わえるイベントです。"}
+    />
+    <!-- 構造化データ: schema.org Event (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "あじがさわフードフェス",
+        "description": "青森県鰺ヶ沢町で開催される食の祭典。ヒラメのヅケ丼や肉グルメ、スイーツなど多彩な味覚が集結し、家族で楽しめる体験や抽選会、ステージイベントも多数開催。毎年多くの来場者で賑わう、地域の魅力を味わえるイベントです。",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+          "@type": "Place",
+          "name": "海の駅わんど向かい 特設会場",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "鰺ヶ沢町",
+            "addressRegion": "青森県",
+            "addressCountry": "JP"
+          }
+        },
+        "image": ["https://aji-foodfes.com/images/main-image.webp"],
+        "organizer": {
+          "@type": "Organization",
+          "name": "あじがさわフードフェス実行委員会",
+          "url": "https://aji-foodfes.com/"
+        }
+      }
+    </script>
+    <!-- パンくずリスト構造化データ（トップページ用） -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "ホーム",
+            "item": "https://aji-foodfes.com/"
+          }
+        ]
+      }
+    </script>
+    <meta
+      property="og:title"
+      content="あじがさわフードフェス｜ヒラメのヅケ丼×肉×スイーツが大集合！青森・鰺ヶ沢"
+    />
+    <meta
+      property="og:description"
+      content="青森県鰺ヶ沢町で開催される『あじがさわフードフェス』は、ヒラメのヅケ丼や肉グルメ、スイーツなど多彩な味覚が集結する食の祭典。家族で楽しめる体験や抽選会、ステージイベントも多数開催。毎年多くの来場者で賑わう、地域の魅力を味わえるイベントです。"
+    />
+    <meta
+      property="og:image"
+      content="https://aji-foodfes.com/images/main-image.webp"
+    />
+    <meta property="og:url" content="https://aji-foodfes.com/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="あじがさわフードフェス｜ヒラメのヅケ丼×肉×スイーツが大集合！青森・鰺ヶ沢"
+    />
+    <meta
+      name="twitter:description"
+      content="青森県鰺ヶ沢町で開催される『あじがさわフードフェス』は、ヒラメのヅケ丼や肉グルメ、スイーツなど多彩な味覚が集結する食の祭典。家族で楽しめる体験や抽選会、ステージイベントも多数開催。毎年多くの来場者で賑わう、地域の魅力を味わえるイベントです。"
+    />
+    <meta
+      name="twitter:image"
+      content="https://aji-foodfes.com/images/main-image.webp"
+    />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />

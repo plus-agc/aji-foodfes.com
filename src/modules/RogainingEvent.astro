@@ -119,7 +119,10 @@ const introParas = extractIntroParas();
   <div class="rogaining__inner">
     <div class="rogaining__content">
       <div class="rogaining__title-wrap">
-        <h2 class="rogaining__title">ロゲイニングイベント<br />あじがさわフードフェス2025併催イベント</h2>
+        <div class="experience-corner__title">
+          <h2 class="lanove">あじがさわフードフェス2025併催イベント</h2>
+        </div>
+        <h2 class="rogaining__title">ロゲイニングイベント</h2>
       </div>
       {
         introParas.length > 0 && (
@@ -197,6 +200,21 @@ const introParas = extractIntroParas();
     margin: 0 0 0.75rem 0; /* match body paragraph spacing */
     position: relative;
     z-index: 2;
+  }
+  /* Prominent first line title (match Experience Corner look, scoped here) */
+  .rogaining__title-wrap .experience-corner__title {
+    width: 100%;
+    text-align: center;
+    margin: 0 0 0.25rem 0; /* keep second line close */
+    position: relative;
+    z-index: 2;
+  }
+  .rogaining__title-wrap .experience-corner__title h2 {
+    font-size: 2.5rem;
+    color: #40220f;
+    font-family: "lanove", Arial, sans-serif;
+    margin: 0;
+    font-weight: bold;
   }
   .rogaining__title {
     font-size: 1rem; /* match body */
